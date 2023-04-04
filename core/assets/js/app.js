@@ -34,13 +34,16 @@ function fn() {
 //Menu
 function windowScroll() {
   const navbar = document.getElementById("navbar");
+  nav_links =  document.getElementById("navbar-navlist");
   if (
     document.body.scrollTop >= 50 ||
     document.documentElement.scrollTop >= 50
   ) {
     navbar.classList.add("nav-sticky");
+    nav_links.classList.add("text-dark");
   } else {
     navbar.classList.remove("nav-sticky");
+    nav_links.classList.add("btn btn-primary");
   }
 }
 window.addEventListener("scroll", (ev) => {

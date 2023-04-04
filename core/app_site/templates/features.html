@@ -1,93 +1,404 @@
-<section class="section" id="advantage">
+<nav>
+    <div class="nav nav-tabs nav-pills justify-content-center text-dark" id="nav-tab" role="tablist">
+        <button class="nav-link active " id="promo-tab" data-bs-toggle="tab" data-bs-target="#promo" type="button"
+                role="tab" aria-controls="nav-home" aria-selected="true">Промо акции
+        </button>
+        <button class="nav-link " id="brochures-tab" data-bs-toggle="tab" data-bs-target="#brochures" type="button"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Листовки
+        </button>
+        <button class="nav-link" id="polygraph-tab" data-bs-toggle="tab" data-bs-target="#polygraph" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Полиграфия
+        </button>
+        <button class="nav-link" id="adv-equipment-tab" data-bs-toggle="tab" data-bs-target="#adv-equipment" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Монтаж и производство рекламных конструкций
+        </button>
+        <button class="nav-link" id="decor-tab" data-bs-toggle="tab" data-bs-target="#decor" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Праздничное  оформление
+        </button>
+        <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Социалистические  исследования
+        </button>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="promo" role="tabpanel" aria-labelledby="promo-tab" tabindex="0">
+        <section class="section">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="section-title text-center mb-4 pb-2">
-                            <h3 class="title mb-3">Почему лучше заказать у нас?</h3>
-                            <p class="text-muted mx-auto para-desc mb-0">за 2022 год нашими услугами воспользовались 250 клиентов из 45 регионов страны</p>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/1.jpg" class="rounded img-fluid mx-auto d-block"
+                                     alt="">
+                            </div>
+                        </div><!--end col-->
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-airplay h4 mb-0"></i>
-                            </div>
-                            <div class="content">
-                                <a href="{% url 'app_site:feature' %}" class="title text-dark h4">более 1800 промоутеров</a>
-                                <p class="text-muted mt-3"> обширная база промоутеров для разных уровней промо-акций</p>
-<!--                                <a href="" class="text-dark title">Read More <i class="uil uil-arrow-right"></i> </a>-->
-                            </div>
-                        </div>
-                    </div><!--end col-->
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">Промо акции </h4>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>организация праздников
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>event-мероприятий
 
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-circle-layer h4 mb-0"></i>
-                            </div>
-                            <div class="content">
-                                <a href="" class="title text-dark h4">67 регион</a>
-                                <p class="text-muted mt-3">можно заказть промо-акцию дистанционно в другом регионе</p>
-                            </div>
-                        </div>
-                    </div><!--end col-->
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>выставок, открытий, кооперативов
 
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-fire h4 mb-0"></i>
-                            </div>
-                            <div class="content">
-                                <a href="" class="title text-dark h4">3 уровня контроля </a>
-                                <p class="text-muted mt-3">приорите для опытных промоутеров, фотофиксация, "тайный покупатель"</p>
-<!--                                <a href="" class="text-dark title">Read More <i class="uil uil-arrow-right"></i> </a>-->
-                            </div>
-                        </div>
-                    </div><!--end col-->
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>HoReCa
 
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-flip-h h4 mb-0"></i>
-                            </div>
-                            <div class="content">
-                                <a href="" class="title text-dark h4">фотоотчет на телефон</a>
-                                <p class="text-muted mt-3">Отправим фотоотчет удобный способом (почта, меседжер)</p>
-<!--                                <a href="" class="text-dark title">Read More <i class="uil uil-arrow-right"></i> </a>-->
-                            </div>
-                        </div>
-                    </div><!--end col-->
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>раздача листовок
 
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-mountains h4 mb-0"></i>
-                            </div>
-                            <div class="content">
-                                <a href="" class="title text-dark h4">плати меньше на 7%</a>
-                                <p class="text-muted mt-3">сидки на объем заказа и годовой договор</p>
-<!--                                <a href="" class="text-dark title">Read More <i class="uil uil-arrow-right"></i> </a>-->
-                            </div>
-                        </div>
-                    </div><!--end col-->
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>промо модели
 
-                    <div class="col-lg-4 col-md-6 mt-5 pt-4">
-                        <div class="card features feature-primary feature-shadow-md shadow rounded p-4 pt-5">
-                            <div class="icon-style mt-n80 position-relative text-center shadow rounded bg-white mb-4">
-                                <i class="uil uil-wind h4 mb-0"></i>
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>аниматоры
+
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>ведущие
+
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>диджея
+
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>супервайзер
+
+                                    </li>
+                                      <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>дегустации
+
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>подарок за покупку
+
+                                    </li>
+                                      <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>консультация
+
+                                    </li>
+                                     <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>хостесс
+
+                                    </li>
+                                      <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>ростовая кукла
+
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>Тайный покупатель
+
+                                 </ul>
+
                             </div>
-                            <div class="content">
-                                <a href="" class="title text-dark h4">проект за 3 дня</a>
-                                <p class="text-muted mt-3">Листейовки от 2 дней, акции-сэплинг и дегустация от 3 дн </p>
-<!--                                <a href="" class="text-dark title">Read More <i class="uil uil-arrow-right"></i> </a>-->
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+           </span>     </div>
             </div><!--end container-->
+        </section><!--end section-->
+    </div>
+    <div class="tab-pane fade" id="brochures" role="tabpanel" aria-labelledby="brochures-tab" tabindex="0">
+        <section class="section">
+            <div class="container">
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/2.jpg" class="rounded img-fluid mx-auto d-block" alt="">
+                            </div>
+                        </div><!--end col-->
 
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">Листовки</h4>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>адресное расписание
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2">
+                                        <i class="uil uil-check-circle align-middle"></i></span>безадресное распределение
+                                    </li>
+                                 </ul>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+            </div>
+            </div><!--end container-->
+        </section><!--end section-->>
+    </div>
+    <div class="tab-pane fade" id="polygraph" role="tabpanel" aria-labelledby="polygraph-tab" tabindex="0">
+        <section class="section">
+            <div class="container">
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/3.jpg" class="rounded img-fluid mx-auto d-block"
+                                     alt="">
+                                <div class="play-icon">
+                                    <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox">
+                                        <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
 
- </section><!--end section-->
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">BTL-услуги <br> Hassle Free Business</h4>
+                                <p class="text-muted">BTL (от англ. below-the-line — под чертой) — комплекс
+                                    маркетинговых коммуникаций, отличающихся от прямой рекламы ATL (от англ.
+                                    above-the-Line) уровнем воздействия на потребителей и выбором средств воздействия на
+                                    целевую аудиторию. Включает в себя стимулирование сбыта, мерчандайзинг,
+                                    POS-материалы (аббр. от англ. point of sale — место продажи), директ мейл (от англ.
+                                    direct mail — прямые почтовые рассылки), выставки и многое другое.</p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди торговых посредников (trade promotion),
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди потребителей (consumer promotion)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Прямой маркетинг
+                                        (direct marketing)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Специальные
+                                        мероприятия (special events)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> POS-материалы
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Трейд-маркетинг
+                                    </li>
+                                </ul>
+                                <div class="d-inline-block">
+                                    <div class="pt-3 d-flex align-items-center border-top">
+                                        <i class="uil uil-envelope text-primary me-2 fs-1"></i>
+                                        <div class="content">
+                                            <p class="mb-0">Need More Help?</p>
+                                            <a href="" class="text-dark h6">Ask us your question</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
+    </div>
+    <div class="tab-pane fade" id="adv-equipment" role="tabpanel" aria-labelledby="adv-equipment-tab" tabindex="0">
+        <section class="section">
+            <div class="container">
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/4.jpg" class="rounded img-fluid mx-auto d-block"
+                                     alt="">
+                                <div class="play-icon">
+                                    <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox">
+                                        <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">BTL-услуги <br> Hassle Free Business</h4>
+                                <p class="text-muted">BTL (от англ. below-the-line — под чертой) — комплекс
+                                    маркетинговых коммуникаций, отличающихся от прямой рекламы ATL (от англ.
+                                    above-the-Line) уровнем воздействия на потребителей и выбором средств воздействия на
+                                    целевую аудиторию. Включает в себя стимулирование сбыта, мерчандайзинг,
+                                    POS-материалы (аббр. от англ. point of sale — место продажи), директ мейл (от англ.
+                                    direct mail — прямые почтовые рассылки), выставки и многое другое.</p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди торговых посредников (trade promotion),
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди потребителей (consumer promotion)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Прямой маркетинг
+                                        (direct marketing)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Специальные
+                                        мероприятия (special events)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> POS-материалы
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Трейд-маркетинг
+                                    </li>
+                                </ul>
+                                <div class="d-inline-block">
+                                    <div class="pt-3 d-flex align-items-center border-top">
+                                        <i class="uil uil-envelope text-primary me-2 fs-1"></i>
+                                        <div class="content">
+                                            <p class="mb-0">Need More Help?</p>
+                                            <a href="" class="text-dark h6">Ask us your question</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
+    </div>
+    <div class="tab-pane fade" id="decor" role="tabpanel" aria-labelledby="decor-tab" tabindex="0">
+        <section class="section">
+            <div class="container">
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/3.jpg" class="rounded img-fluid mx-auto d-block"
+                                     alt="">
+                                <div class="play-icon">
+                                    <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox">
+                                        <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">BTL-услуги <br> Hassle Free Business</h4>
+                                <p class="text-muted">BTL (от англ. below-the-line — под чертой) — комплекс
+                                    маркетинговых коммуникаций, отличающихся от прямой рекламы ATL (от англ.
+                                    above-the-Line) уровнем воздействия на потребителей и выбором средств воздействия на
+                                    целевую аудиторию. Включает в себя стимулирование сбыта, мерчандайзинг,
+                                    POS-материалы (аббр. от англ. point of sale — место продажи), директ мейл (от англ.
+                                    direct mail — прямые почтовые рассылки), выставки и многое другое.</p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди торговых посредников (trade promotion),
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди потребителей (consumer promotion)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Прямой маркетинг
+                                        (direct marketing)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Специальные
+                                        мероприятия (special events)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> POS-материалы
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Трейд-маркетинг
+                                    </li>
+                                </ul>
+                                <div class="d-inline-block">
+                                    <div class="pt-3 d-flex align-items-center border-top">
+                                        <i class="uil uil-envelope text-primary me-2 fs-1"></i>
+                                        <div class="content">
+                                            <p class="mb-0">Need More Help?</p>
+                                            <a href="" class="text-dark h6">Ask us your question</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
+    </div>
+    <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab" tabindex="0">
+        <section class="section">
+            <div class="container">
+                <div style="background: url('/assets/images/map.png') center center;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="position-relative me-lg-5">
+                                <img src="/assets/images/ipromouter/4.jpg" class="rounded img-fluid mx-auto d-block"
+                                     alt="">
+                                <div class="play-icon">
+                                    <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox">
+                                        <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-6 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="section-title">
+                                <h4 class="title mb-3">BTL-услуги <br> Hassle Free Business</h4>
+                                <p class="text-muted">BTL (от англ. below-the-line — под чертой) — комплекс
+                                    маркетинговых коммуникаций, отличающихся от прямой рекламы ATL (от англ.
+                                    above-the-Line) уровнем воздействия на потребителей и выбором средств воздействия на
+                                    целевую аудиторию. Включает в себя стимулирование сбыта, мерчандайзинг,
+                                    POS-материалы (аббр. от англ. point of sale — место продажи), директ мейл (от англ.
+                                    direct mail — прямые почтовые рассылки), выставки и многое другое.</p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди торговых посредников (trade promotion),
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Стимулирование сбыта
+                                        среди потребителей (consumer promotion)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Прямой маркетинг
+                                        (direct marketing)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Специальные
+                                        мероприятия (special events)
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> POS-материалы
+                                    </li>
+                                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span> Трейд-маркетинг
+                                    </li>
+                                </ul>
+                                <div class="d-inline-block">
+                                    <div class="pt-3 d-flex align-items-center border-top">
+                                        <i class="uil uil-envelope text-primary me-2 fs-1"></i>
+                                        <div class="content">
+                                            <p class="mb-0">Need More Help?</p>
+                                            <a href="" class="text-dark h6">Ask us your question</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div>
+            </div><!--end container-->
+        </section><!--end section-->
+    </div>
+</div>

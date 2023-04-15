@@ -1,44 +1,57 @@
 import json
 
-from django.shortcuts import render
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, redirect
+
+
+from django import forms
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    email = forms.EmailField(max_length=150)
+    subject = forms.CharField(max_length=50)
+    comments = forms.CharField(widget=forms.Textarea, max_length=2000)
 
 
 def index(request):
-    with open('ru.json', 'r', encoding='utf-8') as json_file:
+    with open('Города.json', 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
-        country_book = {}
-        for i in data:
-            if country_book.get(i['region']):
-                country_book[i['region']].append(i['city'])
-            else:
-                country_book[i['region']] = [i['city'], ]
-    # with open('ru.json', 'r', encoding='utf-8') as json_file:
-    #     data = json.load(json_file)
-    #     country_list = []
-    #     for i in data:
-    #         country_list.append(f"{i['city']}({i['region']})")
-    #
-    # with open('cit.js', 'w', encoding='utf-8') as f:
-    #     f.write(json.dumps(country_list, ensure_ascii=False))
-    context = {'cities': country_book}
+    with open('big_cities.json', 'r', encoding='utf-8') as json_file:
+        big_cities = json.load(json_file)
+    with open('kazakhtan_cities.json', 'r', encoding='utf-8') as json_file:
+        kz_cities = json.load(json_file)
+    context = {
+        'cities': data,
+        'big_cities': big_cities,
+        'kz_cities': kz_cities,
+        'form': ContactForm()
+    }
     return render(request, 'index-agency.html', context=context)
 
 
-def feature(request):
-    return render(request, 'feature.html', )
+def contact(request):
+    if request.method == 'POST' and request.is_ajax():
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            body = {
+                'name': form.cleaned_data['name'],
+                'email': form.cleaned_data['email'],
+                'subject': form.cleaned_data['subject'],
+                'comments': form.cleaned_data['comments'],
+            }
+            message = "\n".join(body.values())
+            try:
+                print('\n test:', message, '\n')
+                send_mail(subject, message,
+                          'btl-omsk@bk.ru',
+                          ['btl-omsk@bk.ru', 'kucherdimdimych@mail.ru'])
+                response = {'message': True}
+            except BadHeaderError:
+                return HttpResponse('Найден некорректный заголовок')
+            return JsonResponse(response)
 
-
-def cities(request):
-    with open('ru.json', 'r', encoding='utf-8') as json_file:
-        data = json.load(json_file)
-        country_book = {}
-        for i in data:
-
-            if country_book.get(i['region']):
-                country_book[i['region']].append(i['city'])
-
-            else:
-                country_book[i['region']] = [i['city'], ]
-
-    print(sorted(country_book.items(), key=lambda item: item[1]))
-    return render(request, 'cities.html', context={'cities': country_book})
+    response = {'message': False}
+    return JsonResponse(response)

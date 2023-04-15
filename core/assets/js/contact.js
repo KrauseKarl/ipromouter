@@ -1,5 +1,6 @@
 // Contact Form
 function validateForm() {
+    document.getElementById('#success_send').classList.add('invisible');
     var name = document.forms["myForm"]["name"].value;
     var email = document.forms["myForm"]["email"].value;
     var subject = document.forms["myForm"]["subject"].value;
@@ -36,7 +37,7 @@ function validateForm() {
             document.forms["myForm"]["comments"].value = "";
         }
     };
-    xhttp.open("POST", "php/contact.php", true);
+    xhttp.open("POST", "contact", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("name=" + name + "&email=" + email + "&subject=" + subject + "&comments=" + comments);
     return false;

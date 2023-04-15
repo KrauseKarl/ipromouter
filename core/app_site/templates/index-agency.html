@@ -19,6 +19,8 @@
     <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
     <!-- Custom  Css -->
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
+     <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
+
     <style>
         .list-group-item-action.active {
             background-color: #8CB369 !important;
@@ -31,8 +33,21 @@
         button.nav-link {
         color: black  !important;
         }
+        .fixed {
+                position: fixed;
+                z-index: 99;
+                top: 0;
+            }
 
+        .absolute {
+            position: absolute;
+            z-index: 99;
+        }
+        .invisible {
+            display:none
+        }
     </style>
+
 </head>
 
 <body>
@@ -41,29 +56,29 @@
     <div class="container">
         <a class="navbar-brand" href="">
                     <span class="logo-light-mode">
-                        <img src="/assets/images/logo-light.png" class="l-light" alt="">
-                        <img src="/assets/images/logo-dark.png" class="l-dark" alt="">
+                        <img src="/assets/images/logo/logo_light.png" class="l-light" alt="">
+                        <img src="/assets/images/logo/logo_dark.png" class="l-dark" alt="">
                     </span>
             <img src="/assets/images/logo-light.png" class="logo-dark-mode" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-            <i data-feather="menu"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
                  <li class="nav-item ">
-                    <a class="nav-link btn btn-secondary" href="javascript:void(0)" data-bs-toggle="modal"
+                    <a class="nav-link"  href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#services">услуги</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-secondary" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#region_1">города_1</a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"-->
+<!--                       data-bs-target="#region_1">города_1</a>-->
+<!--                </li>-->
                  <li class="nav-item ">
-                    <a class="nav-link btn btn-secondary" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#region_2">города_2</a>
+                    <a class="nav-link " href="javascript:void(0)" data-bs-toggle="modal"
+                       data-bs-target="#region_2">города</a>
                 </li>
 
             </ul>
@@ -107,11 +122,56 @@
 </nav>
 <!-- END NAVBAR -->
 <!-- Start -->
+
 {% include 'banner.html' %}
 
-<!-- End -->
+
 {% include 'features.html' %}
-{% include 'services_2.html' %}
+<section class="section bg-light" id="features">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title mb-3">География нашей работы</h4>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mt-4 pt-2">
+                <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
+                    <div class="card-body content p-0">
+                        <div class="p-4 text-center">
+                            <a href="#" class="h5 title text-dark d-block mb-0"></a>
+                            {% for city in big_cities %}
+
+                            {% if forloop.counter|divisibleby:2 %}
+                                <span class="fs-6">{{ city }}</span>
+                            {% elif forloop.counter|divisibleby:3 %}
+                                <span class="fs-4">{{ city }}</span>
+                            {% elif forloop.counter|divisibleby:4 %}
+                                <span class="fs-5"> {{ city }} </span>
+                            {% else %}
+                                <span class="fs-2"> {{ city }} </span>
+                            {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div><!--end col-->
+
+
+
+
+        </div><!--end row-->
+    </div><!--end container-->
+</section>
+
+<!-- End -->
+
+
+
 <!-- Footer Start -->
 {% include 'footer.html' %}
 <!-- Footer End -->
@@ -135,7 +195,8 @@
                         aria-label="Close"><i class="uil uil-times fs-4"></i></button>
             </div>
             <div class="modal-body">
-                <form method="post" name="myForm" onsubmit="return validateForm()">
+                <form id='message_form' method="post" name="myForm" onsubmit="return validateForm()" >
+                    {% csrf_token %}
                     <p id="error-msg" class="mb-0"></p>
                     <div id="simple-msg"></div>
                     <div class="row">
@@ -179,6 +240,10 @@
                         </div><!--end col-->
                     </div><!--end row-->
                 </form>
+                <div id="success_send" class="text-center invisible">
+                    <i class="uil uil-envelope-send text-success fs-2"></i>
+                    <h4>Успеншно отправлено</h4>
+                </div>
             </div>
         </div>
     </div>
@@ -202,7 +267,7 @@
                                data-bs-toggle="list" href="#list-home_1" role="tab" aria-controls="list-home">Промо акции
                             </a>
                             <a class="list-group-item list-group-item-action" id="list-profile-list"
-                               data-bs-toggle="list" href="#list-profile_1" role="tab" aria-controls="list-profile">Расписание листовок <br> по почтовым ящикам
+                               data-bs-toggle="list" href="#list-profile_1" role="tab" aria-controls="list-profile_1">Расписание листовок <br> по почтовым ящикам
                             </a>
                             <a class="list-group-item list-group-item-action" id="list-messages-list"
                                data-bs-toggle="list" href="#list-messages_1" role="tab" aria-controls="list-messages">Полиграфия
@@ -223,23 +288,14 @@
                             <div class="tab-pane fade show active" id="list-home_1" role="tabpanel"
                                  aria-labelledby="list-home-list">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">организация праздников</li>
-                                    <li class="list-group-item">event-мероприятий</li>
-                                    <li class="list-group-item">выставок</li>
-                                    <li class="list-group-item">открытий</li>
-                                    <li class="list-group-item">кооперативов</li>
+                                    <li class="list-group-item">организация праздников, event-мероприятий, выставок, открытий, кооперативов</li>
                                     <li class="list-group-item">HoReCa</li>
-                                    <li class="list-group-item">раздача листовок</li>
-                                    <li class="list-group-item">промо модели</li>
-                                    <li class="list-group-item">аниматоры</li>
-                                    <li class="list-group-item">ведущие</li>
-                                    <li class="list-group-item">диджея</li>
+                                    <li class="list-group-item">промо модели, аниматоры, ростовая кукла, ведущие, диджея</li>
                                     <li class="list-group-item">супервайзер</li>
                                     <li class="list-group-item">дегустации</li>
                                     <li class="list-group-item">подарок за покупку</li>
                                     <li class="list-group-item">консультация</li>
                                     <li class="list-group-item">хостесс</li>
-                                    <li class="list-group-item">ростовая кукла</li>
                                     <li class="list-group-item">тайный покупатель</li>
                                 </ul>
                             </div>
@@ -267,10 +323,6 @@
                                     <li class="list-group-item">Лайт боксы</li>
                                     <li class="list-group-item">брендирование</li>
                                     <li class="list-group-item">мерчендайзинг на воздушных шарах</li>
-                                    <li class="list-group-item">печать листовок</li>
-                                    <li class="list-group-item">сувенирная продукция</li>
-                                    <li class="list-group-item">офсетная печать</li>
-                                    <li class="list-group-item">печать на воздушных шарах</li>
                                 </ul>
                             </div>
                             <div class="tab-pane fade" id="list-settings__1" role="tabpanel"
@@ -306,65 +358,155 @@
 <!-- MODAL SERVICES -->
 
 <!-- MODAL REGIONS -->
-<div class="modal fade" id="region_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="region_header">География нашей работы</h5>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-
-                    <div class="col-xs-8 col-xs-offset-2 search-box">
-                        <div class="input-group">
-                            <input oninput="updateResult(this.value)" type="search" class="form-control"
-                                   placeholder="Search...">
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <ul class="list-group result">
-                            <li class="list-group-item"></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal fade" id="region_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0">
             <div class="modal-header">
                 <h5 class="modal-title" id="region_header_2">География нашей работы</h5>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+
+               <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
+                        aria-label="Close">
+                   <i class="uil uil-times fs-4"></i>
+               </button>
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div class="row">
-                         {% for region, cities in cities.items %}
-                    <div class="col-lg-4 col-md-12">
+                    <div class="row ">
+                        <div class="col-lg-3 col-md-12">
+                            <a id="kz_cities_btn" type="button" class="px-2 d-block text-dark">
+                                <span class="flag-icon flag-icon-kz m-2"></span>Казахстан
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
 
-                        <ul class="list-group list-group-flush">
-                            {% ifchanged %}
-                            <li class="list-group-item">{{ region }}{% for city in cities %}
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"> {{ city }}</li>
-                                </ul>
+                            <a id="ru_all_cities_btn" type="button" class="px-2 d-block text-dark">
+                                <span class="flag-icon flag-icon-ru m-2"></span>Все города
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
+                            <a id="ru_big_cities_btn" type="button" class="px-2 d-block text-dark">
+                                <span class="flag-icon flag-icon-ru m-2" ></span>Мегаполисы
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="kz_cities" class="row">
+                            {% for city, pop  in kz_cities.items %}
+
+                               {% if pop > 1000000 %}
+                                  <div class="col-lg-3 col-md-12">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item  fs-4 ">
+                                            {{ city|upper }}
+                                        </li>
+                                    </ul>
+                                  </div>
+                                {% elif pop > 500000 %}
+                                <div class="col-lg-3 col-md-12">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item  fs-5 ">
+                                            <b>{{ city }}</b>
+                                        </li>
+                                    </ul>
+                                  </div>
+                                 {% elif pop > 100000 %}
+                                        <div class="col-lg-3 col-md-12">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item  fs-6 ">
+                                                    {{ city }}
+                                                </li>
+                                            </ul>
+                                          </div>
+                                {% endif %}
+
+
+
+                            {% endfor %}
+                        </div>
+                    <div id="ru_big_cities" class="row">
+                            {% for city, pop  in big_cities.items %}
+                               {% if pop > 1500000 %}
+                                  <div class="col-lg-4 col-md-12">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item  fs-4 ">
+                                            <b>{{ city|upper }}</b>
+                                        </li>
+                                    </ul>
+                                  </div>
+                                {% elif pop > 1000000 %}
+                               <div class="col-lg-4 col-md-12">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item  fs-5 ">
+                                             <b>{{ city }}</b>
+                                        </li>
+                                    </ul>
+                                  </div>
+                                 {% elif pop > 500000 %}
+                                        <div class="col-lg-4 col-md-12">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item  fs-6 ">
+                                                    {{ city }}
+                                                </li>
+                                            </ul>
+                                          </div>
+                                {% endif %}
+
+
+
+                            {% endfor %}
+                        </div>
+
+
+                    <div id="ru_all_cities" class="row">
+                        <div class="input-group">
+                            <input id="search_query" type="search" class="search form-control"
+                                   placeholder="введите название города..."/>
+<!--                            <button id="clean_search" type="button"-->
+<!--                                    class="btn-close d-flex align-items-center text-dark">-->
+<!--                            </button>-->
+                        </div>
+                        <div class="list col-lg-6 col-md-12">
+                            {% for region, cities in cities.items %}
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item  mb-2 ">
+                                    <u class="region">{{ region }}</u>
+                                    {% for city, rating in cities.items %}
+                                <li id="all_cities" class="list-group list-group-flush cities">
+                                    {% if forloop.counter0 == 0 %}
+                                        <small class="capital list-group-item fs-4 cities" value="{{ city }}">
+                                            {{ city|upper  }}
+                                        </small>
+                                    {% else %}
+                                    {% if rating < 2 %}
+                                    <small class="born list-group-item fs-5 cities" value="{{ city }}">
+                                        <b>{{ city }}
+                                        </b>
+                                    </small>
+                                    {% elif rating < 4 %}
+                                    <small class="big_city list-group-item fs-5 cities" value="{{ city }}">{{ city }}
+                                    </small>
+                                    {% elif rating < 5 %}
+                                    <small class="small_city list-group-item fs-6 cities" value="{{ city }}">{{ city }}
+                                    </small>
+                                    {% endif %}
+                                    {% endif %}
+                                </li>
                                 {% endfor %}
-                            </li>
-                            {% endifchanged %}
-                        </ul>
+                            </ul>
+                             {% endfor %}
+                        </div>
 
+
+                        <div id="result" style="display: none">
+
+                        </div>
                     </div>
-                    {% endfor %}
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -378,9 +520,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0">
             <div class="modal-header">
-                <h5 class="modal-title" id="messagesModal">Написать нам</h5>
+                <h5 class="modal-title" id="messagesModal">Написать нам
+                </h5>
                 <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+                        aria-label="Close">
+                    <i class="uil uil-times fs-4">
+                    </i>
+                </button>
             </div>
             <div class="modal-body">
                 <div>
@@ -547,41 +693,26 @@
 <!-- TOAST COPY E-MAIL -->
                                                     <!-- MODAL WINDOW -->
 
+
 <!-- JAVASCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="  crossorigin="anonymous"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+
 <script src="/assets/js/tobii.min.js"></script>
 <script src="/assets/js/parallax.js"></script>
 <script src="/assets/js/contact.js"></script>
 <script src="/assets/js/gumshoe.js"></script>
 <script src="/assets/js/feather.min.js"></script>
 <!-- Custom -->
-<script type="text/javascript" src="/assets/js/extra.js"></script>
-<script type="text/javascript" src="/assets/js/plugins.init.js"></script>
-<script type="text/javascript" src="/assets/js/app.js"></script>
-<script type="text/javascript" src="/assets/js/cit.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.0.js"
-        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="jquery-2.0.2.min.js"></script>
-<script>
+<script src="/assets/js/plugins.init.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/extra.js"></script>
+
+<script  type="text/javascript">
      $(document).ready(function ()  {
         var $region = $('#region_id')
         var $city = $('#city_id')
@@ -609,13 +740,55 @@
             </ul>
          `)
         });
+    });
+
+</script>
+<script>
+$(document).ready(function ()  {
+    var $kz_cities = $('#kz_cities').hide()
+    var $ru_big = $('#ru_big_cities').show()
+    var $ru_all = $('#ru_all_cities').hide()
+
+    $('#ru_big_cities_btn').addClass('btn-success fs-4')
+    $('#ru_all_cities_btn').removeClass('btn-success')
+    $('#kz_cities_btn').removeClass('btn-success')
+
+    var btn_kz_cities = $('#kz_cities_btn')
+    var btn_ru_big = $('#ru_all_cities_btn')
+    var btn_ru_all = $('#ru_big_cities_btn')
+
+    $('#kz_cities_btn').on('click', function () {
+        $kz_cities.show('slow')
+        $('#kz_cities_btn').addClass('btn-success fs-4')
+        $('#ru_all_cities_btn').removeClass('btn-success fs-4')
+        $('#ru_big_cities_btn').removeClass('btn-success fs-4')
+        $ru_big.hide('slow')
+        $ru_all.hide('slow')
+    });
+     $('#ru_all_cities_btn').on('click', function () {
+
+        $kz_cities.hide('slow')
+        $ru_big.hide('slow')
+        $ru_all.show('slow')
+        $('#ru_all_cities_btn').addClass('btn-success fs-4')
+        $('#kz_cities_btn').removeClass('btn-success fs-4')
+        $('#ru_big_cities_btn').removeClass('btn-success fs-4')
+    });
+     $('#ru_big_cities_btn').on('click', function () {
+        $kz_cities.hide('slow')
+        $ru_big.show('slow')
+        $ru_all.hide('slow')
+        $('#ru_big_cities_btn').addClass('btn-success fs-4')
+        $('#ru_all_cities_btn').removeClass('btn-success fs-4')
+        $('#kz_cities_btn').removeClass('btn-success fs-4')
 
     });
+});
 
 
 
 </script>
-<script type="module">
+<script  type="text/javascript">
 $('#copyPhoneBtn').on('click', function () {
     var info = $(this).val()
     navigator.clipboard.writeText(info)
@@ -642,34 +815,46 @@ $('#copyMailBtn').on('click', function () {
 })
 </script>
 <script>
-let arr = [
-"Москва,
-"Санкт-Петербург",
-"Омск и Омская область",
-"Новосибирск и Новосибирская область",
-"Тюмень и Тюменская область",
-"Екатеринбург и Свердовская область",
-"Самара и Самарская область",
-"Казань и Татарстан",
-"Нижний Новгород и Нижегородская область",
-]
 
-const updateResult = query=>{
-    let resultList = document.querySelector(".result");
-    resultList.innerHTML = "";
+	$(document).ready(function() {
 
-    arr.map(algo=>{
-        query.split(" ").map(word=>{
-            if (algo.toLowerCase().indexOf(word.toLowerCase()) != -1) {
-                resultList.innerHTML += `<li class="list-group-item">${algo}</li>`;
-            }
-        }
-        )
-    }
-    )
-}
+		var element = $(".fixed_block");
+		var height_el = element.offset().top;
+		var element_stop = $(".fixed_block_stop");
+		var height_el_stop = element_stop.offset().top;
 
-updateResult("")
+		$(".fixed_block_position").css({
+			"width": element.outerWidth(),
+			"height": element.outerHeight()
+		});
+
+		$(window).scroll(function() {
+
+			if($(window).scrollTop() > height_el_stop - element.outerHeight() - 20) {
+
+				element.css({
+					"top": element.offset().top,
+					"left": element.offset().left
+				}).removeClass("fixed").addClass("absolute");
+
+			} else {
+
+				if($(window).scrollTop() > height_el) {
+
+					element.addClass("fixed").removeClass("absolute").attr("style", "");
+
+				} else {
+
+					element.removeClass("fixed absolute").attr("style", "");
+
+				}
+
+			}
+
+		});
+
+	});
+
 </script>
 </body>
 

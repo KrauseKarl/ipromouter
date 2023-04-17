@@ -1,169 +1,72 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Motos - Multipurpose Landing Page Template</title>
-    <meta name="description" content="Responsive HTML5 Template"/>
-    <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean"/>
-    <meta name="author" content="Shreethemes"/>
-    <meta name="website" content="https://shreethemes.in"/>
-    <meta name="email" content="support@shreethemes.in"/>
-    <meta name="version" content="1.1.0"/>
-    <!-- favicon -->
-    <link href="/assets/images/favicon.ico" rel="shortcut icon">
-    <!-- Bootstrap core CSS -->
-    <link href="/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
-    <!-- Custom  Css -->
-    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
-</head>
-
-<body>
-<!-- START NAVBAR -->
-<nav id="navbar" class="navbar navbar-expand-lg nav-dark fixed-top sticky">
-    <div class="container">
-        <a class="navbar-brand" href="">
-                    <span class="logo-light-mode">
-                        <img src="/assets/images/logo-dark.png" class="l-dark" alt="">
-                    </span>
-            <img src="/assets/images/logo-dark.png" class="logo-dark-mode" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <i data-feather="menu"></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#home">главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#features">услуги</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#advantage">почему у нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#pricing">цены</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#portfolio">проекты</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'app_site:index' %}#team">города</a>
-                </li>
-                <li class="nav-item">
-
-                </li>
-            </ul>
-
-            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
-                <a class="btn btn-primary" href="javascript:void(0)" data-bs-toggle="modal"
-                   data-bs-target="#contactform">написать нам</a>
-            </ul>
-        </div>
-        <!--end collapse-->
-    </div>
-    <!--end container-->
-</nav>
-<!-- END NAVBAR -->
-
 <section class="section bg-light" id="features">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title mb-3">Выбирите город</h4>
-
+                    <h4 class="title mb-3">География нашей работы</h4>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
-
         <div class="row">
-
-            <div class="col-lg-6 col-md-6 mt-4 pt-2">
+            <div class="col-lg-12 col-md-12 mt-4 pt-2">
                 <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
                     <div class="card-body content p-0">
-                        <div class="p-4">
-                            <a href="{% url 'app_site:feature' %}" class="h5 title text-dark d-block mb-0"></a>
-                            <select class="form-select form-select-lg" id="region_id">
-                                {% for region, cities in cities.items %}
-                                <option value="{{ region }}">
-                                    {{ region }}
-                                </option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-            <div class="col-lg-6 col-md-6 mt-4 pt-2">
-                <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
-                    <div class="card-body content p-0">
-                        <div class="p-4">
-                            <a href="{% url 'app_site:feature' %}" class="h5 title text-dark d-block mb-0"></a>
-                            <select class="form-select form-select-lg" id="city_id">
-                                {% for region, cities in cities.items %}
-                                {% for city in cities %}
-                                <option value="{{ region }}">
-                                    {{ city }}
-                                </option>
-                                {% endfor %}
-                                {% endfor %}
-                            </select>
-
+                        <div class="p-4 text-center">
+                            <a href="#" class="h5 title text-dark d-block mb-0"></a>
+                            {% for city in big_cities %}
+                            {% if city == 'Омск' %}
+                                <a data-bs-target="#омск_window" data-bs-toggle="modal" data-bs-dismiss="modal" class="city_link" >
+                                   <b class="p-2">{{ city }}</b>
+                                </a>
+                            {% else %}
+                                 {% if forloop.counter|divisibleby:2 %}
+                                    <span class="fs-6">{{ city }}</span>
+                                {% elif forloop.counter|divisibleby:3 %}
+                                    <span class="fs-4">{{ city }}</span>
+                                {% elif forloop.counter|divisibleby:4 %}
+                                    <span class="fs-5"> {{ city }} </span>
+                                {% else %}
+                                    <span class="fs-2"> {{ city }} </span>
+                                {% endif %}
+                            {% endif %}
+                            {% endfor %}
 
                         </div>
                     </div>
                 </div>
             </div><!--end col-->
-            <div class="col-lg-12 col-md-6 mt-4 pt-2">
-                <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
-                    <div class="card-body content p-0">
-                        <div class="p-4">
-                            <a href="{% url 'app_site:feature' %}" class="h5 title text-dark d-block mb-0"></a>
-                            <div id="container">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end col-->
-
-
         </div><!--end row-->
     </div><!--end container-->
 </section>
-
-<!-- Footer Start -->
-{% include 'footer.html' %}
-<!-- Footer End -->
-
-<!-- JAVASCRIPTS -->
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/tobii.min.js"></script>
-<script src="/assets/js/parallax.js"></script>
-<script src="/assets/js/contact.js"></script>
-<script src="/assets/js/gumshoe.js"></script>
-<script src="/assets/js/feather.min.js"></script>
-<!-- Custom -->
-<script src="/assets/js/plugins.init.js"></script>
-<script src="/assets/js/app.js"></script>
-<script src="/assets/js/extra.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.0.js"
-        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-        crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-
-</body>
-</html>
+<div class="modal fade" id="омск_window" aria-hidden="true" aria-labelledby="омск_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="омск_label"> <i class="uil uil-star h4 text-danger"></i>Омск</h5>
+          <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
+                        aria-label="Close">
+                   <i class="uil uil-times fs-4"></i>
+               </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-5 col-md-12">
+                      <img src="/assets/images/cities/omsk.jpg"  class="img-fluid rounded">
+                  </div>
+                  <div class="col-lg-7 col-md-12">
+                      <p>население: <b>1 200 000</b></p>
+                      <p>статус: <b>областной центр</b></p>
+                      <p>Точки высокого трафика:</p>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">ТРЦ МЕГА</li>
+                          <li class="list-group-item">ТРЦ Континет</li>
+                          <li class="list-group-item">Кинотеатр "Маяковский"</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

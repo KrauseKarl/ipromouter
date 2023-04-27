@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Motos - Multipurpose Landing Page Template</title>
+    <title>BTL Plus</title>
     <meta name="description" content="Responsive HTML5 Template"/>
     <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean"/>
     <meta name="author" content="Shreethemes"/>
@@ -19,77 +19,89 @@
     <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
     <!-- Custom  Css -->
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
-     <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
-
+    <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
+<!--    <link href="/assets/css/extra.css" rel="stylesheet" type="text/css"/>-->
     <style>
-        .list-group-item-action.active {
-            background-color: #8CB369 !important;
-            border-color: #8CB369 !important;
-        }
-        .nav-link.active  {
-        background-color: #8CB369 !important;
-        color: white  !important;
-        }
-        button.nav-link {
-        color: black  !important;
-        }
-        .fixed {
-                position: fixed;
-                z-index: 99;
-                top: 0;
-            }
-
-        .absolute {
-            position: absolute;
+    .list-group-item-action.active {
+    background-color: #8CB369 !important;
+    border-color: #8CB369 !important;
+    }
+    .nav-link.active  {
+    background-color: #8CB369 !important;
+    color: white  !important;
+    }
+    button.nav-link {
+    color: black  !important;
+    font-family: sans-serif;
+    }
+    .fixed {
+            position: fixed;
             z-index: 99;
-        }
-        .invisible {
-            display:none
-        }
-        .city_link {
-            color:black;
+            top: 0;
         }
 
-        a:hover {
-            text-decoration: none;
-            color: white;
-            background: #8CB369;
-            border-radius: 10px;
-            box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
-        }
-        .zoom-box {
-            transition: transform .2s;
-        }
-        .message:hover {
-            color:black;
-        }
-        .zoom-box:hover {
-          transform: scale(1.01);
-        }
+    .absolute {
+        position: absolute;
+        z-index: 99;
+    }
+    .invisible {
+        display:none
+    }
+    .city_link {
+        color:black;
+    }
 
-        .row-flex {
-            display: flex;
-            flex-flow: row wrap;
-        }
-        .viber_color {
-            background-color:#9179EE
-        }
-        .whatsapp_color {
-            background-color:#4BC75A;
-            color: #4BC75A;
-        }
-        .telegram_color {
-            background-color:#32A9DD
-        }
-        .instagram_color {
-        background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-        }
-        .vk_color {
-          background-color:#5282B8
-        }
+    a:hover {
+        text-decoration: none;
+        color: white;
+        background: #8CB369;
+        border-radius: 10px;
+        box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
+    }
+    .zoom-box {
+        transition: transform .2s;
+    }
+    .message:hover {
+        color:black;
+    }
+    .zoom-box:hover {
+      transform: scale(1.01);
+    }
+
+    .row-flex {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .viber_color {
+        background-color:#9179EE
+    }
+    .whatsapp_color {
+        background-color:#4BC75A;
+        color: #4BC75A;
+    }
+    .telegram_color {
+        background-color:#32A9DD
+    }
+    .instagram_color {
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    }
+    .vk_color {
+      background-color:#5282B8
+    }
+    .accordion-button, .modal-title {
+        text-transform: uppercase;
+    }
+    .accordion-button:hover {
+        background-color:#8CB369;
+    }
+    .accordion-button:hover  img {
+         transform: scale(1.4)
+    }
+    .accordion-button:active {
+        background-color:#66CCFF;
+
+    }
     </style>
-
-
 </head>
 
 <body>
@@ -273,7 +285,8 @@
 <!-- Modal Content End -->
 
 <!-- MODAL SERVICES -->
-<div  id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions" aria-hidden="true">
+<div id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions"
+     aria-hidden="true">
     <div class="modal-dialog modal-xl " role="document">
         <div class="modal-content rounded shadow border-0">
             <div class="modal-header">
@@ -282,108 +295,266 @@
                         aria-label="Close"><i class="uil uil-times fs-4"></i></button>
             </div>
             <div class="modal-body">
-                <div class="row ">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="list-group" id="services-list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-home-list"
-                               data-bs-toggle="list" href="#list-home_1" role="tab" aria-controls="list-home">Промоакции
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="list-profile-list"
-                               data-bs-toggle="list" href="#list-profile_1" role="tab" aria-controls="list-profile_1">Листовки
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="list-messages-list"
-                               data-bs-toggle="list" href="#list-messages_1" role="tab" aria-controls="list-messages">Полиграфия
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="list-settings-list"
-                               data-bs-toggle="list" href="#list-settings_1" role="tab" aria-controls="list-settings">Рекламные конструкции и оборудование
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="list-settings-list_"
-                               data-bs-toggle="list" href="#list-settings__1" role="tab" aria-controls="list-settings_">Праздничное оформление
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="list-settings-list_1"
-                               data-bs-toggle="list" href="#list-settings_11" role="tab" aria-controls="list-settings_1">Социалистические  исследования
-                            </a>
-                            <a class="list-group-item list-group-item-action" id="hr"
-                               data-bs-toggle="list" href="#list-hr" role="tab" aria-controls="hr">Подбор и работа с персоналом (Рекрутмент)
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12">
-                        <div class="tab-content" id="services-nav-tabContent">
-                            <div class="tab-pane fade show active" id="list-home_1" role="tabpanel"
-                                 aria-labelledby="list-home-list">
+                <div class="accordion" id="accordionExample">
+                    <!-- Промоакции -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/megaphone.png">Промоакции
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Организация праздников, event-мероприятий, выставок, открытий, кооперативов </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Организация праздников, event-мероприятий, выставок, открытий, кооперативов
+                                    </li>
                                     <li class="list-group-item">
                                         <a data-bs-target="#horeca_window" data-bs-toggle="modal"
                                            data-bs-dismiss="modal" class="city_link">
-                                            <span class="p-2">HoReCa</span>
+                                            <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                            HoReCa
                                         </a>
                                     </li>
-                                    <li class="list-group-item">Промо модели, хостесс,  аниматоры, ростовая кукла, ведущие, диджеи</li>
-                                    <li class="list-group-item">Консультация, дегустация</li>
-                                    <li class="list-group-item">Подарок за покупку</li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Промо модели, хостесс, аниматоры, ростовая кукла, ведущие, диджеи
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Консультация, дегустация
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Подарок за покупку
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-profile_1" role="tabpanel"
-                                 aria-labelledby="list-profile-list">
+                        </div>
+                    </div>
+                    <!-- Листовки  -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_2">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                                <img style="width: 45px; text-align:end; margin-right:20px"
+                                     src="/assets/images/icons/paper.png">Листовки
+                            </button>
+                        </h2>
+                        <div id="collapse_2" class="accordion-collapse collapse " aria-labelledby="heading_2"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Адресное распространение</li>
-                                    <li class="list-group-item">Безадресное распространение</li>
-                                    <li class="list-group-item">Распространение в почтовые ящики</li>
-                                    <li class="list-group-item">Листовки для предъявления скидки</li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Адресное распространение
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Безадресное распространение
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Распространение в почтовые ящики
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Листовки для предъявления скидки
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-messages_1" role="tabpanel"
-                                 aria-labelledby="list-messages-list">
+                        </div>
+                    </div>
+                    <!-- Полиграфия -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_3">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+                                <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/merchandise.png">Полиграфия
+                            </button>
+                        </h2>
+                        <div id="collapse_3" class="accordion-collapse collapse " aria-labelledby="heading_3"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Печать листовок</li>
-                                    <li class="list-group-item">Сувенирная продукция</li>
-                                    <li class="list-group-item">Офсетная печать</li>
-                                    <li class="list-group-item">Печать на воздушных шарах</li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать листовок
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Сувенирная продукция
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Офсетная печать
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать на воздушных шарах
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-settings_1" role="tabpanel"
-                                 aria-labelledby="list-settings-list">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">POSM-материалы</li>
-                                    <li class="list-group-item">Изготовление промо стоек</li>
-                                    <li class="list-group-item">Лайт боксы</li>
-                                    <li class="list-group-item">Брендирование</li>
-                                    <li class="list-group-item">Мерчендайзинг на воздушных шарах</li>
+                        </div>
+                    </div>
+                    <!-- Рекламные конструкций  -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_4">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
+                               <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/stand.png">Рекламные конструкций
+                            </button>
+                        </h2>
+                        <div id="collapse_4" class="accordion-collapse collapse " aria-labelledby="heading_4"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        POSM-материалы
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Изготовление промо стоек
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Лайт боксы
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Брендирование
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Мерчендайзинг на воздушных шарах
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-settings__1" role="tabpanel"
-                                 aria-labelledby="list-settings-list_">
+                        </div>
+                    </div>
+                    <!-- Праздничное оформление   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_5">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
+                                 <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/balloons.png">Праздничное оформление
+                            </button>
+                        </h2>
+                        <div id="collapse_5" class="accordion-collapse collapse " aria-labelledby="heading_5"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Фотозоны</li>
-                                    <li class="list-group-item">Печать моментальных фото</li>
-                                    <li class="list-group-item">Тематическое декорирование</li>
-                                    <li class="list-group-item">Световой декор</li>
-                                    <li class="list-group-item">Воздушные шары</li>
-                                    <li class="list-group-item">Гирлянды из воздушных шаров</li>
-                                    <li class="list-group-item">Аренда аппарата сладкой ваты</li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Фотозоны
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать моментальных фото
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Тематическое декорирование
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Световой декор
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Воздушные шары
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Гирлянды из воздушных шаров
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Аренда аппарата сладкой ваты
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-settings_11" role="tabpanel"
-                                 aria-labelledby="list-settings-list_1">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Опрос</li>
-                                    <li class="list-group-item">Наблюдение</li>
-                                    <li class="list-group-item">Контент анализ</li>
-                                    <li class="list-group-item">Фокус группа</li>
-
+                        </div>
+                    </div>
+                    <!--   Социалистические исследования   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_6">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_6" aria-expanded="true" aria-controls="collapse_6">
+                                  <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/checklist.png">Социалистические  исследования
+                            </button>
+                        </h2>
+                        <div id="collapse_6" class="accordion-collapse collapse " aria-labelledby="heading_6"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Опрос
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Наблюдение
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Контент анализ
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Фокус группа
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="tab-pane fade" id="list-hr" role="tabpanel"
-                                 aria-labelledby="list-settings-list_1">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Тайный покупатель</li>
-                                    <li class="list-group-item">Подборка кандидатов</li>
-                                    <li class="list-group-item">Организация собеседования</li>
-                                    <li class="list-group-item">Проверка профессиональных навыков кандидатов</li>
-                                    <li class="list-group-item">Разработка корпоративных стандартов</li>
-                                    <li class="list-group-item">Супервайзер</li>
+                        </div>
+                    </div>
+                     <!--  Подбор и работа с персоналом   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_7">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_7" aria-expanded="true" aria-controls="collapse_7">
+                                   <img style="width: 45px; text-align:end;
+                                margin-right:20px" src="/assets/images/icons/headhunting.png">Подбор и работа с
+                                персоналом
+                            </button>
+                        </h2>
+                        <div id="collapse_7" class="accordion-collapse collapse " aria-labelledby="heading_7"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                  <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Тайный покупатель
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Подборка кандидатов
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Организация собеседования
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Проверка профессиональных навыков кандидатов
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Разработка корпоративных стандартов
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Супервайзер
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -898,52 +1069,9 @@
 <!-- Custom -->
 <script src="/assets/js/plugins.init.js"></script>
 <script src="/assets/js/app.js"></script>
-<script src="assets/js/extra.js"></script>
-<script src="assets/js/list.js"></script>
+<script src="/assets/js/extra.js"></script>
+<script src="/assets/js/list.js"></script>
 
-
-<script>
-
-	$(document).ready(function() {
-
-		var element = $(".fixed_block");
-		var height_el = element.offset().top;
-		var element_stop = $(".fixed_block_stop");
-		var height_el_stop = element_stop.offset().top;
-
-		$(".fixed_block_position").css({
-			"width": element.outerWidth(),
-			"height": element.outerHeight()
-		});
-
-		$(window).scroll(function() {
-
-			if($(window).scrollTop() > height_el_stop - element.outerHeight() - 20) {
-
-				element.css({
-					"top": element.offset().top,
-					"left": element.offset().left
-				}).removeClass("fixed").addClass("absolute");
-
-			} else {
-
-				if($(window).scrollTop() > height_el) {
-
-					element.addClass("fixed").removeClass("absolute").attr("style", "");
-
-				} else {
-
-					element.removeClass("fixed absolute").attr("style", "");
-
-				}
-
-			}
-
-		});
-
-	});
-
-</script>
 </body>
 </html>
 

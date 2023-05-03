@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BTL Plus</title>
+    <title>BTL+</title>
+
+<!--    <title>Раскрутка сайта, продвижение сайтов: Netpeak Украина — интернет-маркетинг для бизнеса</title>-->
+<!--    <meta name="keywords" content="Netpeak, Нетпик, Украина, раскрутка сайта,-->
+<!--    продвижение сайтов, интернет-маркетинг, интернет-маркетинг для бизнеса" />-->
+<!--    <meta name="description" content="Netpeak — интернет-маркетинг для бизнеса в Украине:-->
+<!--    11 лет опыта, 1&nbsp;962 довольных клиента, таких как LG, TripAdvisor, OLX, Kärcher." />-->
+
     <meta name="description" content="Responsive HTML5 Template"/>
     <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean"/>
     <meta name="author" content="Shreethemes"/>
@@ -11,16 +18,17 @@
     <meta name="email" content="support@shreethemes.in"/>
     <meta name="version" content="1.1.0"/>
     <!-- favicon -->
-    <link href="/assets/images/favicon.ico" rel="shortcut icon">
+    <link href="/assets/images/favicon_2.ico" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
     <link href="/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
     <!-- Custom  Css -->
+    <link href="/assets/css/extra.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
     <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
-<!--    <link href="/assets/css/extra.css" rel="stylesheet" type="text/css"/>-->
+
     <style>
     .list-group-item-action.active {
     background-color: #8CB369 !important;
@@ -98,34 +106,50 @@
          transform: scale(1.4)
     }
     .accordion-button:active {
-        background-color:#66CCFF;
-
+        background-color: #5A6D90;
+    }
+    .accordion {
+        --bs-accordion-active-color: black;
+        --bs-accordion-active-bg: white;
+    }
+    .invisible {
+        display:none;
+    }
+    .bg-yellow {
+        background-color: #F9BF3B;
+    }
+    .bg-purple {
+        background-color: #9B59B6;
+    }
+    .bg-red {
+        background-color: #FE6860;
+    }
+    .bg-green {
+        background-color: #23B684;
+    }
+    .bg-brown {
+        background-color: #603838;
     }
     </style>
 </head>
 
-<body>
+<body style="margin:15px;">
 <!-- START NAVBAR -->
 <nav id="navbar" class="navbar navbar-expand-lg nav-dark fixed-top nav-sticky">
     <div class="container">
-        <a class="navbar-brand" href="">
-                    <span class="logo-light-mode">
-                        <img src="/assets/images/logo/logo_light.png" class="l-light" alt="">
-                        <img src="/assets/images/logo/logo_dark.png" class="l-dark" alt="">
-                    </span>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand ms-2 px-3" href="">
+            <span class="logo-light-mode">
+                <img src="/assets/images/logo/icon_48.png" class="l-light " alt="logo btl+">
+                <img src="/assets/images/logo/icon_48.png" class="l-dark "  alt="logo btl+">
+            </span>
             <img src="/assets/images/logo-light.png" class="logo-dark-mode" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-1" id="navbar-navlist">
                  <li class="nav-item">
                     <a class="nav-link"  href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#services">
-                        <i class="uil  uil-align-left-justify h5"></i>
+                        <i class="uil uil-align-left-justify h5"></i>
                         <span class="px-2">услуги</span>
                     </a>
                 </li>
@@ -136,48 +160,46 @@
                         <span class="px-2">города</span>
                     </a>
                 </li>
-
             </ul>
             <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
                 <li>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a type="button" class="btn btn-info"  href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#messages">
-                            <i class="uil uil-phone h5"></i>
-                        </a>
-                        <button id="copyPhoneBtn" title="скопировать телефон"
-                                class="js-textareacopybtn  btn btn-primary"
-                                value="89008007060"
-                                style="vertical-align:top;">
-                            <span>+7 (900) 800-70-60</span>
-                        </button>
-
-                    </div>
-                </li>
-            </ul>
-            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
-                <li>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a type="button" class="btn btn-info"  href="javascript:void(0)" data-bs-toggle="modal"
+                        <a type="button" class="btn btn-outline-secondary "  href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#contactform" >
                             <i class="uil-envelope-alt h5"></i>
                         </a>
-                        <button title="скопировать почту" class="btn btn-primary" id="copyMailBtn"
+                        <button title="скопировать почту" class="btn btn-primary mb-1" id="copyMailBtn"
                                 value="btl-omsk@bk.ru"
                            style="vertical-align:top;">
-                            <span>btl-omsk@bk.ru</span>
+                            <span class="fw-bold">btl-omsk@bk.ru</span>
                         </button>
 
                     </div>
                 </li>
             </ul>
         </div>
+        <div class="btn-group ms-2" role="group" aria-label="Basic example">
+            <a type="button" class="btn btn-outline-secondary mb-1 fs-5 zoom-box" href="javascript:void(0)" data-bs-toggle="modal"
+               data-bs-target="#messages">
+                <i class="uil uil-phone"></i>
+            </a>
+            <button title="скопировать телефон"
+                    class="js-textareacopybtn  btn btn-primary mb-1 fw-bold"
+                    value="89008007060"
+                    style="vertical-align:top;"><span>+7 (900) 800-70-60</span>
+            </button>
+        </div>
+        <button class="navbar-toggler mb-1 " style="margin-right:30px;" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
         <!--end collapse-->
     </div>
     <!--end container-->
 </nav>
 <!-- END NAVBAR -->
-<!-- Start -->
 
 {% include 'banner.html' %}
 
@@ -199,704 +221,19 @@
 <!-- Back to top -->
 
 <!-- Modal Content Start -->
-<div id="contactform" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Написать нам</h5>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
-            </div>
-            <div class="modal-body">
-                <form id='message_form' method="post" name="myForm" onsubmit="return validateForm()" >
-                    {% csrf_token %}
-                    <p id="error-msg" class="mb-0"></p>
-                    <div id="simple-msg"></div>
-                    <div class="row">
-                        <!-- NAME INPUT -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>
-                                <input name="name" id="name" type="text" class="form-control" >
-                            </div>
-
-                        </div>
-                        <!-- EMAIL INPUT    -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш электорнный адрес
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="email" id="email" type="email" class="form-control"
-                                       placeholder="company@mail.com">
-                            </div>
-                        </div><!--end col-->
-                        <!-- TELEPHONE INPUT      -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш телефон
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="telephone" id="telephone" type="text" class="form-control"
-                                       placeholder=" +7 (900) 800 70-60">
-                            </div>
-                        </div><!--end col-->
-                        <!-- SUBJECT INPUT      -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Тема
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="subject" id="subject" class="form-control"
-                                       placeholder="например : Раздача листовок">
-                            </div>
-                        </div><!--end col-->
-                        <!--  COMMENTS INPUT   -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">сообщение <span
-                                        class="text-danger">*</span></label>
-                                <textarea name="comments" id="comments" rows="4" class="form-control"
-                                          placeholder="например: Сколько стоит раздача листовок в трех локациях? "></textarea>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-grid">
-                                <button type="submit" id="submit" name="send" class="btn btn-primary">отправить</button>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end row-->
-                </form>
-                <div id="success_send" class="text-center invisible">
-                    <i class="uil uil-envelope-send text-success fs-2"></i>
-                    <h4>Успеншно отправлено</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'modals/contactform.html' %}
 <!-- Modal Content End -->
 
 <!-- MODAL SERVICES -->
-<div id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions"
-     aria-hidden="true">
-    <div class="modal-dialog modal-xl " role="document">
-        <div class="modal-content rounded shadow border-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="services_title">Наши услуги</h5>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="accordion" id="accordionExample">
-                    <!-- Промоакции -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/megaphone.png">Промоакции
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Организация праздников, event-мероприятий, выставок, открытий, кооперативов
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a data-bs-target="#horeca_window" data-bs-toggle="modal"
-                                           data-bs-dismiss="modal" class="city_link">
-                                            <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                            HoReCa
-                                        </a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Промо модели, хостесс, аниматоры, ростовая кукла, ведущие, диджеи
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Консультация, дегустация
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Подарок за покупку
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Листовки  -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_2">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-                                <img style="width: 45px; text-align:end; margin-right:20px"
-                                     src="/assets/images/icons/paper.png">Листовки
-                            </button>
-                        </h2>
-                        <div id="collapse_2" class="accordion-collapse collapse " aria-labelledby="heading_2"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Адресное распространение
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Безадресное распространение
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Распространение в почтовые ящики
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Листовки для предъявления скидки
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Полиграфия -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_3">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
-                                <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/merchandise.png">Полиграфия
-                            </button>
-                        </h2>
-                        <div id="collapse_3" class="accordion-collapse collapse " aria-labelledby="heading_3"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Печать листовок
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Сувенирная продукция
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Офсетная печать
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Печать на воздушных шарах
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Рекламные конструкций  -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_4">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
-                               <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/stand.png">Рекламные конструкций
-                            </button>
-                        </h2>
-                        <div id="collapse_4" class="accordion-collapse collapse " aria-labelledby="heading_4"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                            <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        POSM-материалы
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Изготовление промо стоек
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Лайт боксы
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Брендирование
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Мерчендайзинг на воздушных шарах
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Праздничное оформление   -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_5">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
-                                 <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/balloons.png">Праздничное оформление
-                            </button>
-                        </h2>
-                        <div id="collapse_5" class="accordion-collapse collapse " aria-labelledby="heading_5"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Фотозоны
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Печать моментальных фото
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Тематическое декорирование
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Световой декор
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Воздушные шары
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Гирлянды из воздушных шаров
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Аренда аппарата сладкой ваты
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--   Социалистические исследования   -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_6">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_6" aria-expanded="true" aria-controls="collapse_6">
-                                  <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/checklist.png">Социалистические  исследования
-                            </button>
-                        </h2>
-                        <div id="collapse_6" class="accordion-collapse collapse " aria-labelledby="heading_6"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Опрос
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Наблюдение
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Контент анализ
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Фокус группа
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                     <!--  Подбор и работа с персоналом   -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading_7">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse_7" aria-expanded="true" aria-controls="collapse_7">
-                                   <img style="width: 45px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/headhunting.png">Подбор и работа с
-                                персоналом
-                            </button>
-                        </h2>
-                        <div id="collapse_7" class="accordion-collapse collapse " aria-labelledby="heading_7"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                  <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Тайный покупатель
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Подборка кандидатов
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Организация собеседования
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Проверка профессиональных навыков кандидатов
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Разработка корпоративных стандартов
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Супервайзер
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'modals/services.html' %}
 <!-- MODAL SERVICES -->
 
 <!-- MODAL REGIONS -->
-<div id="regions" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="region_header_2">География нашей работы</h5>
-               <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close">
-                   <i class="uil uil-times fs-4"></i>
-               </button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-lg-3 col-md-12">
-                            <a id="kz_cities_btn" type="button" class="px-2 d-block text-dark">
-                                <span class="flag-icon flag-icon-kz m-1"></span>Казахстан
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-12">
-                            <a id="ru_all_cities_btn" type="button" class="px-2 d-block text-dark">
-                                <span class="flag-icon flag-icon-ru m-1"></span>Все города
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-12">
-                            <a id="ru_big_cities_btn" type="button" class="px-2 d-block text-dark">
-                                <span class="flag-icon flag-icon-ru m-1" ></span>Мегаполисы
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div id="kz_cities" class="row">
-                            {% for city, pop  in kz_cities.items %}
-
-                               {% if pop > 1000000 %}
-                                  <div class="col-lg-3 col-md-12">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item  fs-4 ">
-                                            {{ city|upper }}
-                                        </li>
-                                    </ul>
-                                  </div>
-                                {% elif pop > 500000 %}
-                                <div class="col-lg-3 col-md-12">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item  fs-5 ">
-                                            <b>{{ city }}</b>
-                                        </li>
-                                    </ul>
-                                  </div>
-                                 {% elif pop > 100000 %}
-                                        <div class="col-lg-3 col-md-12">
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item  fs-6 ">
-                                                    {{ city }}
-                                                </li>
-                                            </ul>
-                                          </div>
-                                {% endif %}
-
-
-
-                            {% endfor %}
-                        </div>
-                    <div id="ru_big_cities" class="row ">
-                            {% for city, pop  in big_cities.items %}
-                               {% if pop > 1800000 %}
-                                  <div class="col-lg-4 col-md-12">
-                                    <ul class="list-group list-group-flush ">
-                                        <li class="list-group-item  fs-5 ">
-                                            {% if city == 'Москва' or city  == 'Санкт-Петербург' %}
-                                             <i class="uil uil-star h4 text-danger"></i>
-                                            {% endif %}
-                                              <b>{{ city|upper }}</b>
-                                        </li>
-                                    </ul>
-                                  </div>
-                                {% elif pop > 1000000 %}
-                               <div class="col-lg-4 col-md-12">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item  fs-5 ">
-                                            {% if city == 'Омск' %}
-                                            <a data-bs-target="#омск" data-bs-toggle="modal"
-                                               data-bs-dismiss="modal" class="city_link" >
-                                                <b class="p-2">{{ city }}</b>
-                                            </a>
-
-                                            {% elif city == 'Новосибирск' %}
-                                            <a data-bs-target="#новосибирск" data-bs-toggle="modal"
-                                               data-bs-dismiss="modal" class="city_link">
-                                                <b class="p-2">{{ city }}</b>
-                                            </a>
-                                            {% else %} <b>{{ city }}</b>
-                                            {% endif %}
-                                        </li>
-                                    </ul>
-                                  </div>
-                                 {% elif pop > 500000 %}
-                                        <div class="col-lg-4 col-md-12">
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item  fs-6 ">{{ city }}
-                                                </li>
-                                            </ul>
-                                          </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    <div id="ru_all_cities" class="row ">
-                        <div class="input-group">
-                            <input id="search" type="search" class="search form-control"
-                                   placeholder="введите название города..."/>
-                        </div>
-                        <div class="list col-lg-6 col-md-12 m-2">
-                            {% for city, region in cities.items %}
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group list-group-flush ">
-                                    <small class="name list-group-item fs-5">{{ city|title }}
-                                    </small>
-                                    <small class="region fw-lighter text-muted  list-group-item fs-6">
-                                        &#160;{{ region.region|capfirst  }}
-                                    </small>
-                                </li>
-                            </ul>
-                            {% endfor %}
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% include 'modals/regions.html' %}
 <!-- MODAL REGIONS -->
 
 <!-- MODAL MESSAGERS  -->
-<div class="modal fade" id="messages" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="messagesModal">
-                    Напишите нам <br><span>+7 (900) 800-60-70</span>
-                </h5>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"> </i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row  rounded shadow">
-                        <!--   MESSAGE ICONS -->
-                        <div class="mb-2 viber_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly  align-items-center">
-                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Viber" href="viber://chat?number=79095371096">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/Viber_2.svg" alt="Написать в Viber"
-                                             width="35"
-                                             height="35">
-                                         <small style="color:#9179EE;font-size:12px; font-weight:700">НАПИСТЬ В VIBER</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#viber_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/viber.svg" width="30" height="30">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-2 telegram_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Telegram" href="https://telegram.me/BTLplus">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/Telegram_2.svg" alt="Написать в Telegram"
-                                             width="35"
-                                             height="35">
-                                         <small style="color:#32A9DD;font-size:12px; font-weight:700">НАПИСТЬ В TELEGRAM</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#telegram_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/telegram.svg" width="30" height="30">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-2 whatsapp_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Whatsapp" href="whatsapp://send?phone=79095371096">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/WhatsApp_2.svg" alt="Написать в Whatsapp"
-                                             width="35"
-                                             height="35">
-                                         <small style="color: #4BC75A; font-size:12px; font-weight:700">НАПИСТЬ В WHATSAPP</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#whatsapp_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/whatsapp.svg" width="30" height="30">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-2 instagram_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Instagram" href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM=">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/instagram_2.svg" alt="Написать в Instagram"
-                                             width="35"
-                                             height="35">
-                                        <small style="color: #5282B8; font-size:12px; font-weight:700">НАПИСТЬ В INSTAGRAM</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#instagram_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/instagram_qr_code.svg" width="30" height="30">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-2 vk_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в VK" href="https://vk.com/btl55omsk">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/VK_2.svg" alt="Написать в VK"
-                                             width="35"
-                                             height="35">
-                                         <small style="color: #5282B8; font-size:12px; font-weight:700">НАПИСТЬ В VK</small>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#vk_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/vk_qr_code.svg" width="30" height="30">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="viber_qr_code" aria-hidden="true" aria-labelledby="viber_qr_code_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="modal-content" style="background-color:#9179EE">
-      <div class="modal-header">
-        <h5 class="modal-title" id="viber_qr_code_label">VIBER +7 (900) 800-60-70</h5>
-        <button class="btn btn-primary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-         <img  class="" src="/assets/images/messagers/viber.svg" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="whatsapp_qr_code" aria-hidden="true" aria-labelledby="whatsapp_qr_code_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="modal-content" style="background-color:#4BC75A">
-      <div class="modal-header">
-        <h5 class="modal-title" id="whatsapp_qr_code_label">WHATSAPP +7 (900) 800-60-70</h5>
-        <button class="btn btn-primary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-         <img src="/assets/images/messagers/whatsapp.svg" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="telegram_qr_code" aria-hidden="true" aria-labelledby="telegram_qr_code_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="modal-content" style="background-color:#32A9DD">
-      <div class="modal-header">
-        <h5 class="modal-title" id="telegram_qr_code_label">TELEGRAM @BTLplus</h5>
-        <button class="btn btn-primary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-         <img src="/assets/images/messagers/telegram.svg" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="instagram_qr_code" aria-hidden="true" aria-labelledby="whatsapp_qr_code_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="instagram_color modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="instagram_qr_code_label">INSTAGRAM @dashylinkaa</h5>
-        <button class="btn btn-primary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-         <img src="/assets/images/messagers/instagram_qr_code.svg" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="vk_qr_code" aria-hidden="true" aria-labelledby="telegram_qr_code_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" >
-    <div class="vk_color modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="vk_qr_code_label">VK Btl+</h5>
-        <button class="btn btn-primary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-         <img src="/assets/images/messagers/vk_qr_code.svg" width="100%" height="100%">
-      </div>
-    </div>
-  </div>
-</div>
+{% include 'modals/message.html' %}
 
 <!--MODAL CITIES -->
 <div class="modal fade" id="омск" aria-hidden="true" aria-labelledby="омск_label" tabindex="-1">

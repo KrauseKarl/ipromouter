@@ -25,7 +25,8 @@ def index(request):
         with open('Города.json', 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         cities = cache.set('all_cities', data, 3600)
-
+    with open('Города по регионам.json', 'r', encoding='utf-8') as json_file:
+        region_city  = json.load(json_file)
     with open('big_cities.json', 'r', encoding='utf-8') as json_file:
         big_cities = json.load(json_file)
     with open('kazakhtan_cities.json', 'r', encoding='utf-8') as json_file:
@@ -34,7 +35,8 @@ def index(request):
         'cities': cities,
         'big_cities': big_cities,
         'kz_cities': kz_cities,
-        'form': ContactForm()
+        'form': ContactForm(),
+        'region_city': region_city,
     }
     return render(request, 'index.html', context=context)
 

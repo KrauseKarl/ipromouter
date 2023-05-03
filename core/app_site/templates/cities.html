@@ -3,70 +3,53 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title mb-3">География нашей работы</h4>
+                    <h2 class="modal-title mb-3"style="color:#5A6D90">Проведение промоакций <br>
+                        в городах России и Казахстана</h2>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
         <div class="row">
             <div class="col-lg-12 col-md-12 mt-4 pt-2">
-                <div class="card blog blog-primary shadow rounded overflow-hidden border-0">
+                <div class="card blog shadow rounded overflow-hidden border-0">
                     <div class="card-body content p-0">
                         <div class="p-4 text-center">
-                            <a href="#" class="h5 title text-dark d-block mb-0"></a>
-                            {% for city in big_cities %}
-                            {% if city == 'Омск' %}
-                                <a data-bs-target="#омск_window" data-bs-toggle="modal" data-bs-dismiss="modal" class="city_link" >
-                                   <b class="p-2">{{ city }}</b>
-                                </a>
-                            {% else %}
-                                 {% if forloop.counter|divisibleby:2 %}
-                                    <span class="fs-6">{{ city }}</span>
-                                {% elif forloop.counter|divisibleby:3 %}
-                                    <span class="fs-4">{{ city }}</span>
-                                {% elif forloop.counter|divisibleby:4 %}
-                                    <span class="fs-5"> {{ city }} </span>
-                                {% else %}
-                                    <span class="fs-2"> {{ city }} </span>
-                                {% endif %}
-                            {% endif %}
-                            {% endfor %}
+                            <div class="h5 title text-dark d-block mb-0">
+                                {% for city, pop in big_cities.items %}
+                                    {% if pop > 1600000 %}
+                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-2 px-1">
+                                        {{ city|upper }}
+                                    </h6>
+                                    {% elif pop > 1100000 %}
+                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-3 px-1">
+                                        <b>{{ city }}
+                                        </b></h6>
+                                    {% elif pop > 8000000 %}
+                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-4 px-1">
+                                        {{ city }}
+                                    </h6>
+                                    {% else %}
+                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-5 px-1">
+                                        {{ city }}
+                                    </h6>
+                                    {% endif %}
+                                {% endfor %}
+                                 {% for city, pop in  kz_cities.items %}
+                                    {% if pop > 1000000 %}
+                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-2 px-1">
+                                        {{ city|upper }}
+                                    </h6>
+                                    {% elif pop > 400000 %}
+                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-4    px-1">
+                                        <b>{{ city }}
+                                        </b></h6>
+                                    {% endif %}
+                                {% endfor %}
 
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
     </div><!--end container-->
-</section>
-<div class="modal fade" id="омск_window" aria-hidden="true" aria-labelledby="омск_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" >
-      <div class="modal-header">
-        <h5 class="modal-title" id="омск_label"> <i class="uil uil-star h4 text-danger"></i>Омск</h5>
-          <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close">
-                   <i class="uil uil-times fs-4"></i>
-               </button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-5 col-md-12">
-                      <img src="/assets/images/cities/omsk.jpg"  class="img-fluid rounded">
-                  </div>
-                  <div class="col-lg-7 col-md-12">
-                      <p>население: <b>1 200 000</b></p>
-                      <p>статус: <b>областной центр</b></p>
-                      <p>Точки высокого трафика:</p>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item">ТРЦ МЕГА</li>
-                          <li class="list-group-item">ТРЦ Континет</li>
-                          <li class="list-group-item">Кинотеатр "Маяковский"</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
     </div>
-  </div>
-</div>
+</section>

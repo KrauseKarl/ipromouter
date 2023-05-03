@@ -4,9 +4,7 @@ from django.conf import settings
 from django.core.cache import cache
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
-
-
+from django.shortcuts import render
 from django import forms
 
 
@@ -19,18 +17,32 @@ class ContactForm(forms.Form):
 
 
 def index(request):
+    time_cache = 604800
 
     cities = cache.get('all_cities')
     if not cities:
-        with open('Города.json', 'r', encoding='utf-8') as json_file:
+        with open('info/cities.json', 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
-        cities = cache.set('all_cities', data, 3600)
-    with open('Города по регионам.json', 'r', encoding='utf-8') as json_file:
-        region_city  = json.load(json_file)
-    with open('big_cities.json', 'r', encoding='utf-8') as json_file:
-        big_cities = json.load(json_file)
-    with open('kazakhtan_cities.json', 'r', encoding='utf-8') as json_file:
-        kz_cities = json.load(json_file)
+        cities = cache.set('all_cities', data, time_cache)
+
+    region_city = cache.get('region_city')
+    if not region_city:
+        with open('info/cities_by_region.json', 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+        region_city = cache.set('region_city', data, time_cache)
+
+    big_cities = cache.get('big_cities')
+    if not big_cities:
+        with open('info/big_cities.json', 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+        big_cities = cache.set('big_cities', data, time_cache)
+
+    kz_cities = cache.get('kz_cities')
+    if not kz_cities:
+        with open('info/kz_cities.json', 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+        kz_cities = cache.set('kz_cities', data, time_cache)
+
     context = {
         'cities': cities,
         'big_cities': big_cities,

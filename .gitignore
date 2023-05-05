@@ -1,6 +1,8 @@
 # mine
 docker-compose.yaml
 Dockerfile
+local_settings
+prod_settings
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -131,3 +133,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/core/core/prod_settings.py

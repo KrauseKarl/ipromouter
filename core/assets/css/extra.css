@@ -434,7 +434,7 @@ button.nav-link {
 a:hover {
     text-decoration: none;
     color: white;
-    background: #8CB369;
+    font-weight: bold;
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
 }

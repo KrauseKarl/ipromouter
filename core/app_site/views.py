@@ -145,3 +145,7 @@ def candidate(request):
 
     response = {'message': False}
     return JsonResponse(response)
+
+
+def my_page_not_found(request, exception):
+    return render(request=request, template_name='404.html', context={'exception': exception}, status=404)

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0" >
             <div class="modal-header">
-                <img src="/assets/images/logo/icon_48.png" class="l-light" style="margin-right:30px" alt="BTL+">
+              <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
                 <h5 class="modal-title" id="exampleModalCenterTitle">написать нам</h5>
                 <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
                         aria-label="Close"><i class="uil uil-times fs-4"></i></button>
@@ -18,7 +18,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>
-                                <input name="name" id="name" type="text" class="form-control" >
+                                <input name="name_c" id="name_c" type="text" class="form-control" >
                             </div>
 
                         </div>
@@ -29,7 +29,7 @@
                                     <span class="text-danger">*
                                     </span>
                                 </label>
-                                <input name="email" id="email" type="email" class="form-control"
+                                <input name="email_c" id="email_c" type="email" class="form-control"
                                        placeholder="company@mail.com">
                             </div>
                         </div><!--end col-->
@@ -40,7 +40,7 @@
                                     <span class="text-danger">*
                                     </span>
                                 </label>
-                                <input name="telephone" id="telephone" type="text" class="form-control"
+                                <input name="telephone_c" id="telephone_c" type="text" class="form-control"
                                        placeholder=" +7 (900) 800 70-60">
                             </div>
                         </div><!--end col-->
@@ -51,7 +51,7 @@
                                     <span class="text-danger">*
                                     </span>
                                 </label>
-                                <input name="subject" id="subject" class="form-control"
+                                <input name="subject_c" id="subject_c" class="form-control"
                                        placeholder="например : Раздача листовок">
                             </div>
                         </div><!--end col-->
@@ -60,7 +60,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">сообщение <span
                                         class="text-danger">*</span></label>
-                                <textarea name="comments" id="comments" rows="4" class="form-control"
+                                <textarea name="comments_c" id="comments_c" rows="4" class="form-control"
                                           placeholder="например: Сколько стоит раздача листовок в трех локациях? "></textarea>
                             </div>
                         </div>
@@ -69,13 +69,13 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-grid">
-                                <button type="submit" id="submit" name="send" class="btn btn-primary">отправить</button>
+                                <button type="submit" id="submit" name="send" class="btn btn-info">отправить</button>
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->
                 </form>
                 <div id="success_send" class="text-center invisible">
-                    <i class="uil uil-envelope-send text-success fs-2"></i>
+                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>
                     <h4>Успеншно отправлено</h4>
                 </div>
             </div>

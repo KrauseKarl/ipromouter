@@ -43,7 +43,7 @@ function windowScroll() {
     nav_links.classList.add("text-dark");
   } else {
     navbar.classList.remove("nav-sticky");
-    nav_links.classList.add("btn.btn-primary");
+    nav_links.classList.add("btn btn-primary");
   }
 }
 window.addEventListener("scroll", (ev) => {

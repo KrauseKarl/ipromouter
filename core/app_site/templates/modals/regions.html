@@ -3,21 +3,21 @@
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0" style="background-color: #fff0.5;">
             <div class="modal-header">
-                <div class="container">
-                    <div class="row d-flex justify-content-evenly">
-                        <div class="col-lg-4 col-md-12 mb-1">
+                <div class="container" style="padding:5px">
+                    <div class="row d-flex justify-content-evenly ">
+                        <div class="col-lg-4 col-md-12 ">
                             <a id="kz_cities_btn" type="button"
                                class="px-1 d-flex align-items-center text-dark text-uppercase fw-bold">
                                 <span class="flag-icon flag-icon-kz m-1 pe-2 rounded" style="font-size:30px"></span>Казахстан
                             </a>
                         </div>
-                        <div class="col-lg-4 col-md-12 mb-1">
+                        <div class="col-lg-4 col-md-12 ">
                             <a id="ru_big_cities_btn" type="button"
                                class="px-1 d-flex align-items-center text-dark text-uppercase fw-bold">
                                 <span class="flag-icon flag-icon-ru m-1 pe-2 rounded" style="font-size:30px"></span>Мегаполисы
                             </a>
                         </div>
-                        <div class="col-lg-4 col-md-12 mb-1">
+                        <div class="col-lg-4 col-md-12 ">
                             <a id="ru_all_cities_btn" type="button"
                                class="px-1 d-flex align-items-center text-dark text-uppercase fw-bold">
                                 <span class="flag-icon flag-icon-ru m-1 pe-2 rounded" style="font-size:30px"></span>Все города
@@ -31,7 +31,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <div class="container" style="padding:5px">
                     <!-- КРУПНЫЕ ГОРОДА КАЗАХСТАНА START -->
                     <div id="kz_cities" class="row ">
                         {% for city, pop in kz_cities.items %}
@@ -70,7 +70,7 @@
                         {% if pop > 1800000 %}
                         <div class="col-lg-4 col-md-12">
                             <ul class="list-group list-group-flush ">
-                                <li class="list-group-item  ">
+                                <li class="list-group-item mb-0">
                                     {% if city == 'Москва' or city == 'Санкт-Петербург' %}
                                     <i class="uil uil-star h4 text-danger"></i>
                                     {% endif %}

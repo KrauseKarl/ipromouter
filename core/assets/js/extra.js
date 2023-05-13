@@ -33,8 +33,6 @@ $(document).ready(function() {
     });
 });
 
-
-
 function queryString(query) {
     var counterCity = 0
     $('button.accordion-button').each(function() {
@@ -46,7 +44,7 @@ function queryString(query) {
             if(value.indexOf(query) == 1 || region == query ){
                 counterCity += 1
                 parent.parents('.listt.col-lg-4.col-md-12.mb-2').removeClass('invisible');
-                parent.parents('.accordion-item').children('.accordion-collapse.collapse').removeClass('collapse').addClass('collapsed')
+                parent.parents('.accordion-item').children('.accordion-collapse.collapse').addClass('show')
                 var allCities = parent.parents('.accordion-item')
                 var childrenLi = $('span.city.fs-6')
                 $.each(childrenLi, function(index, res){
@@ -61,7 +59,7 @@ function queryString(query) {
               return false;
             } else {
                 parent.parents('.listt.col-lg-4.col-md-12.mb-2').addClass("invisible");
-                parent.parents('.accordion-item').children('.accordion-collapse.collapsed').removeClass('collapsed').addClass('collapse')
+                parent.parents('.accordion-item').children('.accordion-collapse.collapse.show').removeClass('show')
             }; // if
         }); // each
     }); // each
@@ -85,7 +83,7 @@ function backCities() {
     $('button.accordion-button').each(function() {
       var parent = $(this)
       parent.parents('.col-lg-4.col-md-12.mb-2.invisible').removeClass('invisible');
-      parent.parents('.accordion-item').children('.accordion-collapse.collapsed').removeClass('collapsed').addClass('collapse')
+      parent.parents('.accordion-item').children('.accordion-collapse.collapse.show').removeClass('show')
       $('#search_result').css('display','none')
       var childrenLi = $('span.city.fs-3.bg-primary.rounded.px-2.py-1.text-light')
       $.each(childrenLi, function(index, res){
@@ -146,11 +144,11 @@ $('#message_form').on('submit', function (event) {
 // 04. MESSAGE VALIDATOR
 function validateForm() {
     $('#success_send').addClass('invisible');
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var telephone = $("#telephone").val();
-    var subject = $("#subject").val();
-    var comments = $("#comments").val();
+    var name = $("#name_c").val();
+    var email = $("#email_c").val();
+    var telephone = $("#telephone_c").val();
+    var subject = $("#subject_c").val();
+    var comments = $("#comments_c").val();
     $("#error-msg").css('opacity', '0');
     $('#error-msg').html("");
     if (name == "" || name == null) {
@@ -191,10 +189,10 @@ function validateForm() {
                 setTimeout(function () {
                     $('#success_send').addClass('invisible');
                     $('#message_form').css('display', 'block ');
-                        $("#name").val("");
-                    $("#email").val("");
-                    $("#subject").val("");
-                    $("#comments").val("");
+                    $("#name_c").val("");
+                    $("#email_c").val("");
+                    $("#subject_c").val("");
+                    $("#comments_c").val("");
                     $('#contactform').modal('hide');
     }, 3000);
             } else {
@@ -206,7 +204,8 @@ function validateForm() {
 
 // 05. PHONE NUMBER VALIDATOR
 $(document).ready(function() {
-$("#telephone").mask("+7 (999) 999-99-99");
+    $("#telephone_c").mask("+7 (999) 999-99-99");
+    $("#telephone").mask("+7 (999) 999-99-99");
 });
 
 // 06. COPY PHONE NUMBER + TOASTER
@@ -238,3 +237,80 @@ $('#copyMailBtn').on('click', function () {
 })
 
 // 08. NAVBAR SERVICES ACCORDION
+
+
+
+
+$('#headhunter_form').on('submit', function (event) {
+    $("#error-msg").css('opacity', '0');
+     validateCandidateForm()
+     event.preventDefault();
+});
+// 09. HEADHUNTER MESSAGE FORM
+function validateCandidateForm() {
+    $('#hh_success_send').addClass('invisible');
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var telephone = $("#telephone").val();
+    var city = $("#city").val();
+    var position = $("#position").val();
+    $("#error-msg").css('opacity', '0');
+    $('#error-msg').html("");
+    if (name == "" || name == null) {
+        $('#error-msg').html("<div class='text-danger alert alert-warning error_message'>* поле 'имя' обязательно *</div>");
+        $('#error-msg').css('opacity', '1');
+        return false;
+    }
+    if (email == "" || email == null) {
+        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'электронный адрес' обязательно *</div>");
+        $('#error-msg').css('opacity', '1');
+        return false;
+    }
+    if (telephone == "" || telephone == null) {
+        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'телефон' обязательно *</div>");
+        $('#error-msg').css('opacity', '1');
+        return false;
+    }
+    if (city == "" || city == null) {
+        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'город' обязательно *</div>");
+        $('#error-msg').css('opacity', '1');
+        return false;
+    }
+    if (position == "" || position == null) {
+        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'вакансия' обязательно *</div>");
+        $('#error-msg').css('opacity', '1');
+        return false;
+    }
+    $.ajax({
+        url: "/candidate",
+        type: 'post',
+        dataType: 'json',
+        data: $('form#headhunter_form').serialize(),
+        success: function (response) {
+            console.log('you did it!')
+            if (response.message == true) {
+                $('#headhunter_form').css('display', 'none ')
+                $('#hh_success_send').removeClass('invisible')
+                setTimeout(function () {
+                    $('#hh_success_send').addClass('invisible');
+                    $('#headhunter_form').css('display', 'block ');
+                    $("#name").val("");
+                    $("#email").val("");
+                    $("#position").val("");
+                    $("#city").val("");
+                    $("#age").val("");
+                    $("#sex").val("");
+                    $("#height").val("");
+                    $("#weight").val("");
+                    $("#clothes_size").val("");
+                    $("#shoes_size").val("");
+                    $("#experience").val("");
+                    $("#preferences").val("");
+                    $('#hh_form').modal('hide');
+    }, 3000);
+            } else {
+                alert('error')
+            };
+            },
+    });
+  }

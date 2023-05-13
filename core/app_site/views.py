@@ -9,11 +9,27 @@ from django import forms
 
 
 class ContactForm(forms.Form):
+    name_c = forms.CharField(max_length=50)
+    telephone_c = forms.CharField(max_length=50)
+    email_c = forms.EmailField(max_length=150)
+    subject_c = forms.CharField(max_length=50)
+    comments_c = forms.CharField(widget=forms.Textarea, max_length=2000)
+
+
+class HeadHunterForm(forms.Form):
     name = forms.CharField(max_length=50)
     telephone = forms.CharField(max_length=50)
     email = forms.EmailField(max_length=150)
-    subject = forms.CharField(max_length=50)
-    comments = forms.CharField(widget=forms.Textarea, max_length=2000)
+    position = forms.CharField(max_length=50)
+    city = forms.CharField(max_length=50)
+    age = forms.CharField(max_length=50, required=False)
+    sex = forms.CharField(max_length=50, required=False)
+    height = forms.CharField(max_length=50, required=False)
+    weight = forms.CharField(max_length=50, required=False)
+    clothes_size = forms.CharField(max_length=50, required=False)
+    shoes_size = forms.CharField(max_length=50, required=False)
+    experience = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)
+    preferences = forms.CharField(widget=forms.Textarea, max_length=2000, required=False)
 
 
 def index(request):
@@ -57,17 +73,68 @@ def contact(request):
     if request.method == 'POST' and request.is_ajax():
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['subject']
+            subject = 'ЗАКАЗЧИК: ' + form.cleaned_data['subject_c']
             body = {
-                'name': form.cleaned_data['name'],
-                'email': form.cleaned_data['email'],
-                'telephone': form.cleaned_data['telephone'],
-                'subject': form.cleaned_data['subject'],
-                'comments': form.cleaned_data['comments'],
+                'name': form.cleaned_data['name_c'],
+                'email': form.cleaned_data['email_c'],
+                'telephone': form.cleaned_data['telephone_c'],
+                'subject': form.cleaned_data['subject_c'],
+                'comments': form.cleaned_data['comments_c'],
             }
             message = "\n".join(body.values())
             try:
-                print('\n test:', message, '\n')
+                send_mail(subject, message,
+                          settings.EMAIL_HOST_USER,
+                          [settings.EMAIL_HOST_USER])
+                response = {'message': True}
+            except BadHeaderError:
+                return HttpResponse('Найден некорректный заголовок')
+            return JsonResponse(response)
+
+    response = {'message': False}
+    return JsonResponse(response)
+
+
+def candidate(request):
+    if request.method == 'POST' and request.is_ajax():
+        form = HeadHunterForm(request.POST)
+        if form.is_valid():
+            subject = 'СОИСКАТЕЛЬ: ' + form.cleaned_data['position'] + ' (' + form.cleaned_data['city'] + ")"
+            body = {
+                'name': 'имя: ' + form.cleaned_data['name'],
+                'email': 'почта: ' + form.cleaned_data['email'],
+                'position': 'вакансия: ' + form.cleaned_data['position'],
+                'telephone': 'телефон: ' + form.cleaned_data['telephone'],
+                'city': 'город: ' + form.cleaned_data['city'],
+            }
+            if form.cleaned_data.get('age'):
+                age = {'age': 'полных лет: ' + form.cleaned_data.get('age')}
+                body.update(age)
+            if form.cleaned_data.get('sex'):
+                sex = {'sex': 'пол: ' + form.cleaned_data.get('sex')}
+                body.update(sex)
+            if form.cleaned_data.get('height'):
+                height = {'height': 'рост: ' + form.cleaned_data.get('height')}
+                body.update(height)
+            if form.cleaned_data.get('weight '):
+                weight = {'weight': 'вес:' + form.cleaned_data.get('weight')}
+                body.update(weight)
+            if form.cleaned_data.get('clothes_size'):
+                clothes_size = {'clothes_size': 'размер одежды: ' + form.cleaned_data.get('clothes_size')}
+                body.update(clothes_size)
+            if form.cleaned_data.get('shoes_size'):
+                shoes_size = {'shoes_size': 'размер обуви: ' + form.cleaned_data.get('shoes_size')}
+                body.update(shoes_size)
+            if form.cleaned_data.get('experience'):
+                experience = {'experience': 'опыт работы: ' + form.cleaned_data.get('experience')}
+                body.update(experience)
+            if form.cleaned_data.get('preferences'):
+                preferences = {'preferences': 'пожелания: ' + form.cleaned_data.get('preferences')}
+                body.update(preferences)
+
+            message = "\n".join(body.values())
+            try:
+                print('\n', message, '\n')
                 send_mail(subject, message,
                           settings.EMAIL_HOST_USER,
                           [settings.EMAIL_HOST_USER])

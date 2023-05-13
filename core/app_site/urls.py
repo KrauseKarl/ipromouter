@@ -8,4 +8,5 @@ app_name = 'app_site'
 urlpatterns = [
     path('', index, name='index'),
     path('contact', contact, name='contact'),
+    path('candidate', candidate, name='candidate'),
 ]

@@ -153,3 +153,6 @@ def candidate(request):
 
 def my_page_not_found(request, exception):
     return render(request=request, template_name='404.html', context={'exception': exception}, status=404)
+
+def my_server_error(request):
+    return render(request=request, template_name='500.html', status=500)

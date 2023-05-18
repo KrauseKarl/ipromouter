@@ -29,5 +29,5 @@ Disallow: /assets/scss/
 Disallow: /assets/font/
 
 
-
+Sitemap: https://btlplus.ru/sitemap
 Host: https://btlplus.ru

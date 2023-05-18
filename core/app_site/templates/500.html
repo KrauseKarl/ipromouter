@@ -160,15 +160,18 @@
                 <div class="d-flex flex-column min-vh-100 justify-content-center px-md-5 py-5 px-4">
                     <div class="title-heading text-center my-auto">
                         <img src="/assets/images/error.png" class="img-fluid" alt="not found image">
-                        <h1 class="py-1 text-dark">Страница не найдена</h1>
-                        <p class="text-muted">Упс, досадно.<br>
-                            Похоже, страница, которую вы искали, не существует.</p>
+                        <h1 class="py-1 text-dark">Ошибка на сервере
+                        </h1>
+                        <p class="text-muted">Упс, досадно.
+                            <br>
+                            Похоже, наш сервер устал и прилег ненадолго.
+                        </p>
                         <div class="mt-1">
-                            <a href="{% url 'app_site:index' %}" class="back-button btn btn-info">на главную</a>
+                            <a href="{% url 'app_site:index' %}" class="back-button btn btn-info">перезагрузить</a>
                         </div>
                     </div>
                     <div class="text-center">
-                        <p class="mb-0">© 2012-<script>document.write(new Date().getFullYear())</script> Рекламное агентство  BTL+</p>
+                        <p class="mb-0">© 2012-<script>document.write(new Date().getFullYear())</script> Рекламное агентство BTL+</p>
                     </div>
                 </div>
             </div><!--end col-->

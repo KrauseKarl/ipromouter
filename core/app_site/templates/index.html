@@ -15,8 +15,8 @@
     <meta name="email" content="btl-omsk@bk.ru"/>
     <meta name="version" content="1.1.0"/>
     <meta http-equiv="refresh" content="360">
-    <meta name="author" content="Рекламное агенство BTL+">
-    <meta name="copyright" content="Все права принадлежат 'Рекламное агенство BTL+'">
+    <meta name="author" content="Рекламное агентство BTL+">
+    <meta name="copyright" content="Все права принадлежат 'Рекламное агентство BTL+'">
 
     <meta property="og:title" content="BTL-акции в России и Казахстане">
     <meta property="og:type" content="website">
@@ -150,77 +150,8 @@
 </head>
 
 <body style="margin:15px;">
-<!-- START NAVBAR -->
-<nav id="navbar" class="navbar navbar-expand-lg nav-dark mb-0 fixed-top nav-sticky">
-    <div class="container py-1">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand ms-2 px-3" href="\">
-            <span class="logo-light-mode">
-                <img src="/assets/images/logo/BTL_logo.svg" class="l-light " alt="logo btl+">
-                <img src="/assets/images/logo/BTL_logo.svg" class="l-dark "  alt="logo btl+">
-            </span>
-            <img src="/assets/images/logo-light.png" class="logo-dark-mode" alt="">
-        </a>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-1" id="navbar-navlist">
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#services">
-                        <span class="px-2">услуги
-                        </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#regions">
-                        <span class="px-2">города
-                        </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#hh_form">
-                        <span class="px-2">вакансии
-                        </span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="list-inline menu-social mb-0 ms-2 ps-lg-0 ms-1">
-                <li>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a type="button" class="btn btn-outline-secondary "  href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#contactform" >
-                            <i class="uil-envelope-edit t h5"></i>
-                        </a>
-                        <button title="скопировать почту" class="btn btn-info mb-1" id="copyMailBtn"
-                                value="btl-omsk@bk.ru"
-                           style="vertical-align:top; color: #084298">
-                            <span class=" badge  fw-bold" >btl-omsk@bk.ru</span>
-                        </button>
 
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="btn-group ms-2" role="group" aria-label="Basic example">
-            <a type="button" class="btn btn-outline-secondary mb-1 fs-5 zoom-box" href="javascript:void(0)" data-bs-toggle="modal"
-               data-bs-target="#messages">
-                <i class="uil  uil-outgoing-call "></i>
-            </a>
-            <button title="скопировать телефон" id="copyPhoneBtn"
-                    class="badge  js-textareacopybtn  btn btn-info mb-1 fs-6 fw-bold"
-                    value="89008007060"
-                    style="vertical-align: top; color: #084298"><span> +7 (909) 537 10-96</span>
-            </button>
-        </div>
-        <button class="navbar-toggler mb-1 " style="margin-right:30px;" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-        <!--end collapse-->
-    </div>
-    <!--end container-->
-</nav>
+{% include 'navbar.html' %}
 
 {% include 'banner.html' %}
 
@@ -290,7 +221,6 @@
     </div>
 </div>
 <!-- TOAST COPY E-MAIL -->
-                                                    <!-- MODAL WINDOW -->
 
 
 <!-- JAVASCRIPTS -->

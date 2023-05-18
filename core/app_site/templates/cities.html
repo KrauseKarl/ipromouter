@@ -18,30 +18,36 @@
                             <div class="h5 title text-dark d-block mb-0">
                                 {% for city, pop in big_cities.items %}
                                     {% if pop > 1600000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-2 px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-2 px-1">
                                         {{ city|upper }}
                                     </h6>
                                     {% elif pop > 1100000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-3 px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-3 px-1">
                                         <b>{{ city }}
                                         </b></h6>
                                     {% elif pop > 8000000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-4 px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-4 px-1">
                                         {{ city }}
                                     </h6>
                                     {% else %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-5 px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-5 px-1">
                                         {{ city }}
                                     </h6>
                                     {% endif %}
                                 {% endfor %}
                                  {% for city, pop in  kz_cities.items %}
                                     {% if pop > 1000000 %}
-                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-2 px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-2 px-1">
                                         {{ city|upper }}
                                     </h6>
                                     {% elif pop > 400000 %}
-                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-4    px-1">
+                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промоакция в г. {{ city }}"
+                                        class="d-inline text-secondary fs-4    px-1">
                                         <b>{{ city }}
                                         </b></h6>
                                     {% endif %}

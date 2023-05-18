@@ -1,13 +1,13 @@
-<div id="hh_form" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div id="hh_form" class="modal fade text-secondary"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered" role="document">
+    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0" >
             <div class="modal-header">
                 <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h4 class="modal-title" id="exampleModalCenterTitle">работа промойтером</h4>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close">
-                  <i class="uil uil-times fs-4"></i>
+                <h3  class="modal-title fs-5" id="exampleModalCenterTitle">отправить резюме</h3>
+                <button type="button" class="btn-close d-flex align-items-center text-dark"
+                        data-bs-dismiss="modal" aria-label="Close">
+                        <i class="uil uil-times fs-4"></i>
                 </button>
             </div>
             <div class="modal-body">
@@ -24,9 +24,8 @@
                             </div>
 
                         </div>
-                        <hr>
                         <!-- EMAIL INPUT    -->
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">Ваш электорнный адрес
                                     <span class="text-danger">*
@@ -37,7 +36,7 @@
                             </div>
                         </div><!--end col-->
                         <!-- TELEPHONE INPUT      -->
-                        <div class="col-md-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">Ваш телефон
                                     <span class="text-danger">*
@@ -47,9 +46,9 @@
                                        placeholder=" +7 (900) 800 70-60">
                             </div>
                         </div><!--end col-->
-                        <hr>
+
                         <!-- position INPUT      -->
-                        <div class="col-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">вакансия
                                     <span class="text-danger">*
@@ -67,7 +66,7 @@
                         <!-- position INPUT      -->
 
                         <!-- city INPUT      -->
-                        <div class="col-6">
+                        <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">город
                                     <span class="text-danger">*
@@ -78,46 +77,52 @@
                             </div>
                         </div><!--end col-->
                         <!-- city INPUT      -->
-
+                        <hr>
                         <!--  age INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3 ">
                                 <label class="form-label fw-normal">полных лет
                                 </label>
-                                <input type="number" name="age" id="age" class="form-control" value="18" min="14" max="55">
+                                <input type="number" name="age" id="age" class="form-control" placeholder="18" min="14" max="55">
                             </div>
                         </div><!--end col-->
                         <!--  age INPUT   -->
 
                         <!--  sex INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3 ">
                                 <label class="form-label fw-normal">пол
                                 </label>
-                                <input type="radio" name="sex"  id="male" value="муж" class="ms-4" >
-                                 <label for="male">м</label>
-                                <input type="radio" name="sex" value="жен" class="ms-4" id="female">
-                                <label for="female">ж</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sex" id="male" value="option1" checked>
+                                    <label class="form-check-label" for="male">мужской
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sex" id="female" value="option1" >
+                                    <label class="form-check-label" for="female">женский
+                                    </label>
+                                </div>
                             </div>
                         </div><!--end col-->
                         <!--  sex INPUT   -->
 
                         <!--  height INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">рост, см
                                 </label>
-                                <input type="number" name="height" id="height" class="form-control" value="160">
+                                <input type="number" name="height" id="height" class="form-control" placeholder="160">
                             </div>
                         </div><!--end col-->
                         <!--  height INPUT   -->
 
                         <!--  weight INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">вес, кг
                                 </label>
-                                <input type="number" class="form-control" value="60" name="weight" id="weight" min="40" max="120">
+                                <input type="number" class="form-control" placeholder="60" name="weight" id="weight" min="40" max="120">
                             </div>
                         </div><!--end col-->
                         <!--  weight INPUT   -->
@@ -128,7 +133,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер одежды
                                 </label>
-                                <input type="number" class="form-control" value="48" name="clothes_size" id="clothes_size" min="32" max="60">
+                                <input type="number" class="form-control" placeholder="48" name="clothes_size" id="clothes_size" min="32" max="60">
                             </div>
                         </div>
                         <!--  clothes_size INPUT   -->
@@ -138,7 +143,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер обуви
                                 </label>
-                                <input type="number" class="form-control" value="38" name="shoes_size" id="shoes_size" min="30" max="50">
+                                <input type="number" class="form-control" placeholder="38" name="shoes_size" id="shoes_size" min="30" max="50">
                             </div>
                         </div>
                         <!--  shoes_size INPUT   -->
@@ -175,9 +180,13 @@
                         </div><!--end col-->
                     </div><!--end row-->
                 </form>
-                <div id="hh_success_send" class="text-center invisible">
-                    <i class="uil uil-envelope-send text-success" style="font-size: 60px"></i>
-                    <h4>Успеншно отправлено</h4>
+                <div id="hh_spinner" class="d-none justify-content-center invisible my-5">
+                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">отправляю резюме...</span>
+                    </div>
+                </div>
+                <div id="hh_success_send" class="text-center mb-5 invisible">
+                    <h4 class="text-success">Успеншно отправлено</h4>
                 </div>
             </div>
         </div>

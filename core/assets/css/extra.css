@@ -396,11 +396,16 @@ h1 {
     }
     .nav-link.active {
     padding: 20px 0;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
     text-align: start  !important;
 }
 .nav-link.active span {
     text-align: center  !important;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
+    text-color: white;
+    font-weight: bold;
 }
 
 button.nav-link {

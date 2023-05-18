@@ -1,3 +1,7 @@
+{% load static  %}
+{% load cache %}
+
+{% cache 604800 banner  %}
 <section class="section mt-3">
 <div class="panel-container">
     <div class="panel  vignette" style="background-image: url('/assets/images/carousel/1.jpg')">
@@ -37,3 +41,4 @@ function removeActiveClasses() {
 }
     </script>
 </section>
+{% endcache %}

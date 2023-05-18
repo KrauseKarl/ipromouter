@@ -83,9 +83,12 @@ def contact(request):
             }
             message = "\n".join(body.values())
             try:
-                send_mail(subject, message,
-                          settings.EMAIL_HOST_USER,
-                          [settings.EMAIL_HOST_USER])
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[settings.EMAIL_HOST_USER,]
+                )
                 response = {'message': True}
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')
@@ -131,13 +134,14 @@ def candidate(request):
             if form.cleaned_data.get('preferences'):
                 preferences = {'preferences': 'пожелания: ' + form.cleaned_data.get('preferences')}
                 body.update(preferences)
-
             message = "\n".join(body.values())
             try:
-                print('\n', message, '\n')
-                send_mail(subject, message,
-                          settings.EMAIL_HOST_USER,
-                          [settings.EMAIL_HOST_USER])
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[settings.EMAIL_HOST_USER]
+                )
                 response = {'message': True}
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')

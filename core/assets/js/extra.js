@@ -9,6 +9,7 @@
  *     06.  COPY PHONE NUMBER + TOASTER           *
  *     07.  COPY E-MAIL   + TOASTER               *
  *     08.  NAVBAR SERVICES ACCORDION             *
+ *     09. HEADHUNTER MESSAGE FORM                *
  =================================================*/
 
 
@@ -137,12 +138,14 @@ $(document).ready(function () {
 // 03. CONTACT MESSAGE  FORM
 $('#message_form').on('submit', function (event) {
     $("#error-msg").css('opacity', '0');
-     validateForm()
-     event.preventDefault();
+    validateForm()
+    event.preventDefault();
 });
 
 // 04. MESSAGE VALIDATOR
 function validateForm() {
+    $('#message_form').css('display', 'none ')
+    $('#spinner').removeClass('invisible d-none').addClass('d-flex');
     $('#success_send').addClass('invisible');
     var name = $("#name_c").val();
     var email = $("#email_c").val();
@@ -180,12 +183,14 @@ function validateForm() {
         url: "/contact",
         type: 'post',
         dataType: 'json',
+        timeout: 6000,
         data: $('form#message_form').serialize(),
         success: function (response) {
             console.log('you did it!')
             if (response.message == true) {
-                $('#message_form').css('display', 'none ')
-                $('#success_send').removeClass('invisible')
+                $('#message_form').css('display', 'none');
+                $('#spinner').addClass('d-none');
+                $('#success_send').removeClass('invisible');
                 setTimeout(function () {
                     $('#success_send').addClass('invisible');
                     $('#message_form').css('display', 'block ');
@@ -194,11 +199,11 @@ function validateForm() {
                     $("#subject_c").val("");
                     $("#comments_c").val("");
                     $('#contactform').modal('hide');
-    }, 3000);
+                }, 2000);
             } else {
                 alert('error')
             };
-            },
+        },
     });
   }
 
@@ -222,6 +227,20 @@ $('#copyPhoneBtn').on('click', function () {
     }, 2000);
 })
 
+$('#copyPhoneBtnFooter').on('click', function () {
+    var info = $(this).val()
+    navigator.clipboard.writeText(info)
+    .then(() => {
+    })
+    .catch(err => {
+    });
+    $('#copyPhoneToast').show('slow');
+    setTimeout(() => {
+    $('#copyPhoneToast').hide('slow');
+    }, 2000);
+})
+
+copyMailBtnFooter
 // 07. COPY E-MAIL + TOASTER
 $('#copyMailBtn').on('click', function () {
      var info = $(this).val()
@@ -235,12 +254,21 @@ $('#copyMailBtn').on('click', function () {
     $('#copyMailToast').hide('slow');
     }, 2000);
 })
+$('#copyMailBtnFooter').on('click', function () {
+     var info = $(this).val()
+    navigator.clipboard.writeText(info)
+    .then(() => {
+    })
+    .catch(err => {
+    });
+    $('#copyMailToast').show('slow');
+    setTimeout(() => {
+    $('#copyMailToast').hide('slow');
+    }, 2000);
+})
+
 
 // 08. NAVBAR SERVICES ACCORDION
-
-
-
-
 $('#headhunter_form').on('submit', function (event) {
     $("#error-msg").css('opacity', '0');
      validateCandidateForm()
@@ -248,6 +276,8 @@ $('#headhunter_form').on('submit', function (event) {
 });
 // 09. HEADHUNTER MESSAGE FORM
 function validateCandidateForm() {
+    $('#headhunter_form').css('display', 'none ')
+    $('#hh_spinner').removeClass('invisible d-none').addClass('d-flex');
     $('#hh_success_send').addClass('invisible');
     var name = $("#name").val();
     var email = $("#email").val();
@@ -285,11 +315,13 @@ function validateCandidateForm() {
         url: "/candidate",
         type: 'post',
         dataType: 'json',
+        timeout: 6000,
         data: $('form#headhunter_form').serialize(),
         success: function (response) {
             console.log('you did it!')
             if (response.message == true) {
                 $('#headhunter_form').css('display', 'none ')
+                $('#hh_spinner').addClass('d-none');
                 $('#hh_success_send').removeClass('invisible')
                 setTimeout(function () {
                     $('#hh_success_send').addClass('invisible');
@@ -311,6 +343,6 @@ function validateCandidateForm() {
             } else {
                 alert('error')
             };
-            },
+        },
     });
   }

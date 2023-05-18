@@ -1,3 +1,7 @@
+{% load static  %}
+{% load cache %}
+
+{% cache 604800 footer  %}
 <footer class="bg-footer">
             <div class="container">
                 <div class="row">
@@ -78,10 +82,9 @@
                             <div class="text-sm-start mb-2">
                                 <h5>Услуги BTL-агентсва:</h5>
                                 <ul class="list-group box-1">
-                                    <li class="list-group-item list-group-item-primary box-1"> Организация event-мероприятий
+                                    <li class="list-group-item list-group-item-primary box-1">Организация event-мероприятий
                                     </li>
-                                    <li class="list-group-item list-group-item-primary"> Промо модели, хостесс,
-                                        аниматоры
+                                    <li class="list-group-item list-group-item-primary"> Промоутеры, хостес, аниматоры
                                     </li>
                                     <li class="list-group-item list-group-item-primary"> Консультация и дегустация
                                     </li>
@@ -109,12 +112,22 @@
                             <div class="text-sm-start ">
                                 <h5>Контакты:</h5>
                                 <ul class="list-group box-1">
-                                    <li class="list-group-item list-group-item-primary  pb-2 text-sm-end"> +7 (909) 537
-                                        10-96
+                                    <li class="list-group-item list-group-item-primary  text-sm-end">
+                                        +7 (909) 537 10-96
+                                       <button class="btn" style="padding: 0 2px" title="скопировать телефон"
+                                               id="copyPhoneBtnFooter"  value="btl-omsk@bk.ru">
+                                           <i class="uil uil-copy"></i>
+                                       </button>
+
                                     </li>
-                                    <li class="list-group-item list-group-item-primary  pb-2 text-sm-end">btl-omsk@bk.ru
+                                    <li class="list-group-item list-group-item-primary  text-sm-end">
+                                        btl-omsk@bk.ru
+                                        <button title="скопировать почту" class="btn" style="padding: 0 2px"
+                                                id="copyMailBtnFooter" value="btl-omsk@bk.ru">
+                                            <i class="uil uil-copy"></i>
+                                        </button>
                                     </li>
-                                    <li class="list-group-item list-group-item-primary py-3">
+                                    <li class="list-group-item list-group-item-primary py-2">
                                         <ul class="list-unstyled social-icon align-items-center text-sm-end foot-social-icon mb-0">
                                             <li class="list-inline-item">
                                                 <a href="https://telegram.me/BTLplus" class="btn rounded">
@@ -162,3 +175,4 @@
                 </div><!--end container-->
             </div>
         </footer><!--end footer-->
+{% endcache %}

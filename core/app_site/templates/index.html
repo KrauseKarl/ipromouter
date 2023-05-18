@@ -1,45 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
+{% load cache %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <title>BTL-акции в России и Казахстане</title>
-    <meta name="description" content="🚀🎄😉Организуем промо-мероприятия в городах России и в Казахстане ☎ +7 (909) 537-10-96
-                                        🎁Листовки ☕Дегустация  ♬ Аниматоры 🌟 Хостес
-                                        😎  Тайный покупатель 🛒 POS-материалы " />
-    <meta name="keywords" content="промоакция, промоушен, промоутер, бтл, btl, сэмплинг, дегустация,
-                                   работа промоутером, промо-акция, рекламная конструкция, соц опрос,
-                                   анкетирование, тайный покупатель, россия, казахстан" />
-
-    <meta name="description" content="Responsive HTML5 Template"/>
-    <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean"/>
-    <meta name="author" content="Shreethemes"/>
+    <meta name="description" content="🚀🎄😉Организуем промо-мероприятия в городах России и Казахстана ☎ +7 (909) 537-10-96 🎁 Листовки ☕ Дегустация  ♬ Аниматоры 🌟 Хостес 😎 Тайный покупатель 🛒 POS-материалы" />
+    <meta name="keywords" content="промоакция промоушен промоутер раздача листовок рекламная акция бтл btl сэмплинг дегустация  работа промоутером промо-акция рекламная конструкция соц опрос анкетирование  тайный покупатель  россия казахстан" />
+    <meta property="image" content="https://btlplus.ru/assets/images/logo/BTL_logo.svg" />
     <meta name="website" content="https://btlplus.ru"/>
     <meta name="email" content="btl-omsk@bk.ru"/>
     <meta name="version" content="1.1.0"/>
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="360">
     <meta name="author" content="Рекламное агенство BTL+">
     <meta name="copyright" content="Все права принадлежат 'Рекламное агенство BTL+'">
 
+    <meta property="og:title" content="BTL-акции в России и Казахстане">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://btlplus.ru/index.html">
+    <meta property="og:description" content="🚀🎄😉Организуем промо-мероприятия в городах России и Казахстана ☎ +7 (909) 537-10-96 🎁 Листовки ☕ Дегустация  ♬ Аниматоры 🌟 Хостес 😎 Тайный покупатель 🛒 POS-материалы">
+    <meta property="og:image" content="https://btlplus.ru/assets/images/logo/BTL_logo.svg" />
+    <meta property="og:site_name" content="btlplus.ru">
+    <meta property="og:locale" content="ru_RU">
 
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="google" content="notranslate">
+    <meta name="yandex-verification" content="6d3c5762c8d260bb" />
+
     <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+
+    <!-- canonical -->
     <link rel="canonical" href="https://btlplus.ru/">
-
-
-
-    <meta property="og:url" content="https://btlplus.ru/index.html">
-    <meta property="og:type" content="website"> <meta property="og:type" content="website">
-    <meta property="og:title" content="BTL-акции в России и Казахстане">
-    <meta property="og:description" content="🚀🎄😉Организуем промо-мероприятия в городах России и в Казахстане ☎ +7 (909) 537-10-96
-                                        🎁Листовки ☕Дегустация  ♬ Аниматоры 🌟 Хостес
-                                        😎  Тайный покупатель 🛒 POS-материалы ">
-    <meta property="og:site_name" content="BTL+">
-    <meta property="og:locale" content="ru_RU">
+    <link rel="preload" as="image" href="https://btlplus.ru/assets/images/logo/BTL_logo.svg"  >
 
     <!-- favicon -->
     <link href="/assets/images/favicon_2.ico" rel="shortcut icon">
@@ -52,6 +48,27 @@
     <link href="/assets/css/extra.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
     <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(93615968, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+    </script>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/93615968" style="position:absolute; left:-9999px;" alt="" />
+        </div>
+    </noscript>
+<!-- /Yandex.Metrika counter -->
 
     <style>
     .list-group-item-action.active {
@@ -134,10 +151,10 @@
 
 <body style="margin:15px;">
 <!-- START NAVBAR -->
-<nav id="navbar" class="navbar navbar-expand-lg nav-dark fixed-top nav-sticky">
-    <div class="container">
+<nav id="navbar" class="navbar navbar-expand-lg nav-dark mb-0 fixed-top nav-sticky">
+    <div class="container py-1">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand ms-2 px-3" href="">
+            <a class="navbar-brand ms-2 px-3" href="\">
             <span class="logo-light-mode">
                 <img src="/assets/images/logo/BTL_logo.svg" class="l-light " alt="logo btl+">
                 <img src="/assets/images/logo/BTL_logo.svg" class="l-dark "  alt="logo btl+">
@@ -148,29 +165,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#services">
-
-                        <span class="px-2">услуги</span>
+                        <span class="px-2">услуги
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#regions">
-                        <span class="px-2">города</span>
+                        <span class="px-2">города
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#hh_form">
-                        <span class="px-2">вакансии</span>
+                        <span class="px-2">вакансии
+                        </span>
                     </a>
                 </li>
             </ul>
-            <ul class="list-inline menu-social mb-0 ps-lg-0 ms-1">
+            <ul class="list-inline menu-social mb-0 ms-2 ps-lg-0 ms-1">
                 <li>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a type="button" class="btn btn-outline-secondary "  href="javascript:void(0)" data-bs-toggle="modal"
                        data-bs-target="#contactform" >
-                            <i class="uil-envelope-alt h5"></i>
+                            <i class="uil-envelope-edit t h5"></i>
                         </a>
                         <button title="скопировать почту" class="btn btn-info mb-1" id="copyMailBtn"
                                 value="btl-omsk@bk.ru"
@@ -185,7 +204,7 @@
         <div class="btn-group ms-2" role="group" aria-label="Basic example">
             <a type="button" class="btn btn-outline-secondary mb-1 fs-5 zoom-box" href="javascript:void(0)" data-bs-toggle="modal"
                data-bs-target="#messages">
-                <i class="uil uil-phone"></i>
+                <i class="uil  uil-outgoing-call "></i>
             </a>
             <button title="скопировать телефон" id="copyPhoneBtn"
                     class="badge  js-textareacopybtn  btn btn-info mb-1 fs-6 fw-bold"
@@ -198,7 +217,6 @@
                 aria-label="Toggle navigation">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-
         <!--end collapse-->
     </div>
     <!--end container-->

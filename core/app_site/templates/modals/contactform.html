@@ -1,15 +1,16 @@
-<div id="contactform" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div id="contactform" class="modal fade text-secondary"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded shadow border-0" >
             <div class="modal-header">
               <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h5 class="modal-title" id="exampleModalCenterTitle">написать нам</h5>
+                <h3 class="modal-title fs-5" id="exampleModalCenterTitle">напишите нам</h3>
                 <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+                        aria-label="Close"><i class="uil uil-times"></i></button>
             </div>
             <div class="modal-body">
-                <form id='message_form' method="post" name="myForm" onsubmit="return validateForm()" >
+
+                <form id='message_form' class="" method="post" name="myForm" onsubmit="return validateForm()" >
                     {% csrf_token %}
                     <p id="error-msg" class="mb-0"></p>
                     <div id="simple-msg"></div>
@@ -74,9 +75,14 @@
                         </div><!--end col-->
                     </div><!--end row-->
                 </form>
-                <div id="success_send" class="text-center invisible">
-                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>
-                    <h4>Успеншно отправлено</h4>
+                <div id="spinner" class="d-none justify-content-center invisible my-5">
+                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">отправляю письмо...</span>
+                    </div>
+                </div>
+                <div id="success_send" class="text-center  invisible">
+<!--                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>-->
+                    <h4 class="text-success">Успеншно отправлено</h4>
                 </div>
             </div>
         </div>

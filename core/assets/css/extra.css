@@ -1,21 +1,12 @@
-.list-group-item-action.active {
-    background-color: #8CB369 !important;
-    border-color: #8CB369 !important;
-}
-.nav-link.active  {
-    background-color: #23B684
-    color: white  !important;
-}
-button.nav-link {
-    color: black
-    font-family: sans-serif;
-}
-.fixed {
-    position: fixed;
-    z-index: 99;
-    top: 0;
+body {
+  font-family: 'Lato';
 }
 
+h1 {
+  font-size: 2em;
+  padding: 2em;
+  text-align: center;
+}
 .absolute {
     position: absolute;
     z-index: 99;
@@ -24,30 +15,26 @@ button.nav-link {
     display:none
 }
 .city_link {
-    color:black;
+    color: black;
 }
 
 a:hover {
     text-decoration: none;
     color: white;
-    background: #8CB369;
-    border-radius: 10px;
+    background: #66CCFF;
+    border-radius: 15px;
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
 }
 .zoom-box {
     transition: transform .2s;
 }
 .message:hover {
-    color:black;
+    color: black;
 }
 .zoom-box:hover {
     transform: scale(1.01);
 }
 
-.row-flex {
-    display: flex;
-    flex-flow: row wrap;
-}
 .viber_color {
     background-color:#9179EE
 }
@@ -72,16 +59,19 @@ a:hover {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Lato';
+.list-group-item-action.active {
+    background-color: #66CCFF !important;
+    border-color: #66CCFF !important;
+}
+.list-group-item-action:hover  {
+    background-color: #66CCFF !important;
+    border-color: #66CCFF !important;
 }
 
-h1 {
-  font-size: 2em;
-  padding: 2em;
-  text-align: center;
+.accordion-button, .modal-title {
+    text-transform: uppercase;
+    font-size:18px;
 }
-
 .accordion dl {
 }
 
@@ -95,7 +85,7 @@ h1 {
 }
 .accordion dd {
   background-color: #FFFFFF;
-  color:#fafafa;
+  color: #fafafa;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -106,6 +96,8 @@ h1 {
 .accordion {
   position: relative;
   background-color:  #FFFFFF;
+  --bs-accordion-active-color: black;
+  --bs-accordion-active-bg: white;
 }
 
 .container {
@@ -367,22 +359,20 @@ h1 {
 .bg-brown {
     background-color: #603838 !important;
 }
-
-.list-group-item-action.active {
-    background-color: #8CB369 !important;
-    border-color: #8CB369 !important;
+.nav-link span {
+    color: black;
 }
-
 .nav-link.active  {
-    background-color: #8CB369 !important;
-    color: white  !important;
+    background-color: #66CCFF !important;
+    color: white;
     text-align: center  !important;
 }
+.nav-link.active span {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px #000;
 
-.nav-link span {
-    color: black  !important;
 }
-
 .nav-link.active .icon-service {
     display:none
 }
@@ -395,8 +385,8 @@ h1 {
     text-align: end  !important;
     }
     .nav-link.active {
-    padding: 20px 0;
-    font-size: 1.2rem;
+    padding: 10px 0;
+    font-size: 1rem;
     color: white;
     font-weight: bold;
     text-align: start  !important;
@@ -409,7 +399,7 @@ h1 {
 }
 
 button.nav-link {
-    color: black  !important;
+    color: black;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -418,17 +408,6 @@ button.nav-link {
     position: fixed;
     z-index: 99;
     top: 0;
-}
-
-.absolute {
-    position: absolute;
-    z-index: 99;
-}
-.invisible {
-    display:none
-}
-.city_link {
-    color:black;
 }
 .box-1 {
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.8);
@@ -443,56 +422,22 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
 }
-.zoom-box {
-    transition: transform .2s;
-}
-.message:hover {
-    color:black;
-}
-.zoom-box:hover {
-  transform: scale(1.01);
-}
 
 .row-flex {
     display: flex;
     flex-flow: row wrap;
 }
-.viber_color {
-    background-color:#9179EE
-}
-.whatsapp_color {
-    background-color:#4BC75A;
-    color: #4BC75A;
-}
-.telegram_color {
-    background-color:#32A9DD
-}
-.instagram_color {
-background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-}
-.vk_color {
-  background-color:#5282B8
-}
-.accordion-button, .modal-title {
-    text-transform: uppercase;
-}
+
 .accordion-button:hover {
-    background-color:#8CB369;
+    background-color: #66CCFF;
 }
 .accordion-button:hover  img {
      transform: scale(1.4)
 }
 .accordion-button:active {
-    background-color: #5A6D90;
-    text-color:white;
-    font-weight:600;
-}
-.accordion {
-    --bs-accordion-active-color: black;
-    --bs-accordion-active-bg: white;
-}
-.invisible {
-    display:none;
+    background-color: #66CCFF;
+    text-color: white;
+    font-weight: 600;
 }
 
 qwerty {
@@ -622,7 +567,7 @@ input:nth-of-type(5):checked ~ main#carousel {
     100%{transform: translate(-100%, 0)}
 }
     .marquee .img {
-    color: #white;
+    color: white;
     font-size: 25px;
     display: inline-block;
     padding-left: 100%;

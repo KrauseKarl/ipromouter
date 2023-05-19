@@ -102,15 +102,15 @@ $(document).ready(function () {
     var $ru_big = $('#ru_big_cities').show();
     var $ru_all = $('#ru_all_cities').hide();
 
-    $('#ru_big_cities_btn').addClass('btn-primary  p-1 rounded')
-    $('#ru_all_cities_btn').removeClass('btn-primary  p-1 rounded')
-    $('#kz_cities_btn').removeClass('btn-primary  p-1 rounded' )
+    $('#ru_big_cities_btn').addClass('btn-info  p-1 rounded')
+    $('#ru_all_cities_btn').removeClass('btn-info   p-1 rounded')
+    $('#kz_cities_btn').removeClass('btn-info  p-1 rounded' )
 
     $('#kz_cities_btn').on('click', function () {
         $kz_cities.show('slow')
-        $('#kz_cities_btn').addClass('btn-primary  p-1 rounded');
-        $('#ru_all_cities_btn').removeClass('btn-primary  p-1 rounded');
-        $('#ru_big_cities_btn').removeClass('btn-primary  p-1 rounded');
+        $('#kz_cities_btn').addClass('btn-info  p-1 rounded');
+        $('#ru_all_cities_btn').removeClass('btn-info   p-1 rounded');
+        $('#ru_big_cities_btn').removeClass('btn-info   p-1 rounded');
         $ru_big.hide('slow')
         $ru_all.hide('slow')
     });
@@ -120,18 +120,18 @@ $(document).ready(function () {
         $kz_cities.hide('slow');
         $ru_big.hide('slow');
         $ru_all.show('slow');
-        $('#ru_all_cities_btn').addClass('btn-primary  p-1 rounded');
-        $('#kz_cities_btn').removeClass('btn-primary  p-1 rounded');
-        $('#ru_big_cities_btn').removeClass('btn-primary  p-1 rounded');
+        $('#ru_all_cities_btn').addClass('btn-info  p-1 rounded');
+        $('#kz_cities_btn').removeClass('btn-info  p-1 rounded');
+        $('#ru_big_cities_btn').removeClass('btn-info  p-1 rounded');
 
     });
     $('#ru_big_cities_btn').on('click', function () {
         $kz_cities.hide('slow')
         $ru_big.show('slow')
         $ru_all.hide('slow')
-        $('#ru_big_cities_btn').addClass('btn-primary  p-1 rounded');
-        $('#ru_all_cities_btn').removeClass('btn-primary  p-1 rounded');
-        $('#kz_cities_btn').removeClass('btn-primary  p-1 rounded');
+        $('#ru_big_cities_btn').addClass('btn-info  p-1 rounded');
+        $('#ru_all_cities_btn').removeClass('btn-info  p-1 rounded');
+        $('#kz_cities_btn').removeClass('btn-info  p-1 rounded');
     });
 });
 

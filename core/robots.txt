@@ -1,5 +1,5 @@
 User-agent: *
-
+Allow: /
 Allow: /images/
 
 Disallow: /btl-admin*
@@ -14,8 +14,10 @@ Disallow: /assets/font/
 
 User-agent: Googlebot
 Allow: /
+Allow: /images/
 
 User-agent: Yandex
+Allow: /
 Allow: /images/
 
 Disallow: /btl-admin*
@@ -28,6 +30,5 @@ Disallow: /assets/php/
 Disallow: /assets/scss/
 Disallow: /assets/font/
 
-
-Sitemap: https://btlplus.ru/sitemap
-Host: https://btlplus.ru
+Host: http://btlplus.ru
+Sitemap: http://btlplus/sitemap.xml

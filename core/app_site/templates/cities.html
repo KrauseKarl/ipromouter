@@ -1,59 +1,149 @@
-<section class="section bg-light" id="features">
+<section class="section my-1 py-1 bg-light" id="city">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h2 title="Проведение промо акций в городах России и Казахстана"
-                        class="modal-title mb-3" style="color:#5A6D90">
+                <div class="section-title text-center  pb-2">
+                    <h3 title="Проведение промо акций в городах России и Казахстана"
+                        class="modal-title " style="color:#5A6D90">
                         Проведение промо акций <br> в городах России и Казахстана
-                    </h2>
+                    </h3>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
         <div class="row">
             <div class="col-lg-12 col-md-12 mt-4 pt-2">
-                <div class="card blog shadow rounded overflow-hidden border-0">
+<!--                <div class="card blog shadow rounded overflow-hidden border-0">-->
+                     <div class="container" style="padding: 5px">
+                    <div class="row d-flex justify-content-evenly ">
+                        <div class="col-lg-4 col-md-12 ">
+                            <a id="kz_cities_btn" type="button"
+                               class="px-1 d-flex justify-content-center align-items-center text-dark text-uppercase fw-bold">
+                                <span class="flag-icon flag-icon-kz m-1 pe-2 rounded" style="font-size: 30px"></span>Казахстан
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-12 ">
+                            <a id="ru_big_cities_btn" type="button"
+                               class="px-1 d-flex justify-content-center align-items-center text-dark text-uppercase fw-bold">
+                                <span class="flag-icon flag-icon-ru m-1 pe-2 rounded" style="font-size:30px"></span>Мегаполисы
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-12 ">
+                            <a id="ru_all_cities_btn" type="button"
+                               class="px-1 d-flex justify-content-center align-items-center text-dark text-uppercase fw-bold">
+                                <span class="flag-icon flag-icon-ru m-1 pe-2 rounded" style="font-size:30px"></span>Все города
+                            </a>
+                        </div>
+                    </div>
+                </div>
                     <div class="card-body content p-0">
                         <div class="p-4 text-center">
-                            <div class="h5 title text-dark d-block mb-0">
-                                {% for city, pop in big_cities.items %}
-                                    {% if pop > 1600000 %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-2 px-1">
-                                        {{ city|upper }}
-                                    </h6>
-                                    {% elif pop > 1100000 %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-3 px-1">
-                                        <b>{{ city }}
-                                        </b></h6>
-                                    {% elif pop > 8000000 %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-4 px-1">
-                                        {{ city }}
-                                    </h6>
-                                    {% else %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-5 px-1">
-                                        {{ city }}
-                                    </h6>
-                                    {% endif %}
-                                {% endfor %}
-                                 {% for city, pop in  kz_cities.items %}
-                                    {% if pop > 1000000 %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-2 px-1">
-                                        {{ city|upper }}
-                                    </h6>
-                                    {% elif pop > 400000 %}
-                                    <h6 title="BTL-акция в {{ city }}е. Раздача листовок в г. {{ city }}. Промо акция в г. {{ city }}"
-                                        class="d-inline text-secondary fs-4 px-1">
-                                        <b>{{ city }}
-                                        </b></h6>
-                                    {% endif %}
-                                {% endfor %}
+                            <div class="container" style="padding:5px">
+                    <!-- КРУПНЫЕ ГОРОДА КАЗАХСТАНА START -->
+                    <div id="kz_cities" class="row ">
+                        {% for city, pop in kz_cities.items %}
+                        {% if pop > 1000000 %}
+                        <div class="col-lg-4 col-md-12">
+                            <ul class="list-group list-group-flush">
+                                <li title="Промоакции в г.{{ city }}" class="list-group-item  fs-5 ">
+                                    {{ city|upper }}
+                                </li>
+                            </ul>
+                        </div>
+                        {% elif pop > 500000 %}
+                        <div class="col-lg-4 col-md-12">
+                            <ul class="list-group list-group-flush">
+                                <li title="Промоакции в г.{{ city }}" class="list-group-item  fs-5 ">
+                                    <b>{{ city }}</b>
+                                </li>
+                            </ul>
+                        </div>
+                        {% elif pop > 100000 %}
+                        <div class="col-lg-4 col-md-12">
+                            <ul class="list-group list-group-flush">
+                                <li title="Промоакции в г.{{ city }}" class="list-group-item  fs-6 ">
+                                    {{ city }}
+                                </li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- КРУПНЫЕ ГОРОДА КАЗАХСТАНА END -->
 
+                    <!--   КРУПНЫЕ ГОРОДА РОССИИ  START -->
+                    <div id="ru_big_cities" class="row">
+                        {% for city, pop in big_cities.items %}
+                            {% if pop > 1800000 %}
+                                <div class="col-lg-4 col-md-12">
+                                <ul class="list-group list-group-flush ">
+                                    <li title="Промоакции в г. {{ city }}."  class="list-group-item">
+                                        {% if city == 'Москва' or city == 'Санкт-Петербург' %}
+                                        <i class="uil uil-star h5 text-danger"></i>
+                                        {% endif %}
+                                        <b class="fs-5">{{ city|upper }}<br></b>
+                                    </li>
+                                </ul>
                             </div>
+                            {% else %}
+                                <div class="col-lg-4 col-md-12">
+                                <ul class="list-group list-group-flush">
+                                    <li  title="Промоакции в г. {{ city }}." class="list-group-item">
+                                        <span class="fs-5">{{ city }}<br></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!--   КРУПНЫЕ ГОРОДА РОССИИ  END -->
+
+                    <!-- ВСЕ ГОРОДА РОССИИ START   -->
+                    <div id="ru_all_cities" class="row  ">
+                        <div class="input-group">
+                            <input id="search" type="search" class="form-control mb-3"
+                                   placeholder="узнайте в каких городах мы работаем..."/>
+                            <button id="clean_city" class="btn-close rounded-3" style="padding: 1em 1em;"></button>
+                        </div>
+                        <div id="search_result" class="input-group" style="display:none">
+                        </div>
+                        {% for region, city in region_city.items %}
+                        <div class="listt col-lg-4 col-md-12 mb-2">
+                            <div class="accordion" id="accordion_regions">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="heading_{{ region|cut:' '   }}">
+                                        <button class="accordion-button"
+                                                type="button"
+                                                data-value="{{ region }}"
+                                                data-cities="{{ city }}"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse_{{ region|cut:' '  }}"
+                                                aria-expanded="true"
+                                                aria-controls="collapse_{{ region|cut:' '  }}"> {{ region|truncatechars:'19' }}
+                                        </button>
+                                    </h6>
+                                    <div class="accordion-collapse collapse "
+                                         id="collapse_{{ region|cut:' '  }}"
+                                         aria-labelledby="heading_{{ region|cut:' '  }}"
+                                         data-bs-parent="#accordion_regions">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                {% for c in city %}
+                                                <li class="list-group-item">
+                                                    <span  title="Промоакции в г. {{ c|capfirst  }}. BTL-акции в г. {{ c|capfirst  }}."  class="city fs-6">{{ c|capfirst }}
+                                                    </span>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- ВСЕ ГОРОДА РОССИИ END   -->
+
+                </div>
                     </div>
                 </div>
             </div><!--end col-->

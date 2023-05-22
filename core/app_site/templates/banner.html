@@ -1,44 +1,69 @@
-{% load static  %}
-{% load cache %}
+<section class="swiper-slider-hero position-relative d-block vh-100" id="home">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide d-flex align-items-center overflow-hidden">
+                <div class="slide-inner slide-bg-image d-flex align-items-center" style="background: center center;" data-background="/assets/images/carousel/1.webp">
+                    <div class="bg-overlay"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-center">
+                                    <h1 class="display-5 text-white title-dark fw-bold mb-4">Business Planning, Strategies <br> and Execution</h1>
+                                    <p class="para-desc mx-auto text-white-50">Launch y and managing conversion centered bootstrap v5 html page.</p>
+                                    <div class="mt-4 pt-2">
+                                        <a href="#" class="btn btn-primary">Contact us</a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
 
-{% cache 604800 banner  %}
-<section class="section mt-3">
-<div class="panel-container">
-    <div class="panel  vignette" style="background-image: url('/assets/images/carousel/1.jpg')">
-        <div>Сэмплинг</div>
-    </div>
-    <div class="panel  vignette" style="background-image: url('/assets/images/carousel/2.jpg')">
-        <div>Раздача листовок</div>
-    </div>
-    <div class="panel active vignette" style="background-image: url('/assets/images/carousel/4.png')">
-        <div>Промо-модели</div>
-    </div>
-    <div class="panel vignette" style="background-image: url('/assets/images/carousel/3.jpg')">
-        <div>POS-материалы</div>
-    </div>
-    <div class="panel vignette" style="background-image: url('/assets/images/carousel/5.png')">
-        <div>Сувенирная продукция</div>
-    </div>
-</div>
+            <div class="swiper-slide d-flex align-items-center overflow-hidden">
+                <div class="slide-inner slide-bg-image d-flex align-items-center" style="background: center center;" data-background="/assets/images/carousel/3.webp">
+                    <div class="bg-overlay"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-center">
+                                    <h1 class="display-5 text-white title-dark fw-bold mb-4">Financial Projections And Analysis <br> Marketing</h1>
+                                    <p class="para-desc mx-auto text-white-50">Launch centered bootstrap v5 html page.</p>
+                                    <div class="mt-4 pt-2">
+                                        <a href="#" class="btn btn-primary">Get Started</a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
 
-<style>
-.vignette {
-  box-shadow: 0 0 80px rgba(0,0,0,0.9) inset;
-}
-</style>
-<script>
-const panels = document.querySelectorAll('.panel');
-panels.forEach(panel => {
-    panel.addEventListener('click', () => {
-        removeActiveClasses();
-        panel.classList.add('active');
-    });
-});
-function removeActiveClasses() {
-    panels.forEach(panel => {
-        panel.classList.remove('active');
-    });
-}
-    </script>
-</section>
-{% endcache %}
+            <div class="swiper-slide d-flex align-items-center overflow-hidden">
+                <div class="slide-inner slide-bg-image d-flex align-items-center" style="background: center center;" data-background="/assets/images/carousel/4.webp">
+                    <div class="bg-overlay"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-center">
+                                    <h1 class="display-5 text-white title-dark fw-bold mb-4">International Business <br> Opportunities</h1>
+                                    <p class="para-desc mx-auto text-white-50">Launch your .</p>
+
+                                    <div class="mt-4 pt-2">
+                                        <a href="#" class="btn btn-primary">Get Started</a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+        </div>
+        <!-- end swiper-wrapper -->
+
+        <!-- swipper controls -->
+         <div class="swiper-pagination"></div>
+<!--        <div class="swiper-button-next border rounded-circle text-center"></div>-->
+<!--        <div class="swiper-button-prev border rounded-circle text-center"></div>-->
+    </div><!--end container-->
+</section><!--end section-->

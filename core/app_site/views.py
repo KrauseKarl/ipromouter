@@ -66,7 +66,7 @@ def index(request):
         'form': ContactForm(),
         'region_city': region_city,
     }
-    return render(request, 'index.html', context=context)
+    return render(request, 'index-startup.html', context=context)
 
 
 def contact(request):

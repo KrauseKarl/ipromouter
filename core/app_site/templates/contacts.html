@@ -1,196 +1,96 @@
 {% load static  %}
 {% load cache %}
 
-<section class="section bg-light px-2" id="contacts">
+
+ <!-- Start Contact -->
+        <section class="section" id="contacts">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col">
-                        <div class="section-title text-center  pb-2">
-                            <h3 title="Контакты" class="modal-title" style="color:#5A6D90">Контакты
-                            </h3>
+                        <div class="section-title text-center mb-1 pb-1">
+                            <h4 class="title mb-3">Контакты</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto">Более подробно о промо мероприятиях и
+                                всех BTL-акциях можно узнать, написав нам любым способом.</p>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-6 col-12 order-md-1 order-2 mt-4 pt-2">
+                        <div class="me-lg-4 ">
+                            <div class="mb-3 col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                                <a class="zoom-box message" title="написать нам в Viber"
+                                   href="viber://chat?number=79095371096">
+                                    <img src="/assets/images/messagers/Viber_2.svg" alt="Написать в Viber" width="50">
+                                </a>
+                            </div>
+                            <div class="mb-3 col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                                <a class="zoom-box message" title="написать нам в Telegram"
+                                   href="https://telegram.me/BTLplus">
+                                    <img src="/assets/images/messagers/Telegram_2.svg" alt="Написать в Telegram"
+                                         width="50">
+                                </a>
+                            </div>
+                            <div class="mb-3 col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                                <a class="zoom-box message" title="написать нам в Whatsapp"
+                                   href="whatsapp://send?phone=79095371096">
+                                    <img src="/assets/images/messagers/WhatsApp_2.svg" alt="Написать в Whatsapp"
+                                         width="50">
+                                </a>
+                            </div>
+                            <div class="mb-3 col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                                <a class="zoom-box message" title="написать нам в Instagram"
+                                   href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM=">
+                                    <img src="/assets/images/messagers/instagram_2.svg" alt="Написать в Instagram"
+                                         width="50">
+                                </a>
+                            </div>
+                            <div class="mb-3 col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                                <a class="zoom-box message" title="написать нам в VK" href="https://vk.com/btl55omsk">
+                                    <img src="/assets/images/messagers/VK_2.svg" alt="Написать в VK" width="50">
+                                </a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-lg-8 col-md-6 order-md-2 order-1 mt-1 pt-2">
+                        <div class="p-4 rounded shadow bg-light">
+                            <form method="post" name="myForm" onsubmit="return validateForm()">
+                                <p class="mb-0" id="error-msg"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <input name="name" id="name" type="text" class="form-control" placeholder="Name :">
+                                        </div>
+                                    </div>
 
-                <div class="row justify-content-evenly">
-                    <!-- 1 -->
-                          <div class="col-lg-2 col-md-12 ">
-                        <h3 style="color:#5A6D90"></h3>
-                        <div class="mb-1 rounded shadow viber_color      col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 me-1 rounded p-2 "
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Viber" href="viber://chat?number=79095371096">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/Viber_2.svg" alt="Написать в Viber"
-                                             width="50"
-                                             height="50">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 me-1 rounded p-2" style="background-color: white">
-                                <a style="background-color: white"
-                                   data-bs-target="#viber_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/viber.svg" width="50" height="50">
-                                </a>
-                            </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <input name="email" id="email" type="email" class="form-control" placeholder="Email :">
+                                        </div>
+                                    </div><!--end col-->
 
-                        </div>
-                        <div class="mb-1 rounded shadow telegram_color   col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box  my-2 mx-1 rounded p-2" style="background-color: white">
-                                <a class="message" title="написать нам в Telegram" href="https://telegram.me/BTLplus">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/Telegram_2.svg" alt="Написать в Telegram"
-                                             width="50"
-                                             height="50">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box  my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#telegram_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/telegram.svg" width="50" height="50">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-1 rounded shadow whatsapp_color   col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box  my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Whatsapp" href="whatsapp://send?phone=79095371096">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/WhatsApp_2.svg"
-                                             alt="Написать в Whatsapp" width="50" height="50">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box  my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#whatsapp_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/whatsapp.svg" width="50" height="50">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-1 rounded shadow instagram_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box  my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в Instagram" href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM=">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/instagram_2.svg" alt="Написать в Instagram"
-                                              width="50" height="50">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box  my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#instagram_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/instagram_qr_code.svg"  width="50" height="50">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mb-1 rounded shadow vk_color         col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
-                            <div class="zoom-box my-2 mx-1 rounded p-2 "
-                                 style="background-color: white">
-                                <a class="message" title="написать нам в VK" href="https://vk.com/btl55omsk">
-                                    <div class="d-block">
-                                        <img src="/assets/images/messagers/VK_2.svg" alt="Написать в VK"
-                                             width="50" height="50">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="zoom-box my-2 mx-1 rounded p-2"
-                                 style="background-color: white">
-                                <a class=" zoom-box rounded " style="background-color: white"
-                                   data-bs-target="#vk_qr_code" data-bs-toggle="modal"
-                                   data-bs-dismiss="modal">
-                                    <img src="/assets/images/messagers/vk_qr_code.svg"  width="50" height="50">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12 mb-2">
-                    <h3 style="color:#5A6D90">Напишите нам</h3>
-                    <form id='message_form' class="" method="post" name="myForm" onsubmit="return validateForm()" >
-                    {% csrf_token %}
-                    <p id="error-msg" class="mb-0"></p>
-                    <div id="simple-msg"></div>
-                    <div class="row">
-                        <!-- NAME INPUT -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>
-                                <input name="name_c" id="name_c" type="text" class="form-control" >
-                            </div>
+                                    <div class="col-12">
+                                        <div class="mb-4">
+                                            <input name="subject" id="subject" class="form-control" placeholder="Subject :">
+                                        </div>
+                                    </div><!--end col-->
 
+                                    <div class="col-12">
+                                        <div class="mb-4">
+                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Message :"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-end">
+                                        <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form>
                         </div>
-                        <!-- EMAIL INPUT    -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш электорнный адрес
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="email_c" id="email_c" type="email" class="form-control"
-                                       placeholder="company@mail.com">
-                            </div>
-                        </div><!--end col-->
-                        <!-- TELEPHONE INPUT      -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш телефон
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="telephone_c" id="telephone_c" type="text" class="form-control"
-                                       placeholder=" +7 (900) 800 70-60">
-                            </div>
-                        </div><!--end col-->
-                        <!-- SUBJECT INPUT      -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">тема
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="subject_c" id="subject_c" class="form-control"
-                                       placeholder="например : Раздача листовок">
-                            </div>
-                        </div><!--end col-->
-                        <!--  COMMENTS INPUT   -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">сообщение <span
-                                        class="text-danger">*</span></label>
-                                <textarea name="comments_c" id="comments_c" rows="4" class="form-control"
-                                          placeholder="например: Сколько стоит раздача листовок в трех локациях? "></textarea>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-grid">
-                                <button type="submit" id="submit" name="send" class="btn btn-info">отправить</button>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end row-->
-                </form>
-                    <div id="spinner" class="d-none justify-content-center invisible my-5">
-                        <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
-                            <span class="visually-hidden">отправляю письмо...</span>
-                        </div>
-                    </div>
-                    <div id="success_send" class="text-center  invisible">
-    <!--                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>-->
-                        <h4 class="text-success">Успешно отправлено</h4>
-                    </div>
-                    </div>
+                    </div><!--end col-->
 
                 </div><!--end row-->
             </div><!--end container-->
         </section><!--end section-->
+        <!-- End Contact -->

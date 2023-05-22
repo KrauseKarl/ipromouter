@@ -366,7 +366,7 @@ a:hover {
     color: black;
 }
 .nav-link.active  {
-    background-color: #66CCFF !important;
+    background-color: #FFBF66 !important;
     color: white;
     text-align: center  !important;
     box-shadow: inset 3px 4px 5px #000;

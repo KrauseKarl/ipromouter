@@ -1,90 +1,90 @@
-<div id="contactform" class="modal fade text-secondary"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0" >
-            <div class="modal-header">
-              <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h3 class="modal-title fs-5" id="exampleModalCenterTitle">напишите нам</h3>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close"><i class="uil uil-times"></i></button>
-            </div>
-            <div class="modal-body">
+<!--<div id="contactform" class="modal fade text-secondary"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"-->
+<!--     aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content rounded shadow border-0" >-->
+<!--            <div class="modal-header">-->
+<!--              <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">-->
+<!--                <h3 class="modal-title fs-5" id="exampleModalCenterTitle">напишите нам</h3>-->
+<!--                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"-->
+<!--                        aria-label="Close"><i class="uil uil-times"></i></button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
 
-                <form id='message_form' class="" method="post" name="myForm" onsubmit="return validateForm()" >
-                    {% csrf_token %}
-                    <p id="error-msg" class="mb-0"></p>
-                    <div id="simple-msg"></div>
-                    <div class="row">
-                        <!-- NAME INPUT -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>
-                                <input name="name_c" id="name_c" type="text" class="form-control" >
-                            </div>
+<!--                <form id='message_form' class="" method="post" name="myForm" onsubmit="return validateForm()" >-->
+<!--                    {% csrf_token %}-->
+<!--                    <p id="error-msg" class="mb-0"></p>-->
+<!--                    <div id="simple-msg"></div>-->
+<!--                    <div class="row">-->
+<!--                        &lt;!&ndash; NAME INPUT &ndash;&gt;-->
+<!--                        <div class="col-md-6">-->
+<!--                            <div class="mb-3">-->
+<!--                                <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>-->
+<!--                                <input name="name_c" id="name_c" type="text" class="form-control" >-->
+<!--                            </div>-->
 
-                        </div>
-                        <!-- EMAIL INPUT    -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш электорнный адрес
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="email_c" id="email_c" type="email" class="form-control"
-                                       placeholder="company@mail.com">
-                            </div>
-                        </div><!--end col-->
-                        <!-- TELEPHONE INPUT      -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш телефон
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="telephone_c" id="telephone_c" type="text" class="form-control"
-                                       placeholder=" +7 (900) 800 70-60">
-                            </div>
-                        </div><!--end col-->
-                        <!-- SUBJECT INPUT      -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">тема
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="subject_c" id="subject_c" class="form-control"
-                                       placeholder="например : Раздача листовок">
-                            </div>
-                        </div><!--end col-->
-                        <!--  COMMENTS INPUT   -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">сообщение <span
-                                        class="text-danger">*</span></label>
-                                <textarea name="comments_c" id="comments_c" rows="4" class="form-control"
-                                          placeholder="например: Сколько стоит раздача листовок в трех локациях? "></textarea>
-                            </div>
-                        </div>
+<!--                        </div>-->
+<!--                        &lt;!&ndash; EMAIL INPUT    &ndash;&gt;-->
+<!--                        <div class="col-md-6">-->
+<!--                            <div class="mb-3">-->
+<!--                                <label class="form-label fw-normal">Ваш электорнный адрес-->
+<!--                                    <span class="text-danger">*-->
+<!--                                    </span>-->
+<!--                                </label>-->
+<!--                                <input name="email_c" id="email_c" type="email" class="form-control"-->
+<!--                                       placeholder="company@mail.com">-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                        &lt;!&ndash; TELEPHONE INPUT      &ndash;&gt;-->
+<!--                        <div class="col-md-6">-->
+<!--                            <div class="mb-3">-->
+<!--                                <label class="form-label fw-normal">Ваш телефон-->
+<!--                                    <span class="text-danger">*-->
+<!--                                    </span>-->
+<!--                                </label>-->
+<!--                                <input name="telephone_c" id="telephone_c" type="text" class="form-control"-->
+<!--                                       placeholder=" +7 (900) 800 70-60">-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                        &lt;!&ndash; SUBJECT INPUT      &ndash;&gt;-->
+<!--                        <div class="col-12">-->
+<!--                            <div class="mb-3">-->
+<!--                                <label class="form-label fw-normal">тема-->
+<!--                                    <span class="text-danger">*-->
+<!--                                    </span>-->
+<!--                                </label>-->
+<!--                                <input name="subject_c" id="subject_c" class="form-control"-->
+<!--                                       placeholder="например : Раздача листовок">-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                        &lt;!&ndash;  COMMENTS INPUT   &ndash;&gt;-->
+<!--                        <div class="col-12">-->
+<!--                            <div class="mb-3">-->
+<!--                                <label class="form-label fw-normal">сообщение <span-->
+<!--                                        class="text-danger">*</span></label>-->
+<!--                                <textarea name="comments_c" id="comments_c" rows="4" class="form-control"-->
+<!--                                          placeholder="например: Сколько стоит раздача листовок в трех локациях? "></textarea>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-grid">
-                                <button type="submit" id="submit" name="send" class="btn btn-info">отправить</button>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end row-->
-                </form>
-                <div id="spinner" class="d-none justify-content-center invisible my-5">
-                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
-                        <span class="visually-hidden">отправляю письмо...</span>
-                    </div>
-                </div>
-                <div id="success_send" class="text-center  invisible">
-<!--                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>-->
-                    <h4 class="text-success">Успешно отправлено</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-12">-->
+<!--                            <div class="d-grid">-->
+<!--                                <button type="submit" id="submit" name="send" class="btn btn-info">отправить</button>-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash;end row&ndash;&gt;-->
+<!--                </form>-->
+<!--                <div id="spinner" class="d-none justify-content-center invisible my-5">-->
+<!--                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">-->
+<!--                        <span class="visually-hidden">отправляю письмо...</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="success_send" class="text-center  invisible">-->
+<!--&lt;!&ndash;                    <i class="uil uil-envelope-send text-success fs-2" style="font-size: 60px"></i>&ndash;&gt;-->
+<!--                    <h4 class="text-success">Успешно отправлено</h4>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

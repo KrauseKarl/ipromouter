@@ -52,9 +52,9 @@ function queryString(query) {
                     var town = $(this).text().toLowerCase()
                     var spanTown = $(this)
                     if(town.indexOf(query) == 0){
-                        spanTown.removeClass('fs-6').addClass('bg-primary fs-3 rounded px-2 py-1 text-light')
+                        spanTown.removeClass('fs-6').addClass('bg-warning fs-3 rounded px-2 py-1 text-light')
                     } else {
-                        spanTown.removeClass('fs-3 bg-primary rounded px-2 py-1 text-light').addClass('fs-6')
+                        spanTown.removeClass('fs-3 bg-warning rounded px-2 py-1 text-light').addClass('fs-6')
                     };
                 });
               return false;
@@ -72,10 +72,10 @@ function queryString(query) {
 
 function cleanCities() {
 $('button.accordion-button').each(function() {
-      var childrenLi = $('span.city.fs-3.bg-primary.rounded.px-2.py-1.text-light')
+      var childrenLi = $('span.city.fs-3.bg-warning.rounded.px-2.py-1.text-light')
       $.each(childrenLi, function(index, res){
         var town = $(this)
-        town.removeClass('fs-3 bg-primary rounded px-2 py-1 text-light').addClass('fs-6')
+        town.removeClass('fs-3 bg-warning rounded px-2 py-1 text-light').addClass('fs-6')
       });
     });
 };
@@ -86,10 +86,10 @@ function backCities() {
       parent.parents('.col-lg-4.col-md-12.mb-2.invisible').removeClass('invisible');
       parent.parents('.accordion-item').children('.accordion-collapse.collapse.show').removeClass('show')
       $('#search_result').css('display','none')
-      var childrenLi = $('span.city.fs-3.bg-primary.rounded.px-2.py-1.text-light')
+      var childrenLi = $('span.city.fs-3.bg-warning.rounded.px-2.py-1.text-light')
       $.each(childrenLi, function(index, res){
         var town = $(this)
-        town.removeClass('fs-3 bg-primary rounded px-2 py-1 text-light').addClass('fs-6')
+        town.removeClass('fs-3 bg-warning rounded px-2 py-1 text-light').addClass('fs-6')
       });
     });
 };
@@ -102,15 +102,15 @@ $(document).ready(function () {
     var $ru_big = $('#ru_big_cities').show();
     var $ru_all = $('#ru_all_cities').hide();
 
-    $('#ru_big_cities_btn').addClass('btn-info  p-1 rounded')
-    $('#ru_all_cities_btn').removeClass('btn-info   p-1 rounded')
-    $('#kz_cities_btn').removeClass('btn-info  p-1 rounded' )
+    $('#ru_big_cities_btn').addClass('btn-warning  p-1 rounded')
+    $('#ru_all_cities_btn').removeClass('btn-warning   p-1 rounded')
+    $('#kz_cities_btn').removeClass('btn-warning  p-1 rounded' )
 
     $('#kz_cities_btn').on('click', function () {
         $kz_cities.show('slow')
-        $('#kz_cities_btn').addClass('btn-info  p-1 rounded');
-        $('#ru_all_cities_btn').removeClass('btn-info   p-1 rounded');
-        $('#ru_big_cities_btn').removeClass('btn-info   p-1 rounded');
+        $('#kz_cities_btn').addClass('btn-warning  p-1 rounded');
+        $('#ru_all_cities_btn').removeClass('btn-warning  p-1 rounded');
+        $('#ru_big_cities_btn').removeClass('btn-warning  p-1 rounded');
         $ru_big.hide('slow')
         $ru_all.hide('slow')
     });
@@ -120,18 +120,18 @@ $(document).ready(function () {
         $kz_cities.hide('slow');
         $ru_big.hide('slow');
         $ru_all.show('slow');
-        $('#ru_all_cities_btn').addClass('btn-info  p-1 rounded');
-        $('#kz_cities_btn').removeClass('btn-info  p-1 rounded');
-        $('#ru_big_cities_btn').removeClass('btn-info  p-1 rounded');
+        $('#ru_all_cities_btn').addClass('btn-warning  p-1 rounded');
+        $('#kz_cities_btn').removeClass('btn-warning  p-1 rounded');
+        $('#ru_big_cities_btn').removeClass('btn-warning  p-1 rounded');
 
     });
     $('#ru_big_cities_btn').on('click', function () {
         $kz_cities.hide('slow')
         $ru_big.show('slow')
         $ru_all.hide('slow')
-        $('#ru_big_cities_btn').addClass('btn-info  p-1 rounded');
-        $('#ru_all_cities_btn').removeClass('btn-info  p-1 rounded');
-        $('#kz_cities_btn').removeClass('btn-info  p-1 rounded');
+        $('#ru_big_cities_btn').addClass('btn-warning  p-1 rounded');
+        $('#ru_all_cities_btn').removeClass('btn-warning  p-1 rounded');
+        $('#kz_cities_btn').removeClass('btn-warning  p-1 rounded');
     });
 });
 
@@ -201,7 +201,7 @@ function validateForm() {
                     $('#contactform').modal('hide');
                 }, 2000);
             } else {
-                alert('error')
+                alert(response)
             };
         },
     });
@@ -270,8 +270,10 @@ $('#copyMailBtnFooter').on('click', function () {
 
 // 08. NAVBAR SERVICES ACCORDION
 $('#headhunter_form').on('submit', function (event) {
-    $("#error-msg").css('opacity', '0');
+    $("#error-msg-hh").css('opacity', '0');
+     console.log('before')
      validateCandidateForm()
+      console.log('after')
      event.preventDefault();
 });
 // 09. HEADHUNTER MESSAGE FORM
@@ -284,33 +286,42 @@ function validateCandidateForm() {
     var telephone = $("#telephone").val();
     var city = $("#city").val();
     var position = $("#position").val();
-    $("#error-msg").css('opacity', '0');
-    $('#error-msg').html("");
+
+    console.log('var ++++')
+    console.log(name)
+    console.log(email)
+    console.log(telephone)
+    console.log(city)
+    console.log(position)
+    console.log('var end +++++')
+    $("#error-msg-hh").css('opacity', '0');
+    $('#error-msg-hh').html("");
     if (name == "" || name == null) {
-        $('#error-msg').html("<div class='text-danger alert alert-warning error_message'>* поле 'имя' обязательно *</div>");
-        $('#error-msg').css('opacity', '1');
+        $('#error-msg-hh').html("<div class='text-danger alert alert-warning error_message'>* поле 'имя' обязательно *</div>");
+        $('#error-msg-hh').css('opacity', '1');
         return false;
     }
     if (email == "" || email == null) {
-        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'электронный адрес' обязательно *</div>");
-        $('#error-msg').css('opacity', '1');
+        $('#error-msg-hh').html("<div class='alert alert-warning error_message'>* поле 'электронный адрес' обязательно *</div>");
+        $('#error-msg-hh').css('opacity', '1');
         return false;
     }
     if (telephone == "" || telephone == null) {
-        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'телефон' обязательно *</div>");
-        $('#error-msg').css('opacity', '1');
+        $('#error-msg-hh').html("<div class='alert alert-warning error_message'>* поле 'телефон' обязательно *</div>");
+        $('#error-msg-hh').css('opacity', '1');
         return false;
     }
     if (city == "" || city == null) {
-        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'город' обязательно *</div>");
-        $('#error-msg').css('opacity', '1');
+        $('#error-msg-hh').html("<div class='alert alert-warning error_message'>* поле 'город' обязательно *</div>");
+        $('#error-msg-hh').css('opacity', '1');
         return false;
     }
     if (position == "" || position == null) {
-        $('#error-msg').html("<div class='alert alert-warning error_message'>* поле 'вакансия' обязательно *</div>");
-        $('#error-msg').css('opacity', '1');
+        $('#error-msg-hh').html("<div class='alert alert-warning error_message'>* поле 'вакансия' обязательно *</div>");
+        $('#error-msg-hh').css('opacity', '1');
         return false;
     }
+    console.log('before ajax')
     $.ajax({
         url: "/candidate",
         type: 'post',
@@ -318,7 +329,7 @@ function validateCandidateForm() {
         timeout: 6000,
         data: $('form#headhunter_form').serialize(),
         success: function (response) {
-            console.log('you did it!')
+            console.log('you sent hh')
             if (response.message == true) {
                 $('#headhunter_form').css('display', 'none ')
                 $('#hh_spinner').addClass('d-none');
@@ -344,9 +355,26 @@ function validateCandidateForm() {
                 alert('error')
             };
         },
+        error: function (jqXHR, exception) {
+		if (jqXHR.status === 0) {
+			alert('Not connect. Verify Network.');
+		} else if (jqXHR.status == 404) {
+			alert('Requested page not found (404).');
+		} else if (jqXHR.status == 500) {
+			alert('Internal Server Error (500).');
+		} else if (exception === 'parsererror') {
+			alert('Requested JSON parse failed.');
+		} else if (exception === 'timeout') {
+			alert('Time out error.');
+		} else if (exception === 'abort') {
+			alert('Ajax request aborted.');
+		} else {
+			alert('Uncaught Error. ' + jqXHR.responseText);
+		}
+	}
     });
   }
 
 $('.navbar-nav>li>a').on('click', function(){
-    $('.navbar-collapse').collapse('hide');
+    $('.navbar-collapse').hide();
 });

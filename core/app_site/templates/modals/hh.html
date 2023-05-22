@@ -4,7 +4,7 @@
         <div class="modal-content rounded shadow border-0" >
             <div class="modal-header">
                 <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h3  class="modal-title fs-5" id="exampleModalCenterTitle">отправить резюме</h3>
+                <h4  class="modal-title fs-5" id="exampleModalCenterTitle">отправить резюме</h4>
                 <button type="button" class="btn-close d-flex align-items-center text-dark"
                         data-bs-dismiss="modal" aria-label="Close">
                         <i class="uil uil-times fs-4"></i>
@@ -13,8 +13,8 @@
             <div class="modal-body">
                 <form id='headhunter_form' method="post" name="hhForm" onsubmit="return validateCandidateForm()" >
                     {% csrf_token %}
-                    <p id="error-msg" class="mb-0"></p>
-                    <div id="simple-msg"></div>
+                    <p id="error-msg-hh" class="mb-0"></p>
+
                     <div class="row">
                         <!-- NAME INPUT -->
                         <div class="col-md-12">
@@ -73,7 +73,6 @@
                                     <span class="text-danger">*
                                     </span>
                                 </label>
-
                                 <input type="text" class="form-control" name="city" id="city">
                             </div>
                         </div><!--end col-->
@@ -95,12 +94,12 @@
                                 <label class="form-label fw-normal">пол
                                 </label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sex" id="male" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="sex" id="male" value="мужской" checked>
                                     <label class="form-check-label" for="male">мужской
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sex" id="female" value="option1" >
+                                    <input class="form-check-input" type="radio" name="sex" id="female" value="женский" >
                                     <label class="form-check-label" for="female">женский
                                     </label>
                                 </div>
@@ -155,7 +154,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">опыт работы
                                 </label>
-                                <textarea name="experience" id="experience" rows="4" class="form-control"
+                                <textarea name="experience" id="experience" rows="3" class="form-control"
                                           placeholder="Есть опыт работы? Опиши вкратце."></textarea>
                             </div>
                         </div>
@@ -166,7 +165,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">пожелания в работе
                                 </label>
-                                <textarea name="preferences"  id="preferences" rows="4" class="form-control"
+                                <textarea name="preferences"  id="preferences" rows="3" class="form-control"
                                           placeholder="например: могу работать только на выходных или могу работать только по вечерам..."></textarea>
                             </div>
                         </div>

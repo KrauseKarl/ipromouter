@@ -693,3 +693,12 @@ input:nth-of-type(5):checked ~ main#carousel {
  top:0;
  left: 0;
 }
+.banner-title {
+    margin-top: 1rem;
+}
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .banner-title {
+        margin-top: 1.5rem;
+    }
+}

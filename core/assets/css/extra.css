@@ -4,7 +4,6 @@ body {
 
 h1 {
   font-size: 2em;
-  padding: 2em;
   text-align: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -20,7 +19,9 @@ h1 {
 .city_link {
     color: black;
 }
-
+.btn-warning {
+    color: black !important;
+}
 a:hover {
     text-decoration: none;
     color: white;

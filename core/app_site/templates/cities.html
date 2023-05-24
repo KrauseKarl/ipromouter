@@ -28,23 +28,23 @@
                         </div>
                     </div>
                     <div class="card-body content p-0">
-                        <div class="text-start p-4">
+                        <div class="text-start lh-1 ps-4 ">
                             <div class="container" style="padding: 5px;">
                                 <div class="row" id="kz_cities">
                                     {% for city, pop in kz_cities.items %} {% if pop > 1000000 %}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-4">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item fs-5" title="Промоакции в г.{{ city }}">{{ city|upper }}</li>
                                         </ul>
                                     </div>
                                     {% elif pop > 500000 %}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-4">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item fs-5" title="Промоакции в г.{{ city }}"><b>{{ city }}</b></li>
                                         </ul>
                                     </div>
                                     {% elif pop > 100000 %}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-4">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item fs-6" title="Промоакции в г.{{ city }}">{{ city }}</li>
                                         </ul>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="row" id="ru_big_cities">
                                     {% for city, pop in big_cities.items %} {% if pop > 1800000 %}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-4">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item" title="Промоакции в г. {{ city }}.">
                                                 {% if city == 'Москва' or city == 'Санкт-Петербург' %} <i class="h5 text-danger uil uil-star"></i> {% endif %} <b class="fs-5">{{ city|upper }}<br /></b>
@@ -61,7 +61,7 @@
                                         </ul>
                                     </div>
                                     {% else %}
-                                    <div class="col-md-4 col-lg-4">
+                                    <div class="col-md-6 col-lg-4">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item" title="Промоакции в г. {{ city }}.">
                                                 <span class="fs-5">{{ city }}<br /></span>

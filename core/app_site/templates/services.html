@@ -1,8 +1,11 @@
-<section class="section" id="services">
+<section class="section px-3" id="services">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <div class="section-title my-2 pb-2 text-center"><h4 class="mb-3 title" style="color: #5a6d90;">Основные направления BTL-кампаний</h4></div>
+                <div class="section-title my-2 pb-2 text-center">
+                    <h4 class="mb-3 title" style="color: #5a6d90;">Основные направления BTL-кампаний
+                    </h4>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -12,14 +15,14 @@
                         <button
                             aria-controls="nav-home"
                             aria-selected="true"
-                            class="active align-items-center border border-opacity-75 col-lg-2 col-md-12 nav-link nav-link-service ps-3 rounded"
+                            class="active align-items-center border border-opacity-75 col-lg-2 col-md-12 nav-link nav-link-service py-3 ps-3 rounded"
                             data-bs-target="#promo"
                             data-bs-toggle="tab"
                             id="promo-tab"
                             role="tab"
-                            type="button"
-                        >
+                            type="button">
                             <span title="Промо акции">Промо акции</span>
+                            <!--   class="badge lh-lg text-wrap text-uppercase" -->
                         </button>
                         <button
                             aria-controls="nav-contact"
@@ -29,57 +32,54 @@
                             data-bs-toggle="tab"
                             id="polygraph-tab"
                             role="tab"
-                            type="button"
-                        >
-                            <span title="Полиграфия" class="badge lh-lg text-wrap text-uppercase">Полиграфия</span>
+                            type="button">
+                            <span title="Полиграфия">Полиграфия</span>
+
                         </button>
                         <button
                             aria-controls="nav-contact"
                             aria-selected="false"
-                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service ps-3 rounded"
+                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service py-3 ps-3 rounded"
                             data-bs-target="#adv-equipment"
                             data-bs-toggle="tab"
                             id="adv-equipment-tab"
                             role="tab"
-                            type="button"
-                        >
-                            <span title="Рекламные конструкции" class="badge lh-lg text-wrap text-uppercase">Рекламные конструкции</span>
+                            type="button">
+                            <span title="Рекламные конструкции">Рекламные конструкции</span>
+                        <!--   class="badge lh-lg text-wrap text-uppercase" -->
                         </button>
                         <button
                             aria-controls="nav-contact"
                             aria-selected="false"
-                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service ps-3 rounded"
+                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service py-3 ps-3 rounded"
                             data-bs-target="#decor"
                             data-bs-toggle="tab"
                             id="decor-tab"
                             role="tab"
-                            type="button"
-                        >
-                            <span title="Праздничное  оформление" class="badge lh-lg text-wrap text-uppercase">Праздничное оформление</span>
+                            type="button">
+                            <span title="Праздничное оформление">Праздничное оформление</span>
                         </button>
                         <button
                             aria-controls="nav-contact"
                             aria-selected="false"
-                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service ps-3 rounded"
+                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service py-3 ps-3 rounded"
                             data-bs-target="#social"
                             data-bs-toggle="tab"
                             id="social-tab"
                             role="tab"
-                            type="button"
-                        >
-                            <span title="Социологическое исследование" class="badge lh-lg text-wrap text-uppercase">Социологическое исследование</span>
+                            type="button">
+                            <span title="Социологическое исследование">Социологическое исследование</span>
                         </button>
                         <button
                             aria-controls="nav-contact"
                             aria-selected="false"
-                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service ps-3 rounded"
+                            class="col-md-12 align-items-center border border-opacity-75 col-lg-2 nav-link nav-link-service py-3 ps-3 rounded"
                             data-bs-target="#hr"
                             data-bs-toggle="tab"
                             id="hr-tab"
                             role="tab"
-                            type="button"
-                        >
-                            <span title="Подбор и работа с персоналом" class="badge lh-lg text-wrap">Подбор и работа с персоналом</span>
+                            type="button">
+                            <span title="Подбор и работа с персоналом">Подбор и работа с персоналом</span>
                         </button>
                     </div>
                 </nav>
@@ -91,9 +91,21 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_1" data-bs-ride="carousel">
                                             <div class="carousel-inner" >
-                                                <div class="carousel-item active"><img alt="Промо акции"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/promo/promo_1.webp></div>
-                                                <div class="carousel-item"><img alt="Промо акции"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/promo/promo_2.webp></div>
-                                                <div class="carousel-item"><img alt="Промо акции"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/promo/promo_3.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img alt="Промо акция. Дегустация"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/promo/promo_1_webp-800x600.webp"
+                                                         src=/assets/images/services/promo/promo_1_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Промо акции.Семплинг"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/promo/promo_2_webp-800x600.webp"
+                                                         src=/assets/images/services/promo/promo_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Промо акции.Консультация покупателя"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/promo/promo_3_webp-800x600.webp"
+                                                         src=/assets/images/services/promo/promo_3_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>
@@ -150,9 +162,18 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_3" data-bs-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item active"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/poligrafia/polugrafia_1.webp></div>
-                                                <div class="carousel-item"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/poligrafia/polugrafia_2.webp></div>
-                                                <div class="carousel-item"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/poligrafia/polugrafia_3.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img class="d-block w-100 rounded-5 vignette" alt="Печать на воздушных шарах"
+                                                         srcset="/assets/images/services/poligrafia/polugrafia_1_webp-800x600.webp"
+                                                         src=/assets/images/services/poligrafia/polugrafia_1_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100 rounded-5 vignette" alt="Кацелярские товары с логотипом"
+                                                          srcset="/assets/images/services/poligrafia/polugrafia_2_webp-800x600.webp"
+                                                         src=/assets/images/services/poligrafia/polugrafia_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100 rounded-5 vignette" alt="Мерчандайзинг"
+                                                         srcset="/assets/images/services/poligrafia/polugrafia_3_webp-800x600.webp"
+                                                         src=/assets/images/services/poligrafia/polugrafia_3_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>
@@ -192,10 +213,22 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_4" data-bs-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item active"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/equipment/equiment_3.webp></div>
-                                                <div class="carousel-item"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/equipment/equiment_2.webp></div>
-                                                <div class="carousel-item"><img alt=... class="d-block w-100 rounded-5 vignette"src=/assets/images/services/equipment/equiment_1.webp></div>
-                                                <div class="carousel-item"><img alt=... class="d-block w-100"src=/assets/images/services/equipment/equiment_4.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/equipment/equiment_3_webp-800x600.webp"
+                                                         src=/assets/images/services/equipment/equiment_3_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/equipment/equiment_2_webp-800x600.webp"
+                                                         src=/assets/images/services/equipment/equiment_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/equipment/equiment_1_webp-800x600.webp"
+                                                         src=/assets/images/services/equipment/equiment_1_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/equipment/equiment_4_webp-800x600.webp"
+                                                         src=/assets/images/services/equipment/equiment_4_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>
@@ -232,10 +265,30 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_5" data-bs-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item active"><img alt="Праздничное оформление"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/decor/decor_1.webp></div>
-                                                <div class="carousel-item"><img alt="Праздничное оформление"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/decor/decor_2.webp></div>
-                                                <div class="carousel-item"><img alt="Праздничное оформление"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/decor/decor_3.webp></div>
-                                                <div class="carousel-item"><img alt="Праздничное оформление"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/decor/decor_4.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img alt="Праздничное оформление"
+
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/decor/decor_1_webp-800x600.webp"
+                                                         src=/assets/images/services/decor/decor_1_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Праздничное оформление"
+
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/decor/decor_2_webp-800x600.webp"
+                                                         src=/assets/images/services/decor/decor_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Праздничное оформление"
+
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/decor/decor_3_webp-800x600.webp"
+                                                         src=/assets/images/services/decor/decor_3_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Праздничное оформление"
+
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/decor/decor_4_webp-800x600.webp"
+                                                         src=/assets/images/services/decor/decor_4_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>
@@ -278,9 +331,21 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_6" data-bs-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item active"><img alt="Социологические исследования"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/anketa/anketa_1.webp></div>
-                                                <div class="carousel-item"><img alt="Социологические исследования"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/anketa/anketa_2.webp></div>
-                                                <div class="carousel-item"><img alt="Социологические исследования"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/anketa/anketa_3.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img alt="Социологические исследования"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/anketa/anketa_1_webp-800x600.webp"
+                                                         src=/assets/images/services/anketa/anketa_1_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Социологические исследования"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/anketa/anketa_2_webp-800x600.webp"
+                                                         src=/assets/images/services/anketa/anketa_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Социологические исследования"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/anketa/anketa_3_webp-800x600.webp"
+                                                         src=/assets/images/services/anketa/anketa_3_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>
@@ -314,10 +379,26 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_7" data-bs-ride="carousel">
                                             <div class="carousel-inner" >
-                                                <div class="carousel-item active"><img alt="Подбор и работа с персоналом"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/hr/hr_4.webp></div>
-                                                <div class="carousel-item"><img alt="Подбор и работа с персоналом"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/hr/hr_2.webp></div>
-                                                <div class="carousel-item"><img alt="Подбор и работа с персоналом"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/hr/hr_3.webp></div>
-                                                <div class="carousel-item"><img alt="Подбор и работа с персоналом"class="d-block w-100 rounded-5 vignette"src=/assets/images/services/hr/hr_1.webp></div>
+                                                <div class="carousel-item active">
+                                                    <img alt="Подбор и работа с персоналом"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/hr/hr_4_webp-800x600.webp"
+                                                         src=/assets/images/services/hr/hr_4_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Подбор и работа с персоналом"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/hr/hr_2_webp-800x600.webp"
+                                                         src=/assets/images/services/hr/hr_2_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Подбор и работа с персоналом"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/hr/hr_3_webp-800x600.webp"
+                                                         src=/assets/images/services/hr/hr_3_jpg-800x600.jpg></div>
+                                                <div class="carousel-item">
+                                                    <img alt="Подбор и работа с персоналом"
+                                                         class="d-block w-100 rounded-5 vignette"
+                                                         srcset="/assets/images/services/hr/hr_1_webp-800x600.webp"
+                                                         src=/assets/images/services/hr/hr_1_jpg-800x600.jpg></div>
                                             </div>
                                         </div>
                                     </div>

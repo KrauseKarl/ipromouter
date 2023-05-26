@@ -2,7 +2,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <div class="text-center mt-2 pb-2 section-title"><h4 class="mb-3 title" style="color: #5a6d90;">Георафия нашей работы</h4></div>
+                <div class="text-center mt-2 pb-2 section-title">
+                    <h3 class="mb-3 title" style="color: #5a6d90;">Георафия нашей работы
+                    </h3>
+                </div>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -78,7 +81,7 @@
                                     <div class="input-group" id="search_result" style="display: none;"></div>
                                     {% for region, city in region_city.items %}
                                     <div class="col-md-12 col-lg-4 listt mb-2">
-                                        <div class="accordion" id="accordion_regions">
+                                        <div class="accordion" id="accordion_regions_{{ region|cut:' ' }}">
                                             <div class="accordion-item">
                                                 <h6 class="accordion-header" id="heading_{{ region|cut:' '   }}">
                                                     <button
@@ -94,11 +97,17 @@
                                                         {{ region|truncatechars:'19' }}
                                                     </button>
                                                 </h6>
-                                                <div class="accordion-collapse collapse" id="collapse_{{ region|cut:' '  }}" aria-labelledby="heading_{{ region|cut:' '  }}" data-bs-parent="#accordion_regions">
+                                                <div class="accordion-collapse collapse"
+                                                     id="collapse_{{ region|cut:' '  }}"
+                                                     aria-labelledby="heading_{{ region|cut:' '  }}"
+                                                     data-bs-parent="#accordion_regions_{{ region|cut:' ' }}">
                                                     <div class="accordion-body">
                                                         <ul class="list-group list-group-flush">
                                                             {% for c in city %}
-                                                            <li class="list-group-item"><span class="fs-6 city" title="Промоакции в г. {{ c|capfirst  }}. BTL-акции в г. {{ c|capfirst  }}.">{{ c|capfirst }}</span></li>
+                                                            <li class="list-group-item">
+                                                                <span class="fs-6 city" title="Промоакции в г. {{ c|capfirst  }}. BTL-акции в г. {{ c|capfirst  }}.">{{ c|capfirst }}
+                                                                </span>
+                                                            </li>
                                                             {% endfor %}
                                                         </ul>
                                                     </div>

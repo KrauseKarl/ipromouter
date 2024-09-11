@@ -1,123 +1,204 @@
-<div id="hh_form" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0" >
-            <div class="modal-header">
-                <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h4 class="modal-title" id="exampleModalCenterTitle">работа промойтером</h4>
-                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
-                        aria-label="Close">
-                  <i class="uil uil-times fs-4"></i>
+{% load static %}
+
+<div id="hh_form"
+        class="modal fade text-secondary" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+    <div class="modal-dialog  modal-lg modal-dialog-centered " role="document">
+        <div class="modal-content  shadow-lg  border-0" >
+            <div class="modal-header bg-secondary" >
+                <img src="{% static 'images/logo/BTL_logo.svg' %}" width="50px" class="l-light" style="margin-right:30px" alt="BTL+">
+                <h2  class="modal-title text-center text-warning fs-5" id="exampleModalCenterTitle">отправить резюме</h2>
+                <button type="button" class="btn-close d-flex align-items-center text-light p-4"
+                        data-bs-dismiss="modal" aria-label="Close">
+                        <i class="uil uil-times fs-3"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                <form id='headhunter_form' method="post" name="hhForm" onsubmit="return validateCandidateForm()" >
+            <div class="modal-body  px-4">
+                <form id="headhunter_form" method="post" name="hhForm" 
+                onsubmit="return validateCandidateForm()">
                     {% csrf_token %}
-                    <p id="error-msg" class="mb-0"></p>
-                    <div id="simple-msg"></div>
-                    <div class="row">
+                    <p id="error-msg-hh" class="mb-0"></p>
+                  
+                    <label class="form-label fw-normal">Поля, для обязательного заполнения 
+                        <span class="text-danger">*
+                        </span>
+                    </label>
+                    <hr>
+                
+                    <div class="row bg-warning rounded-1 p-1">
                         <!-- NAME INPUT -->
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <label class="form-label fw-normal">Ваше имя <span class="text-danger">*</span></label>
-                                <input name="name" id="name" type="text" class="form-control" >
+                                <label class="form-label fw-normal">имя <span class="text-danger">*</span></label>
+                                <input name="name" 
+                                id="name" 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="напривер, Алиса Селезнева"
+                                >
                             </div>
 
                         </div>
-                        <hr>
-                        <!-- EMAIL INPUT    -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш электорнный адрес
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="email" id="email" type="email" class="form-control"
-                                       placeholder="company@mail.com">
-                            </div>
-                        </div><!--end col-->
-                        <!-- TELEPHONE INPUT      -->
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">Ваш телефон
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="telephone" id="telephone" type="text" class="form-control"
-                                       placeholder=" +7 (900) 800 70-60">
-                            </div>
-                        </div><!--end col-->
-                        <hr>
-                        <!-- position INPUT      -->
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">вакансия
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
 
-                                <select class="form-control" name="position" id="position">
-                                    <option>промоутер</option>
-                                    <option>хостес</option>
-                                    <option>аниматор</option>
-                                    <option>интервьюер</option>
-                                </select>
-                            </div>
-                        </div><!--end col-->
-                        <!-- position INPUT      -->
+                    <!-- TELEPHONE INPUT      -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label fw-normal">телефон
+                                <span class="text-danger">*
+                                </span>
+                            </label>
+                            <input name="telephone" id="telephone" type="text" class="form-control"
+                                placeholder=" +7 (000) 000 00-00">
+                        </div>
+                    </div><!--end col-->
 
-                        <!-- city INPUT      -->
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">город
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
+                    <!-- EMAIL INPUT    -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label fw-normal">электорнный адрес
+                                <span class="text-danger">*
+                                </span>
+                            </label>
+                            <input name="email" id="email" type="email" class="form-control"
+                                    placeholder="my_email@mail.com">
+                        </div>
+                    </div><!--end col-->
+                       
 
-                                <input type="text" class="form-control" name="city" id="city">
-                            </div>
-                        </div><!--end col-->
-                        <!-- city INPUT      -->
+                    <!-- position INPUT      -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label fw-normal">вакансия
+                                <span class="text-danger">*
+                                </span>
+                            </label>
 
+                            <select class="form-control" name="position" id="position">
+                                <option disabled selected>выбрать из списка</option>
+                                <option>промоутер</option>
+                                <option>промо-модель</option>
+                                <option>хостес</option>
+                                <option>аниматор</option>
+                                <option>интервьюер</option>
+                                <option>другое (указать в пожеланиях)</option>
+                            </select>
+                        </div>
+                    </div><!--end col-->
+                    <!-- position INPUT      -->
+
+
+                    <!-- country INPUT      -->
+                    <div class="col-lg-6 col-md-12">
+                    <div class="mb-3">
+                        <label class="form-label fw-normal">страна
+                            <span class="text-danger">*
+                            </span>
+                        </label>
+
+                        <select class="form-control" name="country" id="country">
+                            <option disabled selected>выбрать из списка</option>
+                            <option>
+                                <span class="rounded flag-icon  flag-icon-kz">
+                                </span>Казахстан
+                            </option>
+                            <option>
+                                <span class="rounded flag-icon  flag-icon-ru">
+                                </span>РФ
+                            </option>
+                        </select>
+                    </div>
+                    </div><!--end col-->
+                    <!-- country INPUT      -->
+
+                    <!-- city INPUT      -->
+                    <div class="col-lg-6 col-md-12">
+                    <div class="mb-3">
+                    <label class="form-label fw-normal">город
+                    <span class="text-danger">*
+                    </span>
+                    </label>
+                    <input type="text" 
+                    class="form-control" 
+                    name="city" 
+                    id="city"
+                    placeholder="город"
+                    >
+                    </div>
+                    </div><!--end col-->
+                    <!-- city INPUT      -->
+                       
+                    </div>
+                    <hr>
+
+                    <label class="form-label fw-normal">Дополнительная информация
+                    </label>
+                    <hr>
+
+                    <div class="row">  
                         <!--  age INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3 ">
                                 <label class="form-label fw-normal">полных лет
                                 </label>
-                                <input type="number" name="age" id="age" class="form-control" value="18" min="14" max="55">
+                                <input type="number" 
+                                    name="age" 
+                                    id="age" 
+                                    class="form-control" 
+                                    placeholder="18 лет"
+                                    min="18" max="60">
                             </div>
                         </div><!--end col-->
                         <!--  age INPUT   -->
 
                         <!--  sex INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3 ">
                                 <label class="form-label fw-normal">пол
                                 </label>
-                                <input type="radio" name="sex"  id="male" value="муж" class="ms-4" >
-                                 <label for="male">м</label>
-                                <input type="radio" name="sex" value="жен" class="ms-4" id="female">
-                                <label for="female">ж</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sex" id="male" value="мужской" checked>
+                                    <label class="form-check-label" for="male">мужской
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sex" id="female" value="женский" >
+                                    <label class="form-check-label" for="female">женский
+                                    </label>
+                                </div>
                             </div>
                         </div><!--end col-->
                         <!--  sex INPUT   -->
 
                         <!--  height INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">рост, см
                                 </label>
-                                <input type="number" name="height" id="height" class="form-control" value="160">
+                                <input type="number" 
+                                        name="height" 
+                                        id="height" 
+                                        min="150" max="200" 
+                                        class="form-control" 
+                                        placeholder="160 см">
                             </div>
                         </div><!--end col-->
                         <!--  height INPUT   -->
 
                         <!--  weight INPUT   -->
-                        <div class="col-6">
+                        <div class="col-lg-3 col-md-12">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">вес, кг
                                 </label>
-                                <input type="number" class="form-control" value="60" name="weight" id="weight" min="40" max="120">
+                                <input type="number" 
+                                class="form-control" 
+                                placeholder="60 кг" 
+                                name="weight" 
+                                id="weight" 
+                                min="40" max="120"
+                                >
                             </div>
                         </div><!--end col-->
                         <!--  weight INPUT   -->
@@ -128,7 +209,13 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер одежды
                                 </label>
-                                <input type="number" class="form-control" value="48" name="clothes_size" id="clothes_size" min="32" max="60">
+                                <input type="number" 
+                                class="form-control" 
+                                placeholder="48 рамер" 
+                                name="clothes_size" 
+                                id="clothes_size" 
+                                min="32" max="60"
+                                >
                             </div>
                         </div>
                         <!--  clothes_size INPUT   -->
@@ -138,7 +225,13 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер обуви
                                 </label>
-                                <input type="number" class="form-control" value="38" name="shoes_size" id="shoes_size" min="30" max="50">
+                                <input type="number" 
+                                class="form-control" 
+                                placeholder="38 размер"
+                                name="shoes_size" 
+                                id="shoes_size" 
+                                min="30" max="65"
+                                >
                             </div>
                         </div>
                         <!--  shoes_size INPUT   -->
@@ -149,7 +242,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">опыт работы
                                 </label>
-                                <textarea name="experience" id="experience" rows="4" class="form-control"
+                                <textarea name="experience" id="experience" rows="3" class="form-control"
                                           placeholder="Есть опыт работы? Опиши вкратце."></textarea>
                             </div>
                         </div>
@@ -160,8 +253,8 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">пожелания в работе
                                 </label>
-                                <textarea name="preferences"  id="preferences" rows="4" class="form-control"
-                                          placeholder="например: могу работать только на выходных или могу работать только по вечерам."></textarea>
+                                <textarea name="preferences"  id="preferences" rows="3" class="form-control"
+                                placeholder="например: могу работать только на выходных или могу работать только по вечерам..."></textarea>
                             </div>
                         </div>
                         <!--  preferences INPUT   -->
@@ -169,15 +262,22 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <p id="error-msg-hh" class="mb-0"></p>
                             <div class="d-grid">
-                                <button type="submit" id="submit" name="send" class="btn btn-info">отправить</button>
+                                 <p id="error-msg-hh-2" class="mb-0"></p>
+                                <button type="submit" id="submit_resume" name="send" class="btn btn-success">отправить</button>
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->
                 </form>
-                <div id="hh_success_send" class="text-center invisible">
-                    <i class="uil uil-envelope-send text-success" style="font-size: 60px"></i>
-                    <h4>Успеншно отправлено</h4>
+                <div id="hh_spinner" class="d-none justify-content-center invisible my-5">
+                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">отправляю резюме...</span>
+                    </div>
+                </div>
+                <div id="hh_success_send" class="text-center text-success text-uppercase  mb-5 invisible">
+                   <i class="uil uil-envelope" style="font-size:7rem;"></i>	                    
+                   <h4 class="text-success">Успешно отправлено</h4>
                 </div>
             </div>
         </div>

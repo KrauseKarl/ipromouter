@@ -1,9 +1,10 @@
+{% load static %}
 <div id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions"
      aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded shadow border-0">
             <div class="modal-header">
-                <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
+                <img src="{% static 'images/logo/BTL_logo.svg' %}" class="l-light" style="margin-right:30px" alt="BTL+">
                 <h5 class="modal-title" id="services_title">Наши услуги</h5>
                 <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
                         aria-label="Close"><i class="uil uil-times fs-4"></i></button>
@@ -16,7 +17,7 @@
                             <button class="accordion-button"  type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <img style="width: 30px; text-align:end; margin-right:20px; "
-                                     src="/assets/images/icons/megaphone.png">Промоакции
+                                     src="{% static 'images/icons/megaphone.png' %}">Промоакции
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
@@ -52,7 +53,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Промо-модели, хостесс, аниматоры, ростовая кукла, ведущие, диджеи
+                                        Промо-модели, хостес, аниматоры, ростовая кукла, ведущие, диджеи
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
@@ -72,7 +73,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
                                 <img style="width: 30px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/merchandise.png">Полиграфия
+                                margin-right:20px" src="{% static 'images/icons/merchandise.png' %}">Полиграфия
                             </button>
                         </h2>
                         <div id="collapse_3" class="accordion-collapse collapse " aria-labelledby="heading_3"
@@ -105,7 +106,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
                                <img style="width: 30px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/stand.png">Рекламные конструкций
+                                margin-right:20px" src="{% static 'images/icons/stand.png' %}">Рекламные конструкции
                             </button>
                         </h2>
                         <div id="collapse_4" class="accordion-collapse collapse " aria-labelledby="heading_4"
@@ -114,15 +115,15 @@
                             <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        POSM-материалы
+                                        POS-материалы
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Изготовление промо стоек
+                                        Изготовление промостоек
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Лайт боксы
+                                        Лайтбоксы
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
@@ -130,7 +131,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <i class="uil uil-check-circle" style="margin-right:10px"></i>
-                                        Мерчендайзинг на воздушных шарах
+                                        Мерчандайзинг на воздушных шарах
                                     </li>
                                 </ul>
                             </div>
@@ -142,7 +143,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
                                  <img style="width: 30px; text-align:end; margin-right:20px"
-                                      src="/assets/images/icons/balloons.png">Праздничное оформление
+                                      src="{% static 'images/icons/balloons.png' %}">Праздничное оформление
                             </button>
                         </h2>
                         <div id="collapse_5" class="accordion-collapse collapse " aria-labelledby="heading_5"
@@ -187,7 +188,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse_6" aria-expanded="true" aria-controls="collapse_6">
                                   <img style="width: 30px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/checklist.png">Социалогические  исследования
+                                margin-right:20px" src="{% static 'images/icons/checklist.png' %}">Социологические  исследования
                             </button>
                         </h2>
                         <div id="collapse_6" class="accordion-collapse collapse " aria-labelledby="heading_6"
@@ -220,8 +221,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse_7" aria-expanded="true" aria-controls="collapse_7">
                                    <img style="width: 30px; text-align:end;
-                                margin-right:20px" src="/assets/images/icons/headhunting.png">Подбор и работа с
-                                персоналом
+                                margin-right:20px" src="{% static 'images/icons/headhunting.png' %}">Подбор и работа с персоналом
                             </button>
                         </h2>
                         <div id="collapse_7" class="accordion-collapse collapse " aria-labelledby="heading_7"

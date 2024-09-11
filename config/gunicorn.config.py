@@ -1,4 +1,4 @@
 bind = "127.0.0.1:8000"
-workers = 1
+workers = 2
 user = "alice"
-timeout = 120
+timeout = 300

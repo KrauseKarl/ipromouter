@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 Allow: /images/
@@ -31,4 +32,39 @@ Disallow: /assets/scss/
 Disallow: /assets/font/
 
 Host: http://btlplus.ru
+=======
+User-agent: *
+Allow: /
+Allow: /images/
+
+Disallow: /btl-admin*
+Disallow: /contact*
+Disallow: /candidate*
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/php/
+Disallow: /assets/scss/
+Disallow: /assets/font/
+
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+User-agent: Yandex
+Allow: /
+Allow: /images/
+
+Disallow: /btl-admin*
+Disallow: /contact*
+Disallow: /candidate*
+
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/php/
+Disallow: /assets/scss/
+Disallow: /assets/font/
+
+Host: http://btlplus.ru
+>>>>>>> 6110949cb381fe83926376cf17ed9f97b0b73a67
 Sitemap: http://btlplus/sitemap.xml

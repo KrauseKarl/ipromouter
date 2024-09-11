@@ -134,3 +134,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /core/core/prod_settings.py
+.idea/
+desktop.ini

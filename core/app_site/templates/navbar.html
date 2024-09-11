@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky">
             <div class="container p-2">
                 <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse"
@@ -58,4 +59,67 @@
                 <!--end collapse-->
             </div>
             <!--end container-->
+=======
+{% load static %}
+  <nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky">
+            <div class="container p-2">
+                <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i data-feather="menu"></i>
+                </button>
+                <div class="btn-group me-2" role="group" aria-label="Basic example">
+                    <a type="button" class="btn btn-light mb-1 fs-5 zoom-box" href="javascript:void(0)"
+                       data-bs-toggle="modal"
+                       data-bs-target="#messages">
+                        <i class="uil  uil-outgoing-call"></i>
+                    </a>
+                    <button title="скопировать телефон" id="copyPhoneBtn"
+                            class="badge js-textareacopybtn  btn btn-warning mb-1 "
+                            value="89008007060"
+                            style="vertical-align: top;">
+                        <span class="badge fs-6" style="text-shadow: 1px 1px 2px #293141">
+                            +7 (909) 537 10-96</span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#services" aria-label="Подробно ознакомиться с услугами">услуги
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#cities" aria-label="Посмотреть географию нашей работы">города
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#cases" aria-label="Просмореть подробно реализованные мероприятия">кейсы
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pe-2 text-warning" href="javascript:void(0)" data-bs-toggle="modal"
+                               data-bs-target="#hh_form" aria-label="Отправить резюме">вакансии
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#contacts"
+                               aria-label="Напишите нам на электронную почту или в любой доступный месседжер">контакты
+                            </a>
+
+                        </li>
+                    </ul>
+                    <a class="navbar-brand ms-2 px-3" href="{% url 'app_site:index' %}" aria-label="Логотип BTL+">
+                    <span class="logo-light-mode">
+                        <img src="{% static 'images/logo/BTL_logo.svg' %}" style="text-shadow: 1px 1px 3px white" class="l-light" alt="logo btl+">
+                        <img src="{% static 'images/logo/BTL_logo.svg' %}" class="l-dark" alt="logo btl+">
+                    </span>
+
+                </a>
+                </div>
+
+                <!--end collapse-->
+            </div>
+            <!--end container-->
+>>>>>>> 6110949cb381fe83926376cf17ed9f97b0b73a67
         </nav>

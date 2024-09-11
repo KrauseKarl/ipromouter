@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="modal fade text-secondary" id="messages" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered" role="document">
@@ -187,4 +188,197 @@
       </div>
     </div>
   </div>
+=======
+{% load static %}
+
+<div class="modal fade text-secondary" id="messages" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content rounded shadow border-0" style="background-color: #fff;">
+            <div class="modal-header rounded bg-secondary" style="background-color: #fff">
+                <img src="{% static 'images/logo/BTL_logo.svg' %}" class="l-light" style="margin-right:30px" alt="BTL+">
+                <h4 class="modal-title text-light" id="messagesModal">контакты</h4>
+                <button type="button" class="btn-close d-flex align-items-center text-light p-4" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    <i class="uil uil-times" style="font-size:20px"> </i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row rounded shadow">
+                        <!--   MESSAGE ICONS -->
+                        <div class="mb-1 rounded shadow viber_color      col-lg-12 col-md-12 h-100% d-flex justify-content-evenly  align-items-center">
+                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
+                                 style="background-color: white">
+                                <a class="message" title="написать нам в Viber" href="viber://chat?number=79095371096">
+                                    <div class="d-block">
+                                        <img src="{% static 'images/messagers/Viber_2.svg' %}" alt="Написать в Viber"
+                                             width="35"
+                                             height="35">
+                                         <small style="color:#9179EE; padding-left:30px; font-size:15px; font-weight:800">В VIBER</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="zoom-box my-2 me-1 rounded-5 p-2" style="background-color: white">
+                                <a class="zoom-box rounded " style="background-color: white"
+                                   data-bs-target="#viber_qr_code" data-bs-toggle="modal"
+                                   data-bs-dismiss="modal">
+                                    <img src="{% static 'images/messagers/viber.svg' %}" width="30" height="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 rounded shadow telegram_color   col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
+                                 style="background-color: white">
+                                <a class="message" title="написать нам в Telegram" href="https://telegram.me/BTLplus">
+                                    <div class="d-block">
+                                        <img src="{% static 'images/messagers/Telegram_2.svg' %}" alt="Написать в Telegram"
+                                             width="35"
+                                             height="35">
+                                         <small style="color:#32A9DD; padding-left:30px; font-size:15px; font-weight:800">В TELEGRAM</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
+                                 style="background-color: white">
+                                <a class=" zoom-box rounded " style="background-color: white"
+                                   data-bs-target="#telegram_qr_code" data-bs-toggle="modal"
+                                   data-bs-dismiss="modal">
+                                    <img src="{% static 'images/messagers/telegram.svg' %}" width="30" height="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 rounded shadow whatsapp_color   col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
+                                 style="background-color: white">
+                                <a class="message" title="написать нам в Whatsapp" href="whatsapp://send?phone=79095371096">
+                                    <div class="d-block">
+                                        <img src="{% static 'images/messagers/WhatsApp_2.svg' %}"
+                                             alt="Написать в Whatsapp" width="35" height="35">
+                                         <small style="color: #4BC75A;  padding-left:30px; font-size:15px; font-weight:800">В WHATSAPP</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
+                                 style="background-color: white">
+                                <a class=" zoom-box rounded " style="background-color: white"
+                                   data-bs-target="#whatsapp_qr_code" data-bs-toggle="modal"
+                                   data-bs-dismiss="modal">
+                                    <img src="{% static 'images/messagers/whatsapp.svg' %}" width="30" height="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 rounded shadow instagram_color  col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
+                                 style="background-color: white">
+                                <a class="message" title="написать нам в Instagram" href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM=">
+                                    <div class="d-block">
+                                        <img src="{% static 'images/messagers/instagram_2.svg' %}" alt="Написать в Instagram"
+                                             width="35"
+                                             height="35">
+                                        <small style="color: #5282B8;  padding-left:30px; font-size:15px; font-weight:800">В INSTAGRAM</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
+                                 style="background-color: white">
+                                <a class=" zoom-box rounded " style="background-color: white"
+                                   data-bs-target="#instagram_qr_code" data-bs-toggle="modal"
+                                   data-bs-dismiss="modal">
+                                    <img src="{% static 'images/messagers/instagram_qr_code.svg' %}" width="30" height="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 rounded shadow vk_color         col-lg-12 col-md-12 h-100% d-flex justify-content-evenly align-items-center">
+                            <div class="zoom-box my-2 me-2 rounded-5 p-2 pe-4 w-100"
+                                 style="background-color: white">
+                                <a class="message" title="написать нам в VK" href="https://vk.com/btl55omsk">
+                                    <div class="d-block">
+                                        <img src="{% static 'images/messagers/VK_2.svg' %}" alt="Написать в VK"
+                                             width="35"
+                                             height="35">
+                                         <small style="color: #5282B8;  padding-left:30px; font-size:15px; font-weight:800">В VK</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="zoom-box my-2 me-1 rounded-5 p-2"
+                                 style="background-color: white">
+                                <a class=" zoom-box rounded " style="background-color: white"
+                                   data-bs-target="#vk_qr_code" data-bs-toggle="modal"
+                                   data-bs-dismiss="modal">
+                                    <img src="{% static 'images/messagers/vk_qr_code.svg' %}" width="30" height="30">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="viber_qr_code" aria-hidden="true" aria-labelledby="viber_qr_code_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" style="background-color:#9179EE">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viber_qr_code_label">VIBER +7 (909) 537 10-96</h5>
+        <button class="btn btn-secondary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+         <img  class="" src="{% static 'images/messagers/viber.svg' %}" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="whatsapp_qr_code" aria-hidden="true" aria-labelledby="whatsapp_qr_code_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" style="background-color:#4BC75A">
+      <div class="modal-header">
+        <h5 class="modal-title" id="whatsapp_qr_code_label">WHATSAPP +7 (909) 537 10-96</h5>
+        <button class="btn btn-secondary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+         <img src="{% static 'images/messagers/whatsapp.svg' %}" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="telegram_qr_code" aria-hidden="true" aria-labelledby="telegram_qr_code_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" style="background-color:#32A9DD">
+      <div class="modal-header">
+        <h5 class="modal-title" id="telegram_qr_code_label">TELEGRAM @BTLplus</h5>
+        <button class="btn btn-secondary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+         <img src="{% static 'images/messagers/telegram.svg' %}" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="instagram_qr_code" aria-hidden="true" aria-labelledby="whatsapp_qr_code_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="instagram_color modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="instagram_qr_code_label">INSTAGRAM @dashylinkaa</h5>
+        <button class="btn btn-secondary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+         <img src="{% static 'images/messagers/instagram_qr_code.svg' %}" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="vk_qr_code" aria-hidden="true" aria-labelledby="telegram_qr_code_label" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="vk_color modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vk_qr_code_label">VK Btl+</h5>
+        <button class="btn btn-secondary" data-bs-target="#messages" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+         <img src="{% static 'images/messagers/vk_qr_code.svg' %}" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+>>>>>>> 6110949cb381fe83926376cf17ed9f97b0b73a67
 </div>

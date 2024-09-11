@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions"
      aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -260,4 +261,269 @@
             </div>
         </div>
     </div>
+=======
+{% load static %}
+<div id="services" class="modal fade text-secondary" tabindex="-1" role="dialog" aria-labelledby="regions_regions"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded shadow border-0">
+            <div class="modal-header">
+                <img src="{% static 'images/logo/BTL_logo.svg' %}" class="l-light" style="margin-right:30px" alt="BTL+">
+                <h5 class="modal-title" id="services_title">Наши услуги</h5>
+                <button type="button" class="btn-close d-flex align-items-center text-dark" data-bs-dismiss="modal"
+                        aria-label="Close"><i class="uil uil-times fs-4"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="accordion" id="accordionExample">
+                    <!-- Промоакции -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button"  type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <img style="width: 30px; text-align:end; margin-right:20px; "
+                                     src="{% static 'images/icons/megaphone.png' %}">Промоакции
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                     <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Раздача и распространение листовок
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Организация праздников
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Event-мероприятия
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Выставки
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Корпоративы
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a data-bs-target="#horeca_window" data-bs-toggle="modal"
+                                           data-bs-dismiss="modal" class="city_link">
+                                            <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                            HoReCa
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Промо-модели, хостес, аниматоры, ростовая кукла, ведущие, диджеи
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Консультация и дегустация
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Подарок за покупку
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Полиграфия -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_3">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+                                <img style="width: 30px; text-align:end;
+                                margin-right:20px" src="{% static 'images/icons/merchandise.png' %}">Полиграфия
+                            </button>
+                        </h2>
+                        <div id="collapse_3" class="accordion-collapse collapse " aria-labelledby="heading_3"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать листовок
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Сувенирная продукция
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Офсетная печать
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать на воздушных шарах
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Рекламные конструкций  -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_4">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
+                               <img style="width: 30px; text-align:end;
+                                margin-right:20px" src="{% static 'images/icons/stand.png' %}">Рекламные конструкции
+                            </button>
+                        </h2>
+                        <div id="collapse_4" class="accordion-collapse collapse " aria-labelledby="heading_4"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        POS-материалы
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Изготовление промостоек
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Лайтбоксы
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Брендирование
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Мерчандайзинг на воздушных шарах
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Праздничное оформление   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_5">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
+                                 <img style="width: 30px; text-align:end; margin-right:20px"
+                                      src="{% static 'images/icons/balloons.png' %}">Праздничное оформление
+                            </button>
+                        </h2>
+                        <div id="collapse_5" class="accordion-collapse collapse " aria-labelledby="heading_5"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Фотозоны
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Печать моментальных фото
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Тематическое декорирование
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Световой декор
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Воздушные шары
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Гирлянды из воздушных шаров
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Аренда аппарата сладкой ваты
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--   Социалистические исследования   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_6">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_6" aria-expanded="true" aria-controls="collapse_6">
+                                  <img style="width: 30px; text-align:end;
+                                margin-right:20px" src="{% static 'images/icons/checklist.png' %}">Социологические  исследования
+                            </button>
+                        </h2>
+                        <div id="collapse_6" class="accordion-collapse collapse " aria-labelledby="heading_6"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Опрос
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Наблюдение
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Контент анализ
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                        Фокус группа
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <!--  Подбор и работа с персоналом   -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading_7">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse_7" aria-expanded="true" aria-controls="collapse_7">
+                                   <img style="width: 30px; text-align:end;
+                                margin-right:20px" src="{% static 'images/icons/headhunting.png' %}">Подбор и работа с персоналом
+                            </button>
+                        </h2>
+                        <div id="collapse_7" class="accordion-collapse collapse " aria-labelledby="heading_7"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Супервайзер
+                                      </li>
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Тайный покупатель
+                                      </li>
+
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Подборка кандидатов
+                                      </li>
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Организация собеседования
+                                      </li>
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Проверка профессиональных навыков кандидатов
+                                      </li>
+                                      <li class="list-group-item">
+                                          <i class="uil uil-check-circle" style="margin-right:10px"></i>
+                                          Разработка корпоративных стандартов
+                                      </li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> 6110949cb381fe83926376cf17ed9f97b0b73a67
 </div>

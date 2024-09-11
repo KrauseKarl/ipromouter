@@ -1,205 +1,9 @@
-<<<<<<< HEAD
-<div id="hh_form" class="modal fade text-secondary"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content rounded shadow border-0" >
-            <div class="modal-header">
-                <img src="/assets/images/logo/BTL_logo.svg" class="l-light" style="margin-right:30px" alt="BTL+">
-                <h4  class="modal-title fs-5" id="exampleModalCenterTitle">отправить резюме</h4>
-                <button type="button" class="btn-close d-flex align-items-center text-dark"
-                        data-bs-dismiss="modal" aria-label="Close">
-                        <i class="uil uil-times fs-4"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id='headhunter_form' method="post" name="hhForm" onsubmit="return validateCandidateForm()" >
-                    {% csrf_token %}
-                    <p id="error-msg-hh" class="mb-0"></p>
-
-                    <div class="row">
-                        <!-- NAME INPUT -->
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">имя <span class="text-danger">*</span></label>
-                                <input name="name" id="name" type="text" class="form-control" >
-                            </div>
-
-                        </div>
-                        <!-- EMAIL INPUT    -->
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">электорнный адрес
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="email" id="email" type="email" class="form-control"
-                                       placeholder="company@mail.com">
-                            </div>
-                        </div><!--end col-->
-                        <!-- TELEPHONE INPUT      -->
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">телефон
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input name="telephone" id="telephone" type="text" class="form-control"
-                                       placeholder=" +7 (900) 800 70-60">
-                            </div>
-                        </div><!--end col-->
-
-                        <!-- position INPUT      -->
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">вакансия
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-
-                                <select class="form-control" name="position" id="position">
-                                    <option>промоутер</option>
-                                    <option>промо-модель</option>
-                                    <option>хостес</option>
-                                    <option>аниматор</option>
-                                    <option>интервьюер</option>
-                                </select>
-                            </div>
-                        </div><!--end col-->
-                        <!-- position INPUT      -->
-
-                        <!-- city INPUT      -->
-                        <div class="col-lg-6 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">город
-                                    <span class="text-danger">*
-                                    </span>
-                                </label>
-                                <input type="text" class="form-control" name="city" id="city">
-                            </div>
-                        </div><!--end col-->
-                        <!-- city INPUT      -->
-                        <hr>
-                        <!--  age INPUT   -->
-                        <div class="col-lg-3 col-md-12">
-                            <div class="mb-3 ">
-                                <label class="form-label fw-normal">полных лет
-                                </label>
-                                <input type="number" name="age" id="age" class="form-control" placeholder="18" min="14" max="55">
-                            </div>
-                        </div><!--end col-->
-                        <!--  age INPUT   -->
-
-                        <!--  sex INPUT   -->
-                        <div class="col-lg-3 col-md-12">
-                            <div class="mb-3 ">
-                                <label class="form-label fw-normal">пол
-                                </label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sex" id="male" value="мужской" checked>
-                                    <label class="form-check-label" for="male">мужской
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sex" id="female" value="женский" >
-                                    <label class="form-check-label" for="female">женский
-                                    </label>
-                                </div>
-                            </div>
-                        </div><!--end col-->
-                        <!--  sex INPUT   -->
-
-                        <!--  height INPUT   -->
-                        <div class="col-lg-3 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">рост, см
-                                </label>
-                                <input type="number" name="height" id="height" class="form-control" placeholder="160">
-                            </div>
-                        </div><!--end col-->
-                        <!--  height INPUT   -->
-
-                        <!--  weight INPUT   -->
-                        <div class="col-lg-3 col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">вес, кг
-                                </label>
-                                <input type="number" class="form-control" placeholder="60" name="weight" id="weight" min="40" max="120">
-                            </div>
-                        </div><!--end col-->
-                        <!--  weight INPUT   -->
-
-
-                        <!--  clothes_size INPUT   -->
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">размер одежды
-                                </label>
-                                <input type="number" class="form-control" placeholder="48" name="clothes_size" id="clothes_size" min="32" max="60">
-                            </div>
-                        </div>
-                        <!--  clothes_size INPUT   -->
-
-                        <!--  shoes_size INPUT   -->
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">размер обуви
-                                </label>
-                                <input type="number" class="form-control" placeholder="38" name="shoes_size" id="shoes_size" min="30" max="50">
-                            </div>
-                        </div>
-                        <!--  shoes_size INPUT   -->
-
-
-                        <!--  experience INPUT   -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">опыт работы
-                                </label>
-                                <textarea name="experience" id="experience" rows="3" class="form-control"
-                                          placeholder="Есть опыт работы? Опиши вкратце."></textarea>
-                            </div>
-                        </div>
-                        <!--  experience INPUT   -->
-
-                        <!--  preferences INPUT   -->
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <label class="form-label fw-normal">пожелания в работе
-                                </label>
-                                <textarea name="preferences"  id="preferences" rows="3" class="form-control"
-                                          placeholder="например: могу работать только на выходных или могу работать только по вечерам..."></textarea>
-                            </div>
-                        </div>
-                        <!--  preferences INPUT   -->
-
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-grid">
-                                <button type="submit" id="submit_resume" name="send" class="btn btn-warning">отправить</button>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end row-->
-                </form>
-                <div id="hh_spinner" class="d-none justify-content-center invisible my-5">
-                    <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
-                        <span class="visually-hidden">отправляю резюме...</span>
-                    </div>
-                </div>
-                <div id="hh_success_send" class="text-center mb-5 invisible">
-                    <h4 class="text-success">Успешно отправлено</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-=======
 {% load static %}
 
 <div id="hh_form"
-        class="modal fade text-secondary" 
-        tabindex="-1" 
-        role="dialog" 
+        class="modal fade text-secondary"
+        tabindex="-1"
+        role="dialog"
         aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
     <div class="modal-dialog  modal-lg modal-dialog-centered " role="document">
@@ -213,26 +17,26 @@
                 </button>
             </div>
             <div class="modal-body  px-4">
-                <form id="headhunter_form" method="post" name="hhForm" 
+                <form id="headhunter_form" method="post" name="hhForm"
                 onsubmit="return validateCandidateForm()">
                     {% csrf_token %}
                     <p id="error-msg-hh" class="mb-0"></p>
-                  
-                    <label class="form-label fw-normal">Поля, для обязательного заполнения 
+
+                    <label class="form-label fw-normal">Поля, для обязательного заполнения
                         <span class="text-danger">*
                         </span>
                     </label>
                     <hr>
-                
+
                     <div class="row bg-warning rounded-1 p-1">
                         <!-- NAME INPUT -->
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label fw-normal">имя <span class="text-danger">*</span></label>
-                                <input name="name" 
-                                id="name" 
-                                type="text" 
-                                class="form-control" 
+                                <input name="name"
+                                id="name"
+                                type="text"
+                                class="form-control"
                                 placeholder="напривер, Алиса Селезнева"
                                 >
                             </div>
@@ -262,7 +66,7 @@
                                     placeholder="my_email@mail.com">
                         </div>
                     </div><!--end col-->
-                       
+
 
                     <!-- position INPUT      -->
                     <div class="col-lg-6 col-md-12">
@@ -316,16 +120,16 @@
                     <span class="text-danger">*
                     </span>
                     </label>
-                    <input type="text" 
-                    class="form-control" 
-                    name="city" 
+                    <input type="text"
+                    class="form-control"
+                    name="city"
                     id="city"
                     placeholder="город"
                     >
                     </div>
                     </div><!--end col-->
                     <!-- city INPUT      -->
-                       
+
                     </div>
                     <hr>
 
@@ -333,16 +137,16 @@
                     </label>
                     <hr>
 
-                    <div class="row">  
+                    <div class="row">
                         <!--  age INPUT   -->
                         <div class="col-lg-3 col-md-12">
                             <div class="mb-3 ">
                                 <label class="form-label fw-normal">полных лет
                                 </label>
-                                <input type="number" 
-                                    name="age" 
-                                    id="age" 
-                                    class="form-control" 
+                                <input type="number"
+                                    name="age"
+                                    id="age"
+                                    class="form-control"
                                     placeholder="18 лет"
                                     min="18" max="60">
                             </div>
@@ -373,11 +177,11 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">рост, см
                                 </label>
-                                <input type="number" 
-                                        name="height" 
-                                        id="height" 
-                                        min="150" max="200" 
-                                        class="form-control" 
+                                <input type="number"
+                                        name="height"
+                                        id="height"
+                                        min="150" max="200"
+                                        class="form-control"
                                         placeholder="160 см">
                             </div>
                         </div><!--end col-->
@@ -388,11 +192,11 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">вес, кг
                                 </label>
-                                <input type="number" 
-                                class="form-control" 
-                                placeholder="60 кг" 
-                                name="weight" 
-                                id="weight" 
+                                <input type="number"
+                                class="form-control"
+                                placeholder="60 кг"
+                                name="weight"
+                                id="weight"
                                 min="40" max="120"
                                 >
                             </div>
@@ -405,11 +209,11 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер одежды
                                 </label>
-                                <input type="number" 
-                                class="form-control" 
-                                placeholder="48 рамер" 
-                                name="clothes_size" 
-                                id="clothes_size" 
+                                <input type="number"
+                                class="form-control"
+                                placeholder="48 рамер"
+                                name="clothes_size"
+                                id="clothes_size"
                                 min="32" max="60"
                                 >
                             </div>
@@ -421,11 +225,11 @@
                             <div class="mb-3">
                                 <label class="form-label fw-normal">размер обуви
                                 </label>
-                                <input type="number" 
-                                class="form-control" 
+                                <input type="number"
+                                class="form-control"
                                 placeholder="38 размер"
-                                name="shoes_size" 
-                                id="shoes_size" 
+                                name="shoes_size"
+                                id="shoes_size"
                                 min="30" max="65"
                                 >
                             </div>
@@ -472,11 +276,10 @@
                     </div>
                 </div>
                 <div id="hh_success_send" class="text-center text-success text-uppercase  mb-5 invisible">
-                   <i class="uil uil-envelope" style="font-size:7rem;"></i>	                    
+                   <i class="uil uil-envelope" style="font-size:7rem;"></i>
                    <h4 class="text-success">Успешно отправлено</h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
->>>>>>> 6110949cb381fe83926376cf17ed9f97b0b73a67

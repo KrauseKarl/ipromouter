@@ -1,0 +1,10 @@
+.wrapper {
+    border: 1px solid black;
+}
+
+.item {
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: yellow;
+}

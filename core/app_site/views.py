@@ -61,6 +61,12 @@ def index(request):
             data = json.load(json_file)
         big_cities = cache.set('big_cities', data, time_cache)
 
+    big_cities_2 = cache.get('big_cities_2')
+    if not big_cities_2:
+        with open('info/big_city_2.json', 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
+        big_cities_2 = cache.set('big_cities_2', data, time_cache)
+
     kz_cities = cache.get('kz_cities')
     if not kz_cities:
         with open('info/kz_cities.json', 'r', encoding='utf-8') as json_file:
@@ -70,6 +76,7 @@ def index(request):
     context = {
         'cities': cities,
         'big_cities': big_cities,
+        'big_cities_2': big_cities_2,
         'kz_cities': kz_cities,
         'form': ContactForm(),
         'region_city': region_city,

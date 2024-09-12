@@ -20,9 +20,14 @@
         left: -200px;
     }
 }
+@keyframes scrollRight {
+    to{
+        right: -200px;
+    }
+}
 .item__scroll {
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 20px;
     position: absolute;
     left: max(calc(200px * 8), 100%);
     animation-name: scrollLeft;
@@ -32,23 +37,92 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color:#fff;
 }
 
-.item__scroll__1 {
-    animation-delay: calc(var(--t) / 6 * (6 - 1) * -1)
+.item__scroll__reverse {
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    right: max(calc(200px * 8), 100%);
+    animation-name: scrollRight;
+    animation-duration: var(--t);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
 }
-.item__scroll__2 {
-    animation-delay: calc(var(--t) / 6 * (6 - 2) * -1)
+
+.item__scroll__1 { animation-delay: calc(var(--t) / 6 * (6 - 1) * -1)}
+.item__scroll__2 { animation-delay: calc(var(--t) / 6 * (6 - 2) * -1)}
+.item__scroll__3 { animation-delay: calc(var(--t) / 6 * (6 - 3) * -1)}
+.item__scroll__4 { animation-delay: calc(var(--t) / 6 * (6 - 4) * -1)}
+.item__scroll__5 { animation-delay: calc(var(--t) / 6 * (6 - 5) * -1)}
+.item__scroll__6 { animation-delay: calc(var(--t) / 6 * (6 - 6) * -1)}
+
+.wrapper_city {
+    width: 140%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 20px;
+    margin-top: 0.9rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,0.5) 25%,
+        rgba(0,0,0,0.5) 75%,
+        rgba(0,0,0,0)
+    );
+
 }
-.item__scroll__3 {
-    animation-delay: calc(var(--t) / 6 * (6 - 3) * -1)
+.item__scroll_city {
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    left: max(calc(200px * 10), 100%);
+    animation-name: scrollLeft;
+    animation-duration: var(--t);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    font-size: 20px;
+
 }
-.item__scroll__4 {
-    animation-delay: calc(var(--t) / 6 * (6 - 4) * -1)
+.item__scroll_city_reverse {
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    right: max(calc(200px * 10), 100%);
+    animation-name: scrollRight;
+    animation-duration: var(--t);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    font-size: 22px;
+
 }
-.item__scroll__5 {
-    animation-delay: calc(var(--t) / 6 * (6 - 5) * -1)
-}
-.item__scroll__6 {
-    animation-delay: calc(var(--t) / 6 * (6 - 6) * -1)
-}
+.item__scroll__city__1 {animation-delay: calc(var(--t) / 14 * (14 - 1) * -1)}
+.item__scroll__city__2 {animation-delay: calc(var(--t) / 14 * (14 - 2) * -1)}
+.item__scroll__city__3 {animation-delay: calc(var(--t) / 14 * (14 - 3) * -1)}
+.item__scroll__city__4 {animation-delay: calc(var(--t) / 14 * (14 - 4) * -1)}
+.item__scroll__city__5 {animation-delay: calc(var(--t) / 14 * (14 - 5) * -1)}
+.item__scroll__city__6 {animation-delay: calc(var(--t) / 14 * (14 - 6) * -1)}
+.item__scroll__city__7 {animation-delay: calc(var(--t) / 14 * (14 - 7) * -1)}
+.item__scroll__city__8 {animation-delay: calc(var(--t) / 14 * (14 - 8) * -1)}
+.item__scroll__city__9 {animation-delay: calc(var(--t) / 14 * (14 - 9) * -1)}
+.item__scroll__city__10 {animation-delay: calc(var(--t) / 14 * (14 - 10) * -1)}
+.item__scroll__city__11 {animation-delay: calc(var(--t) / 14 * (14 - 11) * -1)}
+.item__scroll__city__12 {animation-delay: calc(var(--t) / 14 * (14 - 12) * -1)}
+.item__scroll__city__13 {animation-delay: calc(var(--t) / 14 * (14 - 13) * -1)}
+.item__scroll__city__14 {animation-delay: calc(var(--t) / 14 * (14 - 14) * -1)}
+

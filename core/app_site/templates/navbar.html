@@ -1,12 +1,12 @@
 {% load static %}
 <nav id="navbar" class="navbar navbar-expand-lg nav-light fixed-top sticky">
-    <div class="container p-2">
+    <div class="container py-0">
         <button class="navbar-toggler p-3" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
             <i data-feather="menu"></i>
         </button>
-        <div class="btn-group me-2" role="group" aria-label="Basic example">
+        <div class="btn-group me-2 py-0" role="group" aria-label="Basic example">
             <a type="button" class="btn btn-light mb-1 fs-5 zoom-box" href="javascript:void(0)"
                data-bs-toggle="modal"
                data-bs-target="#messages">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+            <ul class="navbar-nav ms-auto mb-1 mb-lg-0" id="navbar-navlist">
                 <li class="nav-item">
                     <a class="nav-link text-warning" href="#services" aria-label="Подробно ознакомиться с услугами">услуги
                     </a>
@@ -54,7 +54,6 @@
 <!--                    </a>-->
 <!--                </li>-->
                         <!-- DARK MODE BUTTON -->
-
             </ul>
             <a class="navbar-brand ms-2 px-3" href="{% url 'app_site:index' %}" aria-label="Логотип BTL+">
                     <span class="logo-light-mode">

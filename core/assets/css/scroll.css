@@ -26,8 +26,8 @@
     }
 }
 .item__scroll {
-    width: 150px;
-    height: 20px;
+    width: 200px;
+    height: 100px;
     position: absolute;
     left: max(calc(200px * 8), 100%);
     animation-name: scrollLeft;

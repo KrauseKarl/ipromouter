@@ -47,7 +47,7 @@
     <meta name="yandex-verification" content="6d3c5762c8d260bb" />
     <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
 
-
+    <link rel="prefetch prerender" href="{% static 'images/carousel/animated.gif' %}" />
 
     <!-- canonical -->
     <link rel="canonical" href="https://btlplus.ru/">
@@ -94,9 +94,6 @@
         </div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
-    <style>
-    .title__size { font-size: 50px !important; } .subtitle__size { color: rgba(255, 255, 255, 0.7); line-height: 1.5; font-size: 22px !important; } .container__size { display: flex; align-items: center !important; } /* iPhone 4 ----------- */ @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) { .title__size { font-size: 36px !important; margin-top: 1.5rem; } .subtitle__size { line-height: 1; font-size: 20px !important; margin-bottom: 2rem; } .container__size { display: flex; align-items: center !important; } } @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) { .title__size { font-size: 32px !important; margin-bottom: 0.5rem; margin-top: 1.5rem; } .subtitle__size { line-height: 1.1; font-size: 14px !important; margin-bottom: 2.5rem; } .container__size { display: flex; align-items: end !important; } } /* Smartphones (вертикальная) ----------- */ @media only screen and (max-width: 576px) { .title__size { font-size: 36px !important; } .subtitle__size { line-height: 1.2; font-size: 22px !important; margin-bottom: 2rem; } .container__size { display: flex; align-items: center !important; } } /* Smartphones (горизонтальная) ----------- */ @media only screen and (min-width: 576px) { .title__size { font-size: 32px !important; margin-bottom: 0.5rem; margin-top: 1.5rem; } .subtitle__size { line-height: 1.5; font-size: 18px !important; margin-bottom: 2.5rem; } .container__size { display: flex; align-items: end !important; } } /* iPads (горизонтальная) ----------- */ @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { .title__size { font-size: 50px !important; } .subtitle__size { line-height: 1.2; font-size: 24px !important; margin-bottom: 2rem; } .container__size { display: flex; align-items: center !important; } } /* iPads (вертикальная) ----------- */ @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) { .title__size { font-size: 42px !important; } .subtitle__size { line-height: 1.2; font-size: 24px !important; margin-bottom: 2rem; } .container__size { display: flex; align-items: center !important; } } /* Настольные компьютеры и ноутбуки ----------- */ @media only screen and (min-width: 1224px) { .title__size { font-size: 50px !important; display: flex; огыешан-сщтеыетЖ сутеук } .subtitle__size { line-height: 1.2; font-size: 24px !important; margin-bottom: 2rem; } .container__size { display: flex; align-items: center !important; } }
-    </style>
 </head>
 
 <body>
@@ -111,6 +108,8 @@
 {% include 'services.html' %}
 
 {% include 'cities.html' %}
+
+{% include 'about_me.html' %}
 
 {% include 'cases.html' %}
 

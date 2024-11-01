@@ -67,7 +67,7 @@
     max-width: 1536px;
     margin-inline: auto;
     position: relative;
-    height: 20px;
+    height: 30px;
     margin-top: 0.9rem;
     overflow: hidden;
     mask-image: linear-gradient(
@@ -77,13 +77,60 @@
         rgba(0,0,0,0.5) 75%,
         rgba(0,0,0,0)
     );
+    margin-bottom:-15px;
 
 }
+.red-stripe {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background: repeating-linear-gradient(
+    45deg,
+    #9B59B6 0px,
+    #9B59B6 20px,
+    #C25396 20px,
+    #C25396 40px
+    );
+}
+
+.yellow-stripe {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background: repeating-linear-gradient(
+    45deg,
+    #C25396 0px,
+    #C25396 20px,
+    #23B684 20px,
+    #23B684 40px
+    );
+
+}
+.green-stripe {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background: repeating-linear-gradient(
+    135deg,
+    #603838 0px,
+    #603838 20px,
+    #9B59B6 20px,
+    #9B59B6 40px
+    );
+}
+.brown-stripe {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    background: repeating-linear-gradient(
+    135deg,
+    #23B684 0px,
+    #23B684 20px,
+    #F9BF3B 20px,
+    #F9BF3B 40px
+    );
+}
 .item__scroll_city {
-    width: 300px;
-    height: 20px;
+    width: 250px;
+    height: var(--font-size);
     position: absolute;
-    left: max(calc(200px * 10), 100%);
+    left: max(calc(250px * 11), 100%);
     animation-name: scrollLeft;
     animation-duration: var(--t);
     animation-timing-function: linear;
@@ -92,14 +139,17 @@
     justify-content: center;
     align-items: center;
     color:#fff;
-    font-size: 20px;
+    font-size: var(--font-size);
+    text-transform: uppercase;
+    padding: 5px 0;
 
 }
+
 .item__scroll_city_reverse {
-    width: 300px;
-    height: 20px;
+    width: 250px;
+    height: var(--font-size);
     position: absolute;
-    right: max(calc(200px * 10), 100%);
+    right: max(calc(250px * 11), 100%);
     animation-name: scrollRight;
     animation-duration: var(--t);
     animation-timing-function: linear;
@@ -108,7 +158,8 @@
     justify-content: center;
     align-items: center;
     color:#fff;
-    font-size: 22px;
+    font-size: var(--font-size);
+    text-transform: uppercase;
 
 }
 .item__scroll__city__1 {animation-delay: calc(var(--t) / 14 * (14 - 1) * -1)}

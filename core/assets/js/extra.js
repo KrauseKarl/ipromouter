@@ -250,7 +250,6 @@ $('#copyPhoneBtnFooter').on('click', function () {
     }, 2000);
 })
 
-copyMailBtnFooter
 // 07. COPY E-MAIL + TOASTER
 $('#copyMailBtn').on('click', function () {
      var info = $(this).val()

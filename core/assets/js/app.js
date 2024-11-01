@@ -64,7 +64,7 @@ function toggleMenu() {
 // back-to-top
 var mybutton = document.getElementById("back-to-top");
 window.onscroll = function () {
-  scrollFunction();
+// scrollFunction();
 };
 
 function scrollFunction() {

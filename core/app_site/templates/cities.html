@@ -1,5 +1,5 @@
 {% load static %}
-<section class="bg-dark section" style="padding-top:20px;" id="cities">
+<section class="bg-dark" style="padding-top:20px;" id="cities">
     <div class="container" style="max-width: 100%;">
 
         <div class="row justify-content-center my-3 mt-5">
@@ -10,17 +10,27 @@
             </div>
         </div>
         <div class="row justify-content-center px-4">
-            <div class="col-12 mb-3 wrapper_city" style="margin-top:1px;--t:50s">
-                 {% for city in kz_cities  %}
+            <div class="col-12  wrapper_city " style="--t:150s; --font-size:21px;">
+                 {% for city in big_cities_2  %}
                     <div class="item__scroll_city  item__scroll__city__{{forloop.counter}}">{{city}}</div>
                 {% endfor %}
             </div>
-            <div class="col-12 mb-3 wrapper_city" style="margin-top:1px;--t:100s">
-                 {% for city in big_cities_2  %}
-                    <div class="item__scroll_city_reverse  item__scroll__city__{{forloop.counter}}">{{city}}</div>
+            <div class="col-12  wrapper_city  " style="--t:120s; --font-size:9px;">
+                 {% for city in big_cities  %}
+                    <div class="item__scroll_city_reverse  item__scroll__city__{{forloop.counter}}" style="right: max(calc(200px * 6), 100%) ">{{city}}</div>
                 {% endfor %}
             </div>
-            <div class="mx-3 mb-3 col-12 ">
+            <div class="col-12  wrapper_city  " style="--t:120s; --font-size:29px;">
+                 {% for city in kz_cities  %}
+                    <div class="item__scroll_city   item__scroll__city__{{forloop.counter}}" style="left: max(calc(200px * 16), 100%) ">  {{city}}</div>
+                {% endfor %}
+            </div>
+            <div class="col-12  wrapper_city " style="--t:100s; --font-size:11px;">
+                 {% for city in big_cities_2  %}
+                    <div class="item__scroll_city_reverse  item__scroll__city__{{forloop.counter}}" style="right: max(calc(200px * 6), 100%) ">{{city}}</div>
+                {% endfor %}
+            </div>
+            <div class="mx-3 my-1 col-12 ">
             <!--            <div class="row" style="color:var(&#45;&#45;clr-light);background-color: transparent " id="kz_cities">-->
             <!--                {% for city, pop in kz_cities.items %}-->
             <!--                <div class="col-md-6 col-lg-4">-->
@@ -118,13 +128,18 @@
             {% endfor %}
             </div>
             </div>
-            <div class="col-12 mb-3 wrapper_city" style="margin-top:1px;--t:90s">
+            <div class="col-12  wrapper_city" style="--t:90s; --font-size:18px;">
                  {% for city in big_cities  %}
                     <div class="item__scroll_city  item__scroll__city__{{forloop.counter}}">{{city}}</div>
                 {% endfor %}
             </div>
-            <div class="col-12 mb-3 wrapper_city" style="margin-top:1px;--t:70s">
+            <div class="col-12  wrapper_city" style="--t:190s; --font-size:13px;">
                  {% for city in kz_cities  %}
+                    <div class="item__scroll_city  item__scroll__city__{{forloop.counter}}">{{city}}</div>
+                {% endfor %}
+            </div>
+            <div class="col-12  wrapper_city" style="--t:70s; --font-size:23px;">
+                 {% for city in big_cities_2  %}
                     <div class="item__scroll_city_reverse  item__scroll__city__{{forloop.counter}}">{{city}}</div>
                 {% endfor %}
             </div>

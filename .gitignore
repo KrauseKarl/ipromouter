@@ -136,3 +136,5 @@ dmypy.json
 /core/core/prod_settings.py
 .idea/
 desktop.ini
+/core/logs/
+/logs/

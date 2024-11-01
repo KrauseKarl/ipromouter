@@ -1,55 +1,140 @@
-<section class="section bg-light" id="features">
-    <div class="container">
+{% load static %}
+<section class="bg-dark section" style="padding:60px 10px;" id="cities">
+    <div class="container" style="max-width: 100%;">
         <div class="row justify-content-center">
             <div class="col">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h2 class="modal-title mb-3"style="color:#5A6D90">Проведение промоакций <br>
-                        в городах России и Казахстана</h2>
+                <div class="text-center section-title">
+                    <h2 class="title h4 text-white" >Георафия нашей работы
+                    </h2>
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 mt-4 pt-2">
-                <div class="card blog shadow rounded overflow-hidden border-0">
-                    <div class="card-body content p-0">
-                        <div class="p-4 text-center">
-                            <div class="h5 title text-dark d-block mb-0">
-                                {% for city, pop in big_cities.items %}
-                                    {% if pop > 1600000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-2 px-1">
-                                        {{ city|upper }}
-                                    </h6>
-                                    {% elif pop > 1100000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-3 px-1">
-                                        <b>{{ city }}
-                                        </b></h6>
-                                    {% elif pop > 8000000 %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-4 px-1">
-                                        {{ city }}
-                                    </h6>
-                                    {% else %}
-                                    <h6 title="BTL в {{ city }}е" class="d-inline text-secondary fs-5 px-1">
-                                        {{ city }}
-                                    </h6>
-                                    {% endif %}
-                                {% endfor %}
-                                 {% for city, pop in  kz_cities.items %}
-                                    {% if pop > 1000000 %}
-                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-2 px-1">
-                                        {{ city|upper }}
-                                    </h6>
-                                    {% elif pop > 400000 %}
-                                    <h6 title="BTL в {{ city }}" class="d-inline text-secondary fs-4    px-1">
-                                        <b>{{ city }}
-                                        </b></h6>
-                                    {% endif %}
-                                {% endfor %}
-
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12">
+                <div class="rounded blog border-0 card overflow-hidden shadow">
+                    <div class="container pb-0" >
+                        <div class="row d-flex justify-content-evenly pb-0 mb-0">
+                            <div class="col-md-4 col-lg-4 col-12">
+                                <a class="justify-content-center align-items-center d-flex fw-bold px-1 text-dark text-uppercase" id="kz_cities_btn" type="button">
+                                    <span class="rounded flag-icon m-1 me-2 flag-icon-kz" style="font-size: 25px;"></span>Казахстан
+                                </a>
                             </div>
+                            <div class="col-md-4 col-lg-4 col-12">
+                                <a class="justify-content-center align-items-center d-flex fw-bold px-1 text-dark text-uppercase" id="ru_big_cities_btn" type="button">
+                                    <span class="rounded flag-icon m-1 me-2 flag-icon-ru" style="font-size: 25px;"></span>Мегаполисы
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-12">
+                                <a class="justify-content-center align-items-center d-flex fw-bold px-1 text-dark text-uppercase" id="ru_all_cities_btn" type="button">
+                                    <span class="rounded flag-icon m-1 me-2 flag-icon-ru" style="font-size: 25px;"></span>Все города
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body content pb-2" style=" min-height: 22rem;">
+                            <div class="container">
+                                <div class="row" id="kz_cities">   
+                                    {% for city, pop in kz_cities.items %} 
+                                    <div class="col-md-6 col-lg-4">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item py-1" title="Промоакции в г.{{ city }}">
+                                                {% if pop > 1000000 %}
+                                                <span style="font-size:17px">{{ city|upper }}</span>
+                                                {% elif pop > 500000 %}
+                                                <span  style="font-size:15px"><b>{{ city|upper }}</b></span>
+                                                {% elif pop > 100000 %}
+                                                <span style="font-size:13px">{{ city|upper }}</span>
+                                                {% endif %}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="row" id="ru_big_cities">
+                                    {% for city, pop in big_cities.items %}
+                                        <div class="col-md-6 col-lg-4">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item py-1" title="Промоакции в г. {{ city }}.">
+                                                    {% if city == 'Москва' or city == 'Санкт-Петербург' %} 
+                                                        <i class="text-danger uil uil-star h6"></i>
+                                                        <span style="font-size: 17px; font-weight: 800;">{{ city|upper }}
+                                                        </span>
+                                                    {% elif pop > 1000000 %}
+                                                        <span style="font-size: 15px; font-weight: 600;">{{ city|upper }}
+                                                        </span>
+                                                    {% else %}
+                                                        <span style="font-size: 13px; font-weight: 400;">{{ city }}
+                                                        </span>
+                                                    {% endif %}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="row" id="ru_all_cities">
+                                    <div class="input-group py-1 mt-5 d-flex align-content-center">
+
+                                        <input class=" mb-3 form-control" id="search" 
+                                        placeholder="узнайте в каких городах мы работаем..." type="search" />
+                    
+                                        <button class="btn btn-success px-3 rounded-2" id="search-bottom">
+                                            <i class="uil uil-search"></i>
+                                        </button>
+
+                                        <button 
+                                            class="btn-close rounded-3" 
+                                            id="clean_city" 
+                                            style="padding: 0.9em 0.9em;">
+                                        </button>
+
+                                    </div>
+                                    
+                                    <div class="input-group" id="search_result" style="display: none;"></div>
+                                    {% for region, city in region_city.items %}
+                                    <div class="col-md-12 col-lg-4 listt mb-2 invisible">
+                                        <div class="accordion" id="accordion_regions_{{ region|cut:' ' }}">
+                                            <div class="accordion-item">
+                                                <h6 class="accordion-header" id="heading_{{ region|cut:' '   }}">
+                                                    <button
+                                                        class="accordion-button" style="font-size:14px; padding:5%; border:0;"
+                                                        aria-controls="collapse_{{ region|cut:' '  }}"
+                                                        aria-expanded="true"
+                                                        data-bs-target="#collapse_{{ region|cut:' '  }}"
+                                                        data-bs-toggle="collapse"
+                                                        data-cities="{{ city }}"
+                                                        data-value="{{ region }}"
+                                                        type="button"
+                                                    >
+                                                        {{ region|truncatechars:'19' }}
+                                                    </button>
+                                                </h6>
+                                                <div class="accordion-collapse collapse"
+                                                     id="collapse_{{ region|cut:' '  }}"
+                                                     aria-labelledby="heading_{{ region|cut:' '  }}"
+                                                     data-bs-parent="#accordion_regions_{{ region|cut:' ' }}">
+                                                    <div class="accordion-body">
+                                                        <ul class="list-group list-group-flush">
+                                                            {% for c in city %}
+                                                            <li class="list-group-item">
+                                                                <span  class="fs-6 city" 
+                                                                title="Промоакции в г. {{ c|capfirst  }}. BTL-акции в г. {{ c|capfirst  }}.">
+                                                                {{ c|capfirst }}
+                                                                </span>
+                                                            </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                     
+                        </div>
                     </div>
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
+            </div>
+        </div>
     </div>
 </section>

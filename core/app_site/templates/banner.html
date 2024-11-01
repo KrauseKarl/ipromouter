@@ -1,36 +1,196 @@
-<section class="section">
-<div class="panel-container">
-    <div class="panel " style="background-image: url('/assets/images/carousel/1.jpg')">
-        <div title="Сэмплинг - это распространение образцов товара потребителям бесплатно или
-        в качестве бонуса при покупке других товаров">Сэмплинг</div>
-    </div>
-    <div class="panel " style="background-image: url('/assets/images/carousel/2.jpg')">
-        <div title="Раздача листовок промоутрерами">Раздача листовок</div>
-    </div>
-    <div class="panel active" style="background-image: url('/assets/images/carousel/4.png')">
-        <div title="Работа промомоделей на мероприятии">Промомодели</div>
-    </div>
-    <div class="panel " style="background-image: url('/assets/images/carousel/3.jpg')">
-        <div title="POS-материалы для продвижения бренда или товара">POS-материалы</div>
-    </div>
-    <div class="panel" style="background-image: url('/assets/images/carousel/5.png')">
-        <div title="Сувенирная продукция, мерч">Сувенирная продукция</div>
-    </div>
-</div>
+{% load static %}
+<section  class="swiper-slider-hero position-relative d-block vh-100" id="home">
+     <!-- style="background: url(/static/images/spinner.gif) center center no-repeat"> -->
+    <div class="swiper-container"  >
+        <div class="swiper-wrapper" >
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size"
+                     data-background="{% static 'images/carousel/animated.gif' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2 mt-5">
+                        <div class="row justify-content-around">
+                               <div class="col-12" >
+                                <div class="title-heading text-start banner-title">
+                                    <h1 class="title__size text-start text-white text-uppercase title-dark fw-bold">
+                                        Рекламное агентство BTL+
+                                    </h1>
+                                    <p class="subtitle__size ">Организация и проведение промо-акций в городах  <br>России и Казахстана
+                                    </p>
+                                    <div class="mt-2 pt-1">
+                                        <a href="#contacts" class="btn btn-warning btn-lg">закать промо в вашем городе</a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
 
-<script>
-const panels = document.querySelectorAll('.panel');
-panels.forEach(panel => {
-    panel.addEventListener('click', () => {
-        removeActiveClasses();
-        panel.classList.add('active');
-    });
-});
-function removeActiveClasses() {
-    panels.forEach(panel => {
-        panel.classList.remove('active');
-    });
-}
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size right-position"
+                     data-background="{% static 'images/carousel/fasade.gif' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-start banner-title">
+                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">
+                                        Медиафасады и видеоэкраны</h2>
+                                    <p class="subtitle__size  ">
+                                        Размещение реклама на медиафасадах и видеоэкранах вашего города
+                                    </p>
+                                    <a href="#contacts" class="btn btn-warning btn-lg">узнать подробно
+                                    </a>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
 
-    </script>
-</section>
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size right-position"
+                     data-background="{% static 'images/carousel/banner_1_compressed.jpg' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-start banner-title">
+                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">
+                                        Промутеры и промо-модели
+                                    </h2>
+                                    <p class="subtitle__size ">
+                                        Поиск и обучение промоутеров, подбор хостес,
+                                        промо-моделей и аниматоров на мероприятия.
+                                    </p>
+                                    <div class="mt-2 pt-2">
+                                        <a href="#contacts" class="btn btn-warning btn-lg">
+                                            узнать подробно
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+
+            <div class="swiper-slide container__size overflow-hidden" >
+                <div class="slide-inner slide-bg-image container__size"
+                     style="background-position: center 20px right  50px no-repeat"
+                     data-background="{% static 'images/carousel/banner_2_compressed.jpg' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading  text-start banner-title">
+                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">
+                                        Проведение event-мероприятий
+                                    </h2>
+                                    <p class="subtitle__size">
+                                        Ивент, выставка, корпоратив, открытие магазина, торжество, вечеринка
+                                    </p>
+                                    <div class="mt-2 pt-2">
+                                        <a href="#contacts" class="btn btn-warning btn-lg ">
+                                            организовать мероприятие
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size"
+                     style="background: center center;"
+                     data-background="{% static 'images/carousel/banner_4_compressed.jpg' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-start banner-title">
+                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">
+                                        Раздача листовок семплинг
+                                    </h2>
+                                    <p class="subtitle__size ">
+                                        Распространение листовок в местах с
+                                        высоким трафиком и по почтовым ящикам
+                                    </p>
+
+                                    <div class="mt-2 pt-2">
+                                        <a href="#contacts" class="btn btn-warning btn-lg">
+                                            узнать о стоимости
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size"
+                     style="background: top center;"
+                     data-background="{% static 'images/carousel/banner_6_compressed.jpg' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12" >
+                                <div class="title-heading text-start banner-title">
+                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">
+                                        Полиграфия и брендирование
+                                    </h2>
+                                    <p class="subtitle__size ">
+                                        Сувенирная продукция<br>нанесение логотипа на одежду,
+                                        кружки или воздушные шары
+                                    </p>
+                                    <div class="mt-2 pt-2">
+                                        <a href="#contacts" class="btn btn-warning  btn-lg">
+                                            написать нам
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+            <div class="swiper-slide container__size overflow-hidden">
+                <div class="slide-inner slide-bg-image container__size"
+                     style="background: top center;"
+                     data-background="{% static 'images/carousel/banner_7_compressed.jpg' %}">
+                    <div class="bg-overlay"></div>
+                    <div class="container p-2">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div class="title-heading text-start banner-title">
+                                    <h2 class="title__size text-white text-uppercase title-dark fw-bold">
+                                        Мерчандайзинг
+                                    </h2>
+                                    <p class="subtitle__size   text-start  ">
+                                        Визуальный мерчандайзинг и выкладка товаров<br>
+                                        POS материалы и лайтбоксы
+                                    </p>
+                                    <div class="mt-2 pt-2">
+                                        <a href="#contacts" class="btn btn-warning  btn-lg">
+                                            заказать выкладку
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </div><!-- end slide-inner -->
+            </div> <!-- end swiper-slide -->
+        </div>
+
+        <!-- end swiper-wrapper -->
+
+        <!-- swipper controls -->
+<!--         <div class="swiper-pagination swiper-pagination  "></div>-->
+        <div class="swiper-button-next  text-light text-center"></div>
+        <div class="swiper-button-prev  text-light text-center"></div>
+
+    </div><!--end container-->
+</section><!--end section-->

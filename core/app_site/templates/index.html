@@ -1,205 +1,107 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+{% load cache %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BTL+</title>
+    <!-- HTML Meta Tags -->
+    <title>BTL-акции в России и Казахстане</title>
+    <meta name="description" content="🚀🎄😉Организуем промо-мероприятия в городах России и Казахстана ☎ +7 (909) 537-10-96 🎁 Листовки ☕ Дегустация  ♬ Аниматоры 🌟 Хостес 😎 Тайный покупатель 🛒 POS материалы">
+    <meta name="keywords" content="промоакция промоушен промоутер раздача листовок рекламная акция бтл btl сэмплинг дегустация  работа промоутером промо-акция рекламная конструкция соц опрос анкетирование  тайный покупатель  россия казахстан">
 
-<!--    <title>Раскрутка сайта, продвижение сайтов: Netpeak Украина — интернет-маркетинг для бизнеса</title>-->
-<!--    <meta name="keywords" content="Netpeak, Нетпик, Украина, раскрутка сайта,-->
-<!--    продвижение сайтов, интернет-маркетинг, интернет-маркетинг для бизнеса" />-->
-<!--    <meta name="description" content="Netpeak — интернет-маркетинг для бизнеса в Украине:-->
-<!--    11 лет опыта, 1&nbsp;962 довольных клиента, таких как LG, TripAdvisor, OLX, Kärcher." />-->
-
-    <meta name="description" content="Responsive HTML5 Template"/>
-    <meta name="keywords" content="Onepage, creative, modern, bootstrap 5, multipurpose, clean"/>
-    <meta name="author" content="Shreethemes"/>
-    <meta name="website" content="https://shreethemes.in"/>
-    <meta name="email" content="support@shreethemes.in"/>
+    <meta property="image" content="https://btlplus.ru/static/images/ipromouter/project_3.webp">
+    <meta name="website" content="https://btlplus.ru">
+    <meta name="email" content="btl-omsk@bk.ru">
     <meta name="version" content="1.1.0"/>
+    <meta http-equiv="Cache-Control" content="public">
+    <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate" />
+    <meta name="author" content="Рекламное агентство BTL+">
+    <meta name="copyright" content="Все права принадлежат 'Рекламное агентство BTL+'">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://btlplus.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BTL-акции в России и Казахстане">
+    <meta property="og:description" content="🚀Организуем промо-мероприятия в городах России и Казахстана ☎ +7 (909) 537-10-96 * Листовки * Дегустация * Аниматоры * Хостес * Тайный покупатель * POS материалы">
+    <meta property="og:image" content="https://btlplus.ru/static/images/ipromouter/project_3.webp">
+    <meta content="800" property="og:image:width"/>
+    <meta content="600" property="og:image:height"/>
+    <meta property="og:site_name" content="btlplus.ru">
+    <meta property="og:locale" content="ru_RU">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="btlplus.ru">
+    <meta property="twitter:url" content="https://btlplus.ru/">
+    <meta name="twitter:title" content="BTL-акции в России и Казахстане">
+    <meta name="twitter:description" content="🚀Организуем промо-мероприятия в городах России и Казахстана ☎ +7 (909) 537-10-96 * Листовки * Дегустация * Аниматоры * Хостес * Тайный покупатель * POS материалы">
+    <meta name="twitter:image" content="https://btlplus.ru/assets/images/ipromouter/project_3.webp">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://btlplus.ru/assets/images/ipromouter/project_3.webp">
+
+    <meta name="robots" content="index,follow">
+     <!-- google -->
+    <meta name="googlebot" content="index,follow">
+    <meta name="google" content="notranslate">
+    <meta name="google-site-verification" content="OD3ZVV45vUc8Sg4IVC9Fu_hURsOvYeUaApv_cgmIbjM">
+     <!-- yandex -->
+    <meta name="yandex-verification" content="6d3c5762c8d260bb" />
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+
+    <link rel="prefetch prerender" href="{% static 'images/carousel/animated.gif' %}" />
+
+    <!-- canonical -->
+    <link rel="canonical" href="https://btlplus.ru/">
+    <link rel="preload" as="image" href="https://btlplus.ru/assets/images/logo/BTL_logo.svg"  >
+    <link rel="preload" href="{% static 'js/extra.js' %}" as="script" />
     <!-- favicon -->
-    <link href="/assets/images/favicon_2.ico" rel="shortcut icon">
+    <link rel="shortcut icon" href="https://btlplus.ru/favicon.svg" type="image/svg+xml ">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://btlplus.ru/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://btlplus.ru/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <script rel="preload"  src="{% static 'js/jquery.min.js' %}"></script>
+
     <!-- Bootstrap core CSS -->
-    <link href="/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/tobii.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!--    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>-->
     <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
     <!-- Custom  Css -->
-    <link href="/assets/css/extra.css" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
-    <link href="/assets/images/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" id="flag"/>
+    <link href="{% static 'css/extra.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css" id="theme-opt"/>
+    <link href="{% static 'images/flag-icon-css/css/flag-icon.css' %}" rel="stylesheet" type="text/css" id="flag"/>
+    <link href="{% static 'css/swiper.min.css' %}" type="text/css" rel="stylesheet" />
+    <!-- Yandex.Metrika counter -->
+    <script data-cfasync="false"  type="text/javascript" >
+    setTimeout(function(){
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    <style>
-    .list-group-item-action.active {
-    background-color: #8CB369 !important;
-    border-color: #8CB369 !important;
-    }
-    .nav-link.active  {
-    background-color: #8CB369 !important;
-    color: white  !important;
-    }
-    button.nav-link {
-    color: black  !important;
-    font-family: sans-serif;
-    }
-    .fixed {
-            position: fixed;
-            z-index: 99;
-            top: 0;
-        }
-
-    .absolute {
-        position: absolute;
-        z-index: 99;
-    }
-    .invisible {
-        display:none
-    }
-    .city_link {
-        color:black;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: white;
-        background: #8CB369;
-        border-radius: 10px;
-        box-shadow: 0 10px 8px 0 rgba(0,0,0,0.1);
-    }
-    .zoom-box {
-        transition: transform .2s;
-    }
-    .message:hover {
-        color:black;
-    }
-    .zoom-box:hover {
-      transform: scale(1.01);
-    }
-
-    .row-flex {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    .viber_color {
-        background-color:#9179EE
-    }
-    .whatsapp_color {
-        background-color:#4BC75A;
-        color: #4BC75A;
-    }
-    .telegram_color {
-        background-color:#32A9DD
-    }
-    .instagram_color {
-    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    }
-    .vk_color {
-      background-color:#5282B8
-    }
-    .accordion-button, .modal-title {
-        text-transform: uppercase;
-    }
-    .accordion-button:hover {
-        background-color:#8CB369;
-    }
-    .accordion-button:hover  img {
-         transform: scale(1.4)
-    }
-    .accordion-button:active {
-        background-color: #5A6D90;
-    }
-    .accordion {
-        --bs-accordion-active-color: black;
-        --bs-accordion-active-bg: white;
-    }
-    .invisible {
-        display:none;
-    }
-    .bg-yellow {
-        background-color: #F9BF3B;
-    }
-    .bg-purple {
-        background-color: #9B59B6;
-    }
-    .bg-red {
-        background-color: #FE6860;
-    }
-    .bg-green {
-        background-color: #23B684;
-    }
-    .bg-brown {
-        background-color: #603838;
-    }
-    </style>
+        ym(93615968, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    }, 5000);
+    </script>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/93615968" style="position:absolute; left:-9999px;" alt="">
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
-<body style="margin:15px;">
-<!-- START NAVBAR -->
-<nav id="navbar" class="navbar navbar-expand-lg nav-dark fixed-top nav-sticky">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand ms-2 px-3" href="">
-            <span class="logo-light-mode">
-                <img src="/assets/images/logo/icon_48.png" class="l-light " alt="logo btl+">
-                <img src="/assets/images/logo/icon_48.png" class="l-dark "  alt="logo btl+">
-            </span>
-            <img src="/assets/images/logo-light.png" class="logo-dark-mode" alt="">
-        </a>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-1" id="navbar-navlist">
-                 <li class="nav-item">
-                    <a class="nav-link"  href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#services">
-                        <i class="uil uil-align-left-justify h5"></i>
-                        <span class="px-2">услуги</span>
-                    </a>
-                </li>
-                 <li class="nav-item ">
-                    <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#regions">
-                        <i class="uil  uil-location-point h5"></i>
-                        <span class="px-2">города</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="list-inline menu-social mb-0 ps-lg-4 ms-2">
-                <li>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a type="button" class="btn btn-outline-secondary "  href="javascript:void(0)" data-bs-toggle="modal"
-                       data-bs-target="#contactform" >
-                            <i class="uil-envelope-alt h5"></i>
-                        </a>
-                        <button title="скопировать почту" class="btn btn-primary mb-1" id="copyMailBtn"
-                                value="btl-omsk@bk.ru"
-                           style="vertical-align:top;">
-                            <span class="fw-bold">btl-omsk@bk.ru</span>
-                        </button>
+<body>
+ <script type="application/ld+json">
+   {"@context":"https://schema.org","@type":"Corporation","name":"BTL+ Рекламное агентство","alternateName":"BTL Plus Рекламное агентство. Организация промо мероприятий по России и Казахстане","url":"https://btlplus.ru","logo":"https://btlplus.ru/favicon.svg","contactPoint":[{"@type":"ContactPoint","telephone":"+7 909 537 1096","contactType":"customer service","contactOption":"TollFree","areaServed":"RU","availableLanguage":"Russian"},{"@type":"ContactPoint","telephone":"+7 909 537 1096","contactType":"customer service","areaServed":"KZ","availableLanguage":"Russian"}],"sameAs":"https://www.instagram.com/dashylinkaa/"}
+ </script>
 
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="btn-group ms-2" role="group" aria-label="Basic example">
-            <a type="button" class="btn btn-outline-secondary mb-1 fs-5 zoom-box" href="javascript:void(0)" data-bs-toggle="modal"
-               data-bs-target="#messages">
-                <i class="uil uil-phone"></i>
-            </a>
-            <button title="скопировать телефон"
-                    class="js-textareacopybtn  btn btn-primary mb-1 fw-bold"
-                    value="89008007060"
-                    style="vertical-align:top;"><span>+7 (900) 800-70-60</span>
-            </button>
-        </div>
-        <button class="navbar-toggler mb-1 " style="margin-right:30px;" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-
-        <!--end collapse-->
-    </div>
-    <!--end container-->
-</nav>
-<!-- END NAVBAR -->
+{% include 'navbar.html' %}
 
 {% include 'banner.html' %}
 
@@ -207,22 +109,28 @@
 
 {% include 'cities.html' %}
 
-{% include 'our_projects.html' %}
+{% include 'about_me.html' %}
+
+{% include 'cases.html' %}
+
+{% include 'contacts.html' %}
 
 <!-- Footer Start -->
 {% include 'footer.html' %}
 <!-- Footer End -->
 
 <!-- Back to top -->
-<a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top rounded-pill fs-5">
+<a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top bg-warning rounded-pill fs-5">
     <i data-feather="arrow-up" class="fea icon-sm icons align-middle">
     </i>
 </a>
 <!-- Back to top -->
 
 <!-- Modal Content Start -->
-{% include 'modals/contactform.html' %}
+
 <!-- Modal Content End -->
+
+{% include 'modals/hh.html' %}
 
 <!-- MODAL SERVICES -->
 {% include 'modals/services.html' %}
@@ -235,123 +143,9 @@
 <!-- MODAL MESSAGERS  -->
 {% include 'modals/message.html' %}
 
-<!--MODAL CITIES -->
-<div class="modal fade" id="омск" aria-hidden="true" aria-labelledby="омск_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" >
-      <div class="modal-header">
-        <h5 class="modal-title" id="омск_label"> <i class="uil uil-star h4 text-danger"></i>Омск</h5>
-        <button class="btn btn-primary" data-bs-target="#regions" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-5 col-md-12">
-                      <img src="/assets/images/cities/omsk.jpg"  class="img-fluid rounded">
-                  </div>
-                  <div class="col-lg-7 col-md-12">
-                      <p>население: <b>1 200 000</b></p>
-                      <p>статус: <b>областной центр</b></p>
-                      <p>Точки высокого трафика:</p>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item">ТРЦ МЕГА</li>
-                          <li class="list-group-item">ТРЦ Континет</li>
-                          <li class="list-group-item">Кинотеатр "Маяковский"</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="новосибирск" aria-hidden="true" aria-labelledby="новосибирск_label" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="новосибирск_label"> <i class="uil uil-star h4 text-danger"></i>Новосибирск</h5>
-        <button class="btn btn-primary" data-bs-target="#regions" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-      </div>
-      <div class="modal-body d-flex justify-content-center">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-5 col-md-12">
-                     <img src="/assets/images/cities/novosibirsk.jpg" class="img-fluid rounded">
-                  </div>
-                  <div class="col-lg-7 col-md-12">
-                      <h5>население - 1 600 000 </h5>
-                      <h6>Точки высокого трафика:</h6>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item ">метро "Площадь Ленина
-                          </li>
-                          <li class="list-group-item">метро "Площадь Маркса
-                          </li>
-                          <li class="list-group-item">метро "Речной вокзал
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- MODAL MESSAGERS  -->
 
-<!-- MODAL WINDOW -->
-<div class="modal fade" id="horeca_window" aria-hidden="true" aria-labelledby="омск_label" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="horeca_label">HORECA</h5>
-                  <button class="btn btn-primary" data-bs-target="#services" data-bs-toggle="modal" data-bs-dismiss="modal">назад</button>
-            </div>
-            <div class="modal-body d-flex justify-content-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <p class="p-4 rounded" style="background: white;
-                    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
-                    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
-                    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;">
-                                Направление HoReCa К упаковки и проходит несколько стадий преобразований. Дополняем это
-                                все
-                                мастерством обслуживающего персонала, креативная подача шеф-поваров, уютный дизайн - это
-                                всё придает
-                                ценность продукту.
-                                Одно из направления Хорека представляет собой проведение и организация массовых
-                                промоакций и
-                                рекламных мероприятий, так как конкуренция возросла за последние 10 лет, то приходиться
-                                о себе
-                                напоминать, да бы поддерживать свое имя на рынке сбыта. Как показывает практика, для
-                                этого
-                                изготавливают рекламные конструкции, которые используют для привлечения внимания. Можно
-                                разработать
-                                рекламные витрины, разложить рекламные печатные материалы на столы, установить лайтбокс
-                                на входе
-                                заведения. Особенность таких акций HoReCa в том, что проводится акция непосредственно в
-                                том месте,
-                                где отдыхает клиент (рестораны, клубы, бары</p>
-                        </div>
-                        <div class="col-lg-12 col-md-12">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-12"><img class="img-fluid rounded" src="/assets/images/services/promo/horeca.jpg"></div>
-                                    <div class="col-lg-4 col-md-12"><img class="img-fluid rounded" src="/assets/images/services/promo/horeca_2.jpg"></div>
-                                    <div class="col-lg-4  col-md-12"><img class="img-fluid rounded" src="/assets/images/services/promo/horeca_3.jpg"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+<!--LIST SERVICE MODALS -->
+{% include 'modals/service_modals/horeca.html'%}
 
 <!-- TOAST COPY PHONE NUMBER -->
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -380,34 +174,30 @@
     </div>
 </div>
 <!-- TOAST COPY E-MAIL -->
-                                                    <!-- MODAL WINDOW -->
-
 
 <!-- JAVASCRIPTS -->
-<script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.maskedinput.min.js"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/swiper.min.js' %}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-<script src="/assets/js/tobii.min.js"></script>
-<script src="/assets/js/parallax.js"></script>
-<script src="/assets/js/contact.js"></script>
-<script src="/assets/js/gumshoe.js"></script>
-<script src="/assets/js/feather.min.js"></script>
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}" type="text/javascript" ></script>
+<script src="{% static 'js/jquery.maskedinput.min.js' %}" type="text/javascript" ></script>
+
+<script src="{% static 'js/tobii.min.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/gumshoe.js' %}"></script>
+<script src="{% static 'js/feather.min.js' %}"></script>
 <!-- Custom -->
-<script src="/assets/js/plugins.init.js"></script>
-<script src="/assets/js/app.js"></script>
-<script src="/assets/js/extra.js"></script>
-<script src="/assets/js/list.js"></script>
+<script src="{% static 'js/plugins.init.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/extra.js' %}"></script>
+
+<!-- "{% static 'images/logo.png' %}" -->
 
 </body>
 </html>

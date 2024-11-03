@@ -57,6 +57,7 @@ def index(request):
     region_city_path = os.path.join(settings.BASE_DIR, "info", "cities_by_region.json")
     if not region_city:
         with open(region_city_path, 'r', encoding='utf-8') as json_file:
+
             data = json.load(json_file)
         region_city = cache.set('region_city', data, time_cache)
 

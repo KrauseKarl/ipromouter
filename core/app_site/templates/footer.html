@@ -2,132 +2,174 @@
 {% load cache %}
 
 
-<footer class="bg-warning">
-    <div class="container ">
-        <div class="row">
-            <div class="col-12">
-                <div class="py-2">
-                    <div class="row justify-content-center px-1  rounded" style="background-color:#FFF3CD">
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4 " >
-                            <img src="{% static 'images/client/cast.svg' %}" class="avatar avatar-ex-sm" alt="Castorama">
-                        </div><!--end col-->
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4  " >
-                            <img src="{% static 'images/client/PM.svg' %}" class="avatar avatar-ex-sm" alt="Philip Morris">
-                        </div><!--end col-->
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >
-                            <img src="{% static 'images/client/JTL.svg' %}" class="avatar avatar-ex-sm" alt="Japan Tobacco">
-                        </div><!--end col-->
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >
-                            <img src="{% static 'images/client/svetofor.svg' %}" class="avatar avatar-ex-sm" alt="Светофор">
-                        </div><!--end col-->
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >
-                            <img src="{% static 'images/client/city.svg' %}" class="avatar avatar-ex-sm" alt="ситилинк">
-                        </div><!--end col-->
-                        <div class="col-lg-2 col-md-2 col-6 text-center py-4 " >
-                            <img src="{% static 'images/client/deng.svg' %}" class="avatar avatar-ex-sm" alt="Деньга">
-                        </div><!--end col-->
-                    </div><!--end row-->
+<footer class="bg-dark" style="padding:60px 15px;">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="text-center section-title">
+                    <h2 class="title h4 text-white mt-2 mb-2">Наши клиенты
+                    </h2>
+                    <div class="wrapper" style="--t:50s">
+                        <div class="item__scroll item__scroll__1"><img style="max-height: 3rem; "
+                                                                       src="{% static 'images/client/cast.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="Castorama">
+                        </div>
+                        <div class="item__scroll item__scroll__2"><img style="max-height: 3rem;"
+                                                                       src="{% static 'images/client/PM.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="Philip Morris">
+                        </div>
+                        <div class="item__scroll item__scroll__3"><img style="max-height: 3rem;"
+                                                                       src="{% static 'images/client/JTL.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="Japan Tobacco">
+                        </div>
+                        <div class="item__scroll item__scroll__4"><img style="max-height: 3rem;"
+                                                                       src="{% static 'images/client/svetofor.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="Светофор"></div>
+                        <div class="item__scroll item__scroll__5"><img style="max-height: 3rem;"
+                                                                       src="{% static 'images/client/city.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="ситилинк"></div>
+                        <div class="item__scroll item__scroll__6"><img style="max-height: 3rem;"
+                                                                       src="{% static 'images/client/deng.svg' %}"
+                                                                       class="avatar avatar-ex-sm" alt="Деньга"></div>
+                    </div>
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
+            </div>
+        </div>
+
+
+        <!--        <div class="row d-flex justify-content-evenly align-item-center">-->
+        <!--            <div class="col-12">-->
+
+        <!--                    <div class="row justify-content-center px-1  rounded" style="background-color:#FFF3CD">-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4 " >-->
+        <!--                            <img src="{% static 'images/client/cast.svg' %}" class="avatar avatar-ex-sm" alt="Castorama">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4  " >-->
+        <!--                            <img src="{% static 'images/client/PM.svg' %}" class="avatar avatar-ex-sm" alt="Philip Morris">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >-->
+        <!--                            <img src="{% static 'images/client/JTL.svg' %}" class="avatar avatar-ex-sm" alt="Japan Tobacco">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >-->
+        <!--                            <img src="{% static 'images/client/svetofor.svg' %}" class="avatar avatar-ex-sm" alt="Светофор">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4" >-->
+        <!--                            <img src="{% static 'images/client/city.svg' %}" class="avatar avatar-ex-sm" alt="ситилинк">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                        <div class="col-lg-2 col-md-2 col-6 text-center py-4 " >-->
+        <!--                            <img src="{% static 'images/client/deng.svg' %}" class="avatar avatar-ex-sm" alt="Деньга">-->
+        <!--                        </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--                    </div>&lt;!&ndash;end row&ndash;&gt;-->
+        <!--            </div>&lt;!&ndash;end col&ndash;&gt;-->
+        <!--        </div>&lt;!&ndash;end row&ndash;&gt;-->
     </div><!--end container-->
 
-    <div class="footer-py-4 footer-bar bg-dark">
-        <div class="container text-center">
-            <div class="row align-items-start justify-content-center mb-2 px-0">
-                <div class="col-lg-4 col-md-5 col-sm-6 col-12">
+    <div class="footer-py-4 footer-bar  py-3">
+        <div class="container text-center" style="width:100%;max-width: 1024px;">
+            <div class="row align-items-start justify-content-lg-evenly  justify-content-md-evenly justify-content-center mb-2 px-0">
+                <div class="col-lg-4 col-md-6 col-12">
                     <div class="mb-4 text-start">
                         <h5>Услуги BTL-агентства:</h5>
                         <ul class="list-group box-1">
-                            <li class="list-group-item list-group-item-warning">Организация event-мероприятий
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                Организация event-мероприятий
                             </li>
-                            <li class="list-group-item list-group-item-warning"> Промоутеры, хостес, аниматоры
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                Промоутеры, хостес, аниматоры
                             </li>
-                            <li class="list-group-item list-group-item-warning"> Консультация и дегустация
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                Комплекс рекламных услуг
                             </li>
-                            <li class="list-group-item list-group-item-warning"> Тайный покупатель
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                Размещение рекламы на медиафасадах видеоэкранах
 
                         </ul>
                     </div>
                 </div><!--end col-->
-                <div class="col-lg-4 col-md-5 col-sm-6 col-12">
+                <div class="col-lg-4 col-md-6 col-12">
                     <div class="mb-4 text-start">
                         <h5>Мы ищем:</h5>
-                        <ul class="list-group box-1">
-                            <li class="list-group-item list-group-item-warning ">промоутеров
+                        <ul class="list-group  list-group-flush box-1">
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                промоутеров
                             </li>
-                            <li class="list-group-item list-group-item-warning ">аниматоров
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                аниматоров
                             </li>
-                            <li class="list-group-item list-group-item-warning ">диджеев
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                диджеев
                             </li>
-                            <li class="list-group-item list-group-item-warning ">фотографов
+                            <li class="list-group-item"
+                                style="border-left:2px solid #FFBF66; background:none; color:#F1F1F1">
+                                фотографов
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-2 col-sm-6  col-12">
-                      <div class="mb-4 mx-3 text-start ">
+                <div class="col-lg-4 offset-lg-0  col-12">
+                    <div class="mb-4 mx-3 text-start ">
                         <h5>Контакты:</h5>
-                        <ul class="list-unstyled list-group mx-3 text-start text-light">
-                            <li class="fs-5 mb-2">
-                                <button class="btn btn-dark" title="скопировать телефон"
-                                        id="copyPhoneBtnFooter" value="btl-omsk@bk.ru">
-                                        +7 (909) 537 10-96
-                                    <i class="uil uil-copy text-light"></i>
-                                </button>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-dark "
+                                    title="скопировать телефон"
+                                    id="copyPhoneBtnFooter"
+                                    value="btl-omsk@bk.ru">
+                                +7 (909) 537 10-96
+                                <!--                                    <i class="uil uil-copy text-light"></i>-->
+                                <small class="btn__copy">copy</small>
+                            </button>
+                            <button class="btn btn-dark"
+                                    title="скопировать почту"
+                                    id="copyMailBtnFooter"
+                                    value="btl-omsk@bk.ru">
+                                btl-omsk@bk.ru
+                                <!--                                    <i class="uil uil-copy text-light"></i>-->
+                                <small class="btn__copy">copy</small>
+                            </button>
+                            <div class="d-flex justify-content-center">
+                                <a class="zoom-box me-2" title="написать в Telegram" href="https://telegram.me/BTLplus">
+                                    <img src="{% static 'images/messagers/telegram_mono.svg' %}" width="35"
+                                         alt="написать в Telegram">
+                                </a>
+                                <a class="zoom-box me-2" title="написать в Viber" href="viber://chat?number=79095371096">
+                                    <img src="{% static 'images/messagers/viber_mono.svg' %}" width="35"
+                                         alt="написать в Viber">
+                                </a>
+                                <a class="zoom-box me-2" title="написать в Вконтакте" href="https://vk.com/btl55omsk">
+                                    <img src="{% static 'images/messagers/vk_mono.svg' %}" width="35"
+                                         alt="написать в Вконтакте">
+                                </a>
+                                <a class="zoom-box me-2" title="написать в Instagram"
+                                   href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM=">
+                                    <img src="{% static 'images/messagers/instagram_mono.svg' %}" width="35"
+                                         alt="написать в Instagram">
+                                </a>
+                                <a class="zoom-box me-2" title="написать в WhatsApp" href="whatsapp://send?phone=79095371096">
+                                    <img src="{% static 'images/messagers/whatsApp_mono.svg' %}" width="35"
+                                         alt="написать в WhatsApp">
+                                </a>
+                            </div>
 
-                            </li>
-                            <li class="fs-5 mb-2">
-                                <button title="скопировать почту" class="btn btn-dark"
-                                        id="copyMailBtnFooter" value="btl-omsk@bk.ru">
-                                         btl-omsk@bk.ru
-                                    <i class="uil uil-copy text-light"></i>
-                                </button>
-
-                            </li>
-                            <li>
-                                <ul class="list-unstyled  d-flex align-items-around justify-content-start">
-                                    <li class="list-inline-item me-1">
-                                        <a title="написать в Telegram" href="https://telegram.me/BTLplus"
-                                           class="zoom-box">
-                                            <img src="{% static 'images/messagers/Telegram_2.svg' %}" width="35"
-                                                 alt="написать в Telegram">
-                                        </a></li>
-                                    <li class="list-inline-item me-1">
-                                        <a title="написать в Viber" href="viber://chat?number=79095371096"
-                                           class="zoom-box">
-                                            <img src="{% static 'images/messagers/Viber_2.svg' %}" width="35"
-                                                 alt="написать в Viber">
-                                        </a></li>
-                                    <li class="list-inline-item me-1">
-                                        <a title="написать в Вконтакте" href="https://vk.com/btl55omsk"
-                                           class="zoom-box">
-                                            <img src="{% static 'images/messagers/VK_2.svg' %}" width="35"
-                                                 alt="написать в Вконтакте">
-                                        </a></li>
-                                    <li class="list-inline-item me-1">
-                                        <a title="написать в Instagram" href="https://instagram.com/dashylinkaa?igshid=ZDdkNTZiNTM="
-                                           class="zoom-box">
-                                            <img src="{% static 'images/messagers/instagram_2.svg' %}" width="35"
-                                                 alt="написать в Instagram">
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item me-1">
-                                        <a title="написать в WhatsApp" href="whatsapp://send?phone=79095371096"
-                                           class="zoom-box">
-                                            <img src="{% static 'images/messagers/WhatsApp_2.svg' %}" width="35"
-                                                 alt="написать в WhatsApp">
-                                        </a></li>
-                                </ul><!--end icon-->
-                            </li>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div><!--end row-->
-             <div class="row align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-sm-8">
                     <div class="text-sm-start">
-                        <p class="mb-0">© 2012-<script>document.write(new Date().getFullYear()) </script> Рекламное агентство BTL+</p>
+                        <p class="mb-0">© 2012-
+                            <script>document.write(new Date().getFullYear()) </script>
+                            Рекламное агентство BTL+
+                        </p>
                     </div>
                 </div><!--end col-->
                 <div class="col-sm-4 mt-4 mt-sm-0">

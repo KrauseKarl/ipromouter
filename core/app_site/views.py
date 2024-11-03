@@ -14,6 +14,18 @@ from django.shortcuts import render
 from django import forms
 from .task import send_order_to_telegram_chat
 
+FILE_JSON_PATH = os.path.join(settings.BASE_DIR, "info")
+
+CITY = "cities.json"
+REGION = "cities_by_region.json"
+MEGAPOLIS = "big_cities.json"
+KAZAKHSTAN =  "kz_cities.json"
+
+city_path = os.path.join(FILE_JSON_PATH,CITY)
+region_path = os.path.join(FILE_JSON_PATH, REGION)
+megapolis_path = os.path.join(FILE_JSON_PATH,MEGAPOLIS)
+kazakhstan_path = os.path.join(FILE_JSON_PATH,KAZAKHSTAN)
+
 class ContactForm(forms.Form):
     name_c = forms.CharField(max_length=50)
     telephone_c = forms.CharField(max_length=50)
@@ -44,34 +56,28 @@ class HeadHunterForm(forms.Form):
 
 def index(request):
     time_cache = 604800
-    print(f"{settings.BASE_DIR}")
-    print(os.path.join(settings.BASE_DIR, "info", "cities.json"))
+
     cities = cache.get('all_cities')
-    cities_path = os.path.join(settings.BASE_DIR, "info", "cities.json")
     if not cities:
-        with open(cities_path, 'r', encoding='utf-8') as json_file:
+        with open(city_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         cities = cache.set('all_cities', data, time_cache)
 
     region_city = cache.get('region_city')
-    region_city_path = os.path.join(settings.BASE_DIR, "info", "cities_by_region.json")
     if not region_city:
-        with open(region_city_path, 'r', encoding='utf-8') as json_file:
-
+        with open(region_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         region_city = cache.set('region_city', data, time_cache)
 
     big_cities = cache.get('big_cities')
-    big_cities_path = os.path.join(settings.BASE_DIR, "info", "big_cities.json")
     if not big_cities:
-        with open(big_cities_path, 'r', encoding='utf-8') as json_file:
+        with open(megapolis_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         big_cities = cache.set('big_cities', data, time_cache)
 
     kz_cities = cache.get('kz_cities')
-    kz_cities_path = os.path.join(settings.BASE_DIR, "info", "kz_cities.json")
     if not kz_cities:
-        with open(kz_cities_path, 'r', encoding='utf-8') as json_file:
+        with open(kazakhstan_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         kz_cities = cache.set('kz_cities', data, time_cache)
 

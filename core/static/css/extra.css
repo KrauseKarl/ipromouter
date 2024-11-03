@@ -74,6 +74,7 @@ a:hover  {
 .title__size {
     font-size: 45px !important;
     text-shadow: 1px 1px 2px #000;
+    line-height: 1;
 }
 
 .subtitle__size {

@@ -3,6 +3,7 @@ import json
 import sys
 import datetime
 import locale
+import os
 # locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 from django.conf import settings
@@ -43,28 +44,33 @@ class HeadHunterForm(forms.Form):
 
 def index(request):
     time_cache = 604800
-
+    print(f"{settings.BASE_DIR}")
+    print(os.path.join(settings.BASE_DIR, "info", "cities.json"))
     cities = cache.get('all_cities')
+    cities_path = os.path.join(settings.BASE_DIR, "info", "cities.json")
     if not cities:
-        with open('info/cities.json', 'r', encoding='utf-8') as json_file:
+        with open(cities_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         cities = cache.set('all_cities', data, time_cache)
 
     region_city = cache.get('region_city')
+    region_city_path = os.path.join(settings.BASE_DIR, "info", "cities_by_region.json")
     if not region_city:
-        with open('info/cities_by_region.json', 'r', encoding='utf-8') as json_file:
+        with open(region_city_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         region_city = cache.set('region_city', data, time_cache)
 
     big_cities = cache.get('big_cities')
+    big_cities_path = os.path.join(settings.BASE_DIR, "info", "big_cities.json")
     if not big_cities:
-        with open('info/big_cities.json', 'r', encoding='utf-8') as json_file:
+        with open(big_cities_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         big_cities = cache.set('big_cities', data, time_cache)
 
     kz_cities = cache.get('kz_cities')
+    kz_cities_path = os.path.join(settings.BASE_DIR, "info", "kz_cities.json")
     if not kz_cities:
-        with open('info/kz_cities.json', 'r', encoding='utf-8') as json_file:
+        with open(kz_cities_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         kz_cities = cache.set('kz_cities', data, time_cache)
 

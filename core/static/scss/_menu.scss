@@ -84,6 +84,7 @@
     }
     &.nav-sticky {
         background: $white;
+        height: 3rem;
         margin-top: 0px;
         box-shadow: $shadow;
         .navbar-brand {
@@ -132,6 +133,7 @@
             }
             &.nav-sticky {
                 background: $white;
+                height: 3rem;
                 .nav-item {
                     .nav-link {
                         color: $dark;
@@ -149,6 +151,7 @@
     @media (max-width: 991px) {
         background-color: $white;
         box-shadow: $shadow;
+        height: 3rem;
 
         .menu-social {
             margin-bottom: 20px !important;

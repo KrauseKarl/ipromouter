@@ -3,6 +3,7 @@ import json
 import sys
 import datetime
 import locale
+import os
 # locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 from django.conf import settings
@@ -12,6 +13,18 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django import forms
 from .task import send_order_to_telegram_chat
+
+FILE_JSON_PATH = os.path.join(settings.BASE_DIR, "info")
+
+CITY = "cities.json"
+REGION = "cities_by_region.json"
+MEGAPOLIS = "big_cities.json"
+KAZAKHSTAN =  "kz_cities.json"
+
+city_path = os.path.join(FILE_JSON_PATH,CITY)
+region_path = os.path.join(FILE_JSON_PATH, REGION)
+megapolis_path = os.path.join(FILE_JSON_PATH,MEGAPOLIS)
+kazakhstan_path = os.path.join(FILE_JSON_PATH,KAZAKHSTAN)
 
 class ContactForm(forms.Form):
     name_c = forms.CharField(max_length=50)
@@ -46,25 +59,25 @@ def index(request):
 
     cities = cache.get('all_cities')
     if not cities:
-        with open('info/cities.json', 'r', encoding='utf-8') as json_file:
+        with open(city_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         cities = cache.set('all_cities', data, time_cache)
 
     region_city = cache.get('region_city')
     if not region_city:
-        with open('info/cities_by_region.json', 'r', encoding='utf-8') as json_file:
+        with open(region_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         region_city = cache.set('region_city', data, time_cache)
 
     big_cities = cache.get('big_cities')
     if not big_cities:
-        with open('info/big_cities.json', 'r', encoding='utf-8') as json_file:
+        with open(megapolis_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         big_cities = cache.set('big_cities', data, time_cache)
 
     kz_cities = cache.get('kz_cities')
     if not kz_cities:
-        with open('info/kz_cities.json', 'r', encoding='utf-8') as json_file:
+        with open(kazakhstan_path, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         kz_cities = cache.set('kz_cities', data, time_cache)
 

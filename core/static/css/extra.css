@@ -43,6 +43,11 @@ h1  {
     text-align:  center;
 }
 
+.service__bottom {
+    font-size: 1.2em;
+    /* width: calc((-1 * 1%) + (100% / 7)); */
+    text-wrap: pretty;
+}
 .nav-pills .nav-link.active,  .nav-pills .show > .nav-link  {
     box-shadow:  none;
 }
@@ -155,6 +160,7 @@ a:hover  {
     .subtitle__size { line-height: 1.2; font-size: 14px !important; margin-bottom: 2rem; }
     .container__size { display: flex; align-items: center !important; }
     .right-position { background-position: right 20% center; }
+    .service__bottom {width: calc((-1 * 1%) + (100% / (8 / 4))); }
 }
 /* iPads (вертикальная) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -162,12 +168,14 @@ a:hover  {
     .subtitle__size { line-height: 1.2; font-size: 18px !important; margin-bottom: 2rem; }
     .container__size { display: flex; align-items: center !important; }
     .right-position { background-position: right 20% center; }
+    .service__bottom {width: calc((-1 * 1%) + (100% / (8 / 4))); }
 }
 /* Настольные компьютеры и ноутбуки ----------- */
 @media only screen and (min-width: 1224px) {
     .title__size { font-size: 50px !important;}
     .subtitle__size { line-height: 1.1; font-size: 18px !important; margin-bottom: 2rem; }
     .container__size { display: flex; align-items: center !important; }
+    .service__bottom {width: calc((-1 * 1%) + (100% / 8)); }
 }
 
  .zoom-box  {

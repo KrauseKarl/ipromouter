@@ -4,6 +4,7 @@ import sys
 import datetime
 import locale
 import os
+import time
 # locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 from django.conf import settings
@@ -12,7 +13,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django import forms
-from .task import send_order_to_telegram_chat
+from .task import send_order_to_telegram_chat, send_order_to_telegram_chat_sync
 
 FILE_JSON_PATH = os.path.join(settings.BASE_DIR, "info")
 
@@ -104,32 +105,35 @@ def contact(request):
                 'comments': form.cleaned_data['comments_c'],
             }
             message = "\n".join(body.values())
-            try:
-                finale_message = "🔥 Заказ\n🕑 {date}\n👥 {name}\n☎ {phone}\n✍ сообщение:{msg} ".format(
-                    # order_id=filename,
-                    date=datetime.datetime.now().strftime(" %d-%b-%y (%H:%M)"),
-                    name=body.get('name', 'anon'),
-                    #email= "", # body.get('email', 'anon'),
-                    phone=body.get('telephone', 'anon'),
-                    #subject="", # body.get('subject', 'anon'),
-                    msg=body.get('comments', 'нет комментария')
-    )
-                send_order_to_telegram_chat.apply_async(
-                    kwargs={'data': finale_message}, 
-                    expires=float(1)
-                    )
+            # try:
+            finale_message = "🔥 Заказ\n🕑 {date}\n👥 {name}\n☎ {phone}\n✍ сообщение:{msg} ".format(
+                # order_id=filename,
+                date=datetime.datetime.now().strftime(" %d-%b-%y (%H:%M)"),
+                name=body.get('name', 'anon'),
+                #email= "", # body.get('email', 'anon'),
+                phone=body.get('telephone', 'anon'),
+                #subject="", # body.get('subject', 'anon'),
+                msg=body.get('comments', 'нет комментария')
+)           # sync version
+            send_order_to_telegram_chat_sync(finale_message)
+            # async version
+            time.sleep(1)
+            # send_order_to_telegram_chat.apply_async(
+            #     kwargs={'data': finale_message},
+            #     expires=float(1)
+            #     )
 
-                # send_mail(
-                #     subject=subject,
-                #     message=message,
-                #     from_email=settings.EMAIL_HOST_USER,
-                #     recipient_list=[settings.EMAIL_HOST_USER,]
-                # )
-                response = {'message': True}
+            # send_mail(
+            #     subject=subject,
+            #     message=message,
+            #     from_email=settings.EMAIL_HOST_USER,
+            #     recipient_list=[settings.EMAIL_HOST_USER,]
+            # )
+            response = {'message': True}
                 # response = {'message': False, "error": e}
-            except Exception as e:
-                response = {'message': False, "error": e}
-                # return HttpResponse('Найден некорректный заголовок')
+            # except Exception as e:
+            #     response = {'message': False, "error": e}
+            #     # return HttpResponse('Найден некорректный заголовок')
             return JsonResponse(response)
 
     response = {'message': False}

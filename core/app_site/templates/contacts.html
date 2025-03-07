@@ -1,18 +1,23 @@
 {% load static %}
 
-<section class="bg-dark section" style="padding:60px 15px;" id="contacts">
+<section class="bg-warning section" style="padding:60px 15px;" id="contacts">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="section-title text-center pb-2">
-                    <h3 class="title text-white">Напишите нам</h3>
+                    <h3 class="title text-white title__h2">
+                        Напишите нам
+                    </h3>
                 </div>
             </div><!--end col-->
         </div><!--end row-->
         <div class="row justify-content-center align-items-center">
 
             <div class="col-lg-6 offset-lg-2 col-md-8  col-12 order-md-1 order-2 mt-1 pt-2">
-                <div class="container p-4 rounded shadow bg-light "  style="height: 30%;">
+                <div class="container p-4 rounded bg-light"
+                     style="height: 30%; -webkit-box-shadow: 0px 5px 35px 2px rgba(34, 60, 80, 0.31);
+                            -moz-box-shadow: 0px 5px 35px 2px rgba(34, 60, 80, 0.31);
+                            box-shadow: 0px 5px 35px 2px rgba(34, 60, 80, 0.31);">
                     <div class="row d-flex justify-content-center align-content-beetwen">
                         <form id="message_form" class="col " method="post" name="myForm" >
                             <!-- onsubmit="return validateForm()"> -->
@@ -101,7 +106,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-grid">
-                                    <button type="submit" id="submit" name="send" class="btn btn-success  fw-bold fs-5">
+                                    <button type="submit" id="submit" name="send" class="btn btn-success btn-lg fw-bold fs-5">
                                         отправить
                                     </button>
                                 </div>

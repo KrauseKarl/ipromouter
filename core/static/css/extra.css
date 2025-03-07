@@ -1,12 +1,47 @@
 :root  {
     --clr-dark:  #070a13;
     --clr-light:  #f1f5f9;
+    --warning: #FFBF66;
+    --dark: #24272C;
+    --success: #52CC99;
 }
 #document {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+/*
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+}
+.carousel-inner {
+  padding: 1em;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+}*/
 * {
 /* border: 1px solid red; */
     padding: 0;
@@ -76,6 +111,19 @@ a:hover  {
      border-bottom:  2px solid #5A6D90;
 }
 
+.btn__copy {
+    background-color: var(--warning);
+    text-size: 0.25rem;
+    color: var(--dark);
+    padding: 1px 2px;
+    border-radius: 5px;
+}
+
+.title__h2 {
+    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
 .title__size {
     font-size: 45px !important;
     text-shadow: 1px 1px 2px #000;
@@ -98,6 +146,34 @@ a:hover  {
 .right-position {
     background-position: center center;
 }
+.service__btn {
+    font-weight: 600;
+    margin-right: 5%;
+}
+.new__btn {
+    position: absolute;
+    top:0;
+    right: -2%;
+    color: #fff !important;
+    background-color: var(--success);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+    margin-right:2%;
+    margin-bottom: 2%;
+    padding: 2px 3px;
+    border-radius: 2px;
+    z-index:-1;
+}
+/* .service__btn:before {
+    position:absolute;
+    top: 33%;
+    left: 55%;
+    content:"new";
+    color: #fff;
+    background-color: var(--success);
+    padding: 2px 3px;
+    border-radius: 5px;
+}
+*/
 
 /* iPhone 4 ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
@@ -117,6 +193,7 @@ a:hover  {
         .right-position {
             background-position: right 20% center;
         }
+        .nav-sticky{height:3rem;}
     }
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .title__size {
@@ -139,6 +216,7 @@ a:hover  {
     .right-position {
             background-position: right 20% center;
     }
+    .nav-sticky{height:5rem;}
 }
 /* Smartphones (вертикальная) ----------- */
 @media only screen and (max-width: 576px) {
@@ -146,6 +224,7 @@ a:hover  {
     .subtitle__size { line-height: 1.2; font-size: 18px !important; margin-bottom: 2rem; }
     .container__size { display: flex; align-items: center !important; }
     .right-position { background-position: right 20% center; }
+    .nav-sticky{height:5rem;}
  }
 /* Smartphones (горизонтальная) ----------- */
 @media only screen and (min-width: 576px) {
@@ -153,6 +232,7 @@ a:hover  {
     .subtitle__size { line-height: 1.5; font-size: 12px !important; margin-bottom: 1.2rem; width:50%; text-align: start;}
     .container__size { display: flex; align-items: center !important; }
     .right-position { background-position: right 20% center; }
+    .nav-sticky{height:5rem;}
     }
 /* iPads (горизонтальная) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -531,7 +611,7 @@ a:hover  {
      color:  black;
  }
  .nav-link.active  {
-     background-color:  #FFBF66 !important;
+     background-color:  var(--warning) !important;
      color:  white !important;
      text-align:  center !important;
      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5),  0 2px 6px rgba(0, 0, 0, 0.7);
@@ -987,5 +1067,3 @@ a:hover  {
      }
  }
 /* BANNER CSS  finish */
-
-

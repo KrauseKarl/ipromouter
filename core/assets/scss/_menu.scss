@@ -86,6 +86,7 @@
         background: $white;
         margin-top: 0px;
         box-shadow: $shadow;
+        height: 3rem;
         .navbar-brand {
             .l-dark {
                 display: inline-block;
@@ -132,6 +133,7 @@
             }
             &.nav-sticky {
                 background: $white;
+                height: 3rem;
                 .nav-item {
                     .nav-link {
                         color: $dark;

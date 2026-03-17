@@ -1,0 +1,46 @@
+/* Базовый класс для iframe */
+.custom-iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.4);
+    outline: 30px solid black;
+    outline-offset: -30px;
+    border: none;
+    transition: all 0.3s ease; /* Плавный переход при изменении размера */
+}
+
+/* Для планшетов (от 768px до 1024px) - уменьшаем рамку */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .custom-iframe {
+        outline-width: 15px;
+        outline-offset: -15px;
+        border-radius: 40px;
+    }
+}
+
+/* Для маленьких планшетов и больших телефонов (от 481px до 768px) - еще меньше рамка */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .custom-iframe {
+        outline-width: 10px;
+        outline-offset: -10px;
+        border-radius: 30px;
+    }
+}
+
+/* Для мобильных устройств (до 480px) - убираем рамку полностью */
+@media screen and (max-width: 480px) {
+    .custom-iframe {
+        outline: none; /* Убираем рамку */
+        outline-offset: 0;
+        border-radius: 25px; /* Уменьшаем скругление для мобильных */
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,0.3); /* Немного уменьшаем тень */
+    }
+}
+
+/* Для очень маленьких экранов (до 320px) */
+@media screen and (max-width: 320px) {
+    .custom-iframe {
+        border-radius: 15px;
+    }
+}

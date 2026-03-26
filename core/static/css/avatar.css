@@ -3,9 +3,9 @@
     aspect-ratio: 16/9;
     width: 100%;
     border-radius: 50px;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.4);
-    outline: 30px solid black;
-    outline-offset: -30px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.9);
+    outline: 15px solid var(--first-color);
+    outline-offset: -15px;
     border: none;
     transition: all 0.3s ease; /* Плавный переход при изменении размера */
 }

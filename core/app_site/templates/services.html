@@ -1,5 +1,27 @@
 {% load static %}
-<section class="section " style="padding:60px 20px;" id="services">
+
+<style>
+    .slider-root{width:100%;overflow:hidden;padding:0 0 1.5rem;}
+    .slider-track-wrap{position:relative;overflow:hidden;}
+    .slider-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform;}
+    .slide{flex:0 0 var(--slide-w);padding:0 6px;box-sizing:border-box;transition:opacity .45s;}
+    .slide.dim {cursor: pointer;}
+    .slide-inner{border:none;border-radius:8px;overflow:hidden;height:24rem;display:flex;flex-direction:column;}
+    .slide-img{width:100%;height:180px;object-fit:cover;background:var(--first-color);display:flex;align-items:center;justify-content:center;}
+    .slide-body{padding:14px 16px;flex:1;}
+    .slide-title{font-size:15px;font-weight:700;color:var(--color-text-primary);margin:0 0 8px;}
+    .slide-list{list-style:none;margin:0;padding:10px;}
+    .slide-list li{font-size:13px;color:var(--color-text-secondary);padding:2px 0;display:flex;gap:6px;align-items:baseline;}
+    .slide-list li::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#f0a500;flex-shrink:0;margin-top:4px;}
+    .dots{display:flex;justify-content:center;gap:6px;margin-top:1rem;margin-bottom:1rem;}
+    .dot{position: relative;width:10px;height:10px;border-radius:50%;background:var(--first-color);cursor:pointer;transition:all .25s;}
+    .dot.active{width:180px;height:20px;border-radius:8px;margin-top:-5px;}
+    .dot.active::after {content:attr(data-title);position:absolute;left:50%;transform:translate(-50%,-50%);top:50%;white-space:nowrap;font-size:12px;font-weight:600;color:white;pointer-events: none;}
+    .edge-fade-l,.edge-fade-r{position:absolute;top:0;bottom:0;width:12%;pointer-events:none;z-index:2;}
+    .edge-fade-l{left:0;background:linear-gradient(to right,rgba(255,255,255,.2),transparent);}
+    .edge-fade-r{right:0;background:linear-gradient(to left,rgba(255,255,255,.2),transparent);}
+</style>
+<section class="section" style="padding:60px 20px;" id="services">
     <div class="container" style="max-width: 100%;">
         <div class="row justify-content-center">
             <div class="col">
@@ -11,746 +33,311 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 col-lg-12 mt-2 pt-2">
-                <nav class="mx-1 mb-4">
-                    <div class="row justify-content-lg-evenly justify-content-md-start nav nav-pills nav-tabs sticky-top text-dark"
-                         id="nav-tab" role="tablist">
-                        <button
-                                aria-controls="nav-home"
-                                aria-selected="false"
-                                class=" align-items-center border-bottom border-opacity-75 col-lg-2 col-md-12 nav-link nav-link-service py-1 ps-1 rounded service__bottom"
-                                data-bs-target="#promo"
-                                data-bs-toggle="tab"
-                                id="promo-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap" title="Промо акции">Промо акции</span>
-                            <!--   class="badge lh-lg text-wrap text-uppercase" -->
-                        </button>
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service ps-3 rounded service__bottom"
-                                data-bs-target="#polygraph"
-                                data-bs-toggle="tab"
-                                id="polygraph-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap" title="Полиграфия">Полиграфия</span>
-
-                        </button>
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#adv-equipment"
-                                data-bs-toggle="tab"
-                                id="adv-equipment-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap"
-                                  title="Рекламные конструкции">Рекламные конструкции</span>
-                            <!--   class="badge lh-lg text-wrap text-uppercase" -->
-                        </button>
-                        <!--МЕДИАФАСАД-->
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="true"
-                                class="active col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#fasade"
-                                data-bs-toggle="tab"
-                                id="fasade-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap " title="Реклама на медиафасадах и видеоэкранах">
-                                <span class="new__btn">new
-                                </span>
-                                Медиафасады
-                            </span>
-                            <!--   class="badge lh-lg text-wrap text-uppercase" -->
-                        </button>
-                        <!--МЕДИАФАСАД-->
-                        <!--КОНСАЛДИНГ-->
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#consulting"
-                                data-bs-toggle="tab"
-                                id="consulting-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap" title="Консалтинг">Консалтинг</span>
-                            <!--   class="badge lh-lg text-wrap text-uppercase" -->
-                        </button>
-                        <!--КОНСАЛДИНГ-->
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#decor"
-                                data-bs-toggle="tab"
-                                id="decor-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md text-wrap"
-                                  title="Праздничное оформление">Праздничное оформление</span>
-                        </button>
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#social"
-                                data-bs-toggle="tab"
-                                id="social-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge  lh-md text-wrap" title="Социологическое исследование">Социологическое исследование</span>
-                        </button>
-                        <button
-                                aria-controls="nav-contact"
-                                aria-selected="false"
-                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
-                                data-bs-target="#hr"
-                                data-bs-toggle="tab"
-                                id="hr-tab"
-                                role="tab"
-                                type="button">
-                            <span class="badge lh-md  text-wrap" title="Подбор и работа с персоналом">Подбор и работа с персоналом</span>
-                        </button>
-                    </div>
-                </nav>
-                <div class="tab-content mt-2" id="nav-tabContent">
-                    <div class="fade tab-pane" id="promo" role="tabpanel" aria-labelledby="promo-tab"   tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-1">
-                                        <h3 class="mb-3 h6 title text-start border-bottom px-1 pb-2 "
-                                            title="Промо акции" style="color: #5a6d90;">Промо акции</h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Листовки">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>Листовки
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Организация праздников event-мероприятий выставок открытий корпоративов">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Организация праздников, event-мероприятий, <br>выставок,
-                                                        открытий, корпоративов
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="HoReCa">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>HoReCa
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Промо-модели аниматоры ростовая кукла">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Промо-модели, аниматоры, ростовая кукла
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title=" Ведущие  диджеи">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Ведущие, диджеи
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Супервайзер">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Супервайзер
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Хостесс и консультация">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Хостесс и консультация
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Сэмплинг и подарок за покупку">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Сэмплинг, дегустация и подарок за покупку
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Тайный покупатель">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Тайный покупатель
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Мерчандайзинг">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Мерчандайзинг
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_1"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active ">
-                                                    <img alt="Промо акция. Дегустация"
-                                                         class="d-block w-100 rounded-1   vignette"
-                                                         srcset="{% static 'images/services/promo/promo_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/promo/promo_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Промо акции.Семплинг"
-                                                         class="d-block w-100 rounded-1  vignette"
-                                                         srcset="{% static 'images/services/promo/promo_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/promo/promo_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Промо акции.Консультация покупателя"
-                                                         class="d-block w-100 rounded-1 shadow-lg  vignette"
-                                                         srcset="{% static 'images/services/promo/promo_3_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/promo/promo_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fade tab-pane" id="polygraph" role="tabpanel" aria-labelledby="polygraph-tab"
-                         tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-1">
-
-                                        <h3 class="mb-3 title h6 text-start border-bottom px-1 pb-2 " title="Полиграфия"
-                                            style="color: #5a6d90;">Полиграфия</h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Печать листовок">Печать листовок</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Сувенирная продукция">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Сувенирная продукция</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Офсетная печать">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Офсетная печать</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Печать на воздушных шарах  кружках футболках">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Печать на воздушных шарах, кружках, футболках</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="POS-материалы">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        POS-материалы</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Трейд-маркетинг">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Трейд-маркетинг</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_3"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img class="d-block w-100 rounded-2 vignette"
-                                                         alt="Печать на воздушных шарах"
-                                                         srcset="{% static 'images/services/poligrafia/polugrafia_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/poligrafia/polugrafia_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img class="d-block w-100 rounded-2 vignette"
-                                                         alt="Кацелярские товары с логотипом"
-                                                         srcset="{% static 'images/services/poligrafia/polugrafia_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/poligrafia/polugrafia_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img class="d-block w-100 rounded-2 vignette" alt="Мерчандайзинг"
-                                                         srcset="{% static 'images/services/poligrafia/polugrafia_3_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/poligrafia/polugrafia_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fade tab-pane" id="adv-equipment" role="tabpanel" aria-labelledby="adv-equipment-tab"
-                         tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-1">
-                                        <h3 class="mb-3 title h6 text-start border-bottom px-1 pb-2"
-                                            style="color: #5a6d90;"
-                                            title="Монтаж и производство рекламных конструкций и оборудования">
-                                            Монтаж и производство рекламных конструкций и оборудования
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="POS-материалы">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        POS-материалы
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Лайтбоксы">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Лайтбоксы
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Брендирование">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Брендирование
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Мерчандайзинг на воздушных шарах кружках и одежде">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Мерчандайзинг на воздушных шарах, кружках и одежде
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_4"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/equipment/equiment_3_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/equipment/equiment_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/equipment/equiment_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/equipment/equiment_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/equipment/equiment_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/equipment/equiment_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/equipment/equiment_4_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/equipment/equiment_4_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- КОНСАЛДИНГ START -->
-                    <div class="fade tab-pane" id="consulting" role="tabpanel" aria-labelledby="adv-equipment-tab"
-                         tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-1">
-                                        <h3 class="mb-3 title h6 text-start border-bottom px-1 pb-2"
-                                            style="color: #5a6d90;"
-                                            title="Монтаж и производство рекламных конструкций и оборудования">
-                                            Консалтинг
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Маркетинговая стратегия">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Маркетинговая стратегия
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title=" Реализация маркетинговых мероприятий">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Реализация маркетинговых мероприятий
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Комплекс рекламных услуг">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Комплекс рекламных услуг
-                                                    </h6>
-                                                </li>
-
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_8"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-<!--                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/equipment/equiment_3_webp-800x600.webp' %}"-->
-<!--                                                         src="{% static 'images/services/equipment/equiment_3_jpg-800x600.jpg' %}">-->
-                                                </div>
-                                                <div class="carousel-item">
-<!--                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/equipment/equiment_2_webp-800x600.webp' %}"-->
-<!--                                                         src="{% static 'images/services/equipment/equiment_2_jpg-800x600.jpg' %}">-->
-                                                </div>
-                                                <div class="carousel-item">
-<!--                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/equipment/equiment_1_webp-800x600.webp' %}"-->
-<!--                                                         src="{% static 'images/services/equipment/equiment_1_jpg-800x600.jpg' %}">-->
-                                                </div>
-                                                <div class="carousel-item">
-<!--                                                    <img alt="Лайтбоксы" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/equipment/equiment_4_webp-800x600.webp' %}"-->
-<!--                                                         src="{% static 'images/services/equipment/equiment_4_jpg-800x600.jpg' %}">-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- КОНСАЛДИНГ END -->
-                    <!-- МЕДИАФАСАДЫ START -->
-                    <div class="active show fade tab-pane" id="fasade" role="tabpanel" aria-labelledby="adv-equipment-tab"
-                         tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-1">
-                                        <h3 class="mb-3 title h6 text-start border-bottom px-1 pb-2"
-                                            style="color: #5a6d90;"
-                                            title="Размещение рекламы на медиафасадах и видеоэкранах">
-                                            Реклама на медиафасадах и видеоэкранах
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Маркетинговая стратегия">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Размещение рекламы на медиафасадах
-                                                    </h6>
-                                                </li>
-
-                                                <li class="mb-1">
-                                                    <h6 title="Комплекс рекламных услуг">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Размещение рекламы на видеоэкранах
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Маркетинговая стратегия">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        В любом городе и стране
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_10"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img alt="Медиафасады" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/carousel/light_expose.gif' %}"
-                                                         src="{% static 'images/carousel/light_expose.gif' %}">
-
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Медиафасады" class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/carousel/fasade.gif' %}"
-                                                         src="{% static 'images/carousel/fasade.gif' %}">
-                                                </div>
-<!--                                            <div class="carousel-item active">&ndash;&gt;-->
-<!--                                                     <img alt="Медиафасады" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/fasade/billboard_1.jpg' %}"-->
-<!--                                                         src="{% static 'images/services/fasade/billboard_1.jpg' %}">-->
-<!--                                                </div>-->
-<!--                                                <div class="carousel-item">-->
-<!--                                                    <img alt="Медиафасады" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/fasade/billboard_3.png' %}"-->
-<!--                                                         src="{% static 'images/services/fasade/billboard_3.png' %}">-->
-<!--                                                </div>-->
-<!--                                                <div class="carousel-item">-->
-<!--                                                    <img alt="Медиафасады" class="d-block w-100 rounded-2 vignette"-->
-<!--                                                         srcset="{% static 'images/services/fasade/billboard_4.jpg' %}"-->
-<!--                                                         src="{% static 'images/services/fasade/billboard_4.jpg' %}">-->
-<!--                                                </div>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- МЕДИАФАСАДЫ END -->
-
-                    <div class="fade tab-pane" id="decor" role="tabpanel" aria-labelledby="decor-tab" tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-4">
-                                        <h3 class="mb-3 title h6 text-start border-bottom px-1 pb-2 "
-                                            title="Праздничное оформление"
-                                            style="color: #5a6d90;">
-                                            Праздничное оформление
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Фотозоны">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Фотозоны
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="печать моментальных фото">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Печать моментальных фото</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="тематическое декорирование">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Тематическое декорирование
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="световой декор">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Световой декор
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="воздушные шары">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Воздушные шары
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="гирлянды  из воздушных шаров">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Гирлянды из воздушных шаров
-                                                    </h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="аренда аппарата сладкой ваты">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Аренда аппарата сладкой ваты
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_5"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img alt="Праздничное оформление"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/decor/decor_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/decor/decor_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Праздничное оформление"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/decor/decor_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/decor/decor_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Праздничное оформление"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/decor/decor_3_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/decor/decor_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Праздничное оформление"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/decor/decor_4_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/decor/decor_4_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fade tab-pane" id="social" role="tabpanel" aria-labelledby="social-tab" tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-4">
-                                        <h3 class="mb-3 title text-start h6 border-bottom px-1 pb-2"
-                                            style="color: #5a6d90;"
-                                            title="Социологические исследования">
-                                            Социологические исследования
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Опрос">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Опрос</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Наблюдение">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Наблюдение</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Контент анализ">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Контент анализ</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Фокус группа">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Фокус группа</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_6"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img alt="Социологические исследования"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/anketa/anketa_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/anketa/anketa_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Социологические исследования"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/anketa/anketa_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/anketa/anketa_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Социологические исследования"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/anketa/anketa_3_webp-800x600.webp'  %}"
-                                                         src="{% static 'images/services/anketa/anketa_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fade tab-pane" id="hr" role="tabpanel" aria-labelledby="hr-tab" tabindex="0">
-                        <div class="container">
-                            <div style="background: url(/static/images/map.png) center center;">
-                                <div class="row">
-                                    <div class="col-lg-7 col-md-6 mt-sm-0 pt-2 pt-sm-0 mt-4">
-                                        <h3 class="mb-3 title text-start h6 border-bottom px-1 pb-2"
-                                            style="color: #5a6d90;"
-                                            title="Подбор и работа с персоналом">
-                                            Подбор и работа с персоналом
-                                        </h3>
-                                        <div class="section-title">
-                                            <ul class="list-unstyled text-muted">
-                                                <li class="mb-1">
-                                                    <h6 title="Супервайзер">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Супервайзер</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Тайный покупатель">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Тайный покупатель</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Подборка кандидатов">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Подборка кандидатов</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Организация собеседования">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Организация собеседования</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Проверка профессиональных навыков кандидатов">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Проверка профессиональных навыков кандидатов</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Разработка корпоративных стандартов">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Разработка корпоративных стандартов</h6>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <h6 title="Обучение и адаптация персонала">
-                                                        <i class="align-middle h6 me-2 text-warning uil uil-check-circle"></i>
-                                                        Обучение и адаптация персонала</h6>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="carousel carousel-fade slide" id="carouselExampleSlidesOnly_7"
-                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner w-120">
-                                                <div class="carousel-item active">
-                                                    <img alt="Подбор и работа с персоналом"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/hr/hr_4_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/hr/hr_4_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Подбор и работа с персоналом"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/hr/hr_2_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/hr/hr_2_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Подбор и работа с персоналом"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/hr/hr_3_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/hr/hr_3_jpg-800x600.jpg' %}">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img alt="Подбор и работа с персоналом"
-                                                         class="d-block w-100 rounded-2 vignette"
-                                                         srcset="{% static 'images/services/hr/hr_1_webp-800x600.webp' %}"
-                                                         src="{% static 'images/services/hr/hr_1_jpg-800x600.jpg' %}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="slider-root" id="sl">
+                <div class="dots" id="dots"></div>
+                <div class="slider-track-wrap" id="wrap">
+                    <div class="slider-track" id="track"></div>
+                    <div class="edge-fade-l"></div>
+                    <div class="edge-fade-r"></div>
                 </div>
-                </div>
+
+            </div>
         </div>
     </div>
+
 </section>
+
+<script>
+    const SLIDE_MEDIA = [
+          // 0 — Промо акции
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/promo/promo_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/promo/promo_1_webp-800x600.webp' %}", alt: "Промо акция. Дегустация" },
+              { src: "{% static 'images/services/promo/promo_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/promo/promo_2_webp-800x600.webp' %}", alt: "Промо акции. Семплинг" },
+              { src: "{% static 'images/services/promo/promo_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/promo/promo_3_webp-800x600.webp' %}", alt: "Промо акции. Консультация покупателя" },
+            ]
+          },
+          // 1 — Полиграфия
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/poligrafia/polugrafia_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/poligrafia/polugrafia_1_webp-800x600.webp' %}", alt: "Печать на воздушных шарах" },
+              { src: "{% static 'images/services/poligrafia/polugrafia_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/poligrafia/polugrafia_2_webp-800x600.webp' %}", alt: "Канцелярские товары с логотипом" },
+              { src: "{% static 'images/services/poligrafia/polugrafia_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/poligrafia/polugrafia_3_webp-800x600.webp' %}", alt: "Мерчандайзинг" },
+            ]
+          },
+          // 2 — Рекламные конструкции
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/equipment/equiment_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/equipment/equiment_1_webp-800x600.webp' %}", alt: "Лайтбоксы" },
+              { src: "{% static 'images/services/equipment/equiment_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/equipment/equiment_2_webp-800x600.webp' %}", alt: "Лайтбоксы" },
+              { src: "{% static 'images/services/equipment/equiment_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/equipment/equiment_3_webp-800x600.webp' %}", alt: "Лайтбоксы" },
+              { src: "{% static 'images/services/equipment/equiment_4_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/equipment/equiment_4_webp-800x600.webp' %}", alt: "Лайтбоксы" },
+            ]
+          },
+          // 3 — Медиафасады (видео + изображение)
+          {
+            type: "video",
+            poster:   "{% static 'images/carousel/jumping-from-screen-last.jpg' %}",
+            fallback: "{% static 'images/carousel/jumping-from-screen-first.jpg' %}",
+            sources: [
+              { src: "{% static 'images/carousel/jumping-from-screen-laptop.mp4' %}",  type: "video/mp4",  media: "(min-width: 768px)" },
+              { src: "{% static 'images/carousel/jumping-from-screen-laptop.webm' %}", type: "video/webm", media: "(min-width: 768px)" },
+              { src: "{% static 'images/carousel/jumping-from-screen-mobile.mp4' %}",  type: "video/mp4",  media: "(max-width: 767px)" },
+              { src: "{% static 'images/carousel/jumping-from-screen-mobile.webm' %}", type: "video/webm", media: "(max-width: 767px)" },
+              { src: "{% static 'images/carousel/jumping-from-screen-mobile.mp4' %}",  type: "video/mp4"  },
+              { src: "{% static 'images/carousel/jumping-from-screen-mobile.webm' %}", type: "video/webm" },
+            ]
+          },
+          // 4 — Консалтинг (нет изображений — пустой заглушка)
+          {     type: "images",
+                images: [
+                         { src: "{% static 'images/services/hr/hr_4_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/hr/hr_4_webp-800x600.webp' %}", alt: "Подбор и работа с персоналом" },
+                         ]
+           },
+          // 5 — Праздничное оформление
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/decor/decor_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/decor/decor_1_webp-800x600.webp' %}", alt: "Праздничное оформление" },
+              { src: "{% static 'images/services/decor/decor_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/decor/decor_2_webp-800x600.webp' %}", alt: "Праздничное оформление" },
+              { src: "{% static 'images/services/decor/decor_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/decor/decor_3_webp-800x600.webp' %}", alt: "Праздничное оформление" },
+              { src: "{% static 'images/services/decor/decor_4_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/decor/decor_4_webp-800x600.webp' %}", alt: "Праздничное оформление" },
+            ]
+          },
+          // 6 — Социологические исследования
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/anketa/anketa_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/anketa/anketa_1_webp-800x600.webp' %}", alt: "Социологические исследования" },
+              { src: "{% static 'images/services/anketa/anketa_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/anketa/anketa_2_webp-800x600.webp' %}", alt: "Социологические исследования" },
+              { src: "{% static 'images/services/anketa/anketa_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/anketa/anketa_3_webp-800x600.webp' %}", alt: "Социологические исследования" },
+            ]
+          },
+          // 7 — Подбор персонала
+          {
+            type: "images",
+            images: [
+              { src: "{% static 'images/services/hr/hr_1_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/hr/hr_1_webp-800x600.webp' %}", alt: "Подбор и работа с персоналом" },
+              { src: "{% static 'images/services/hr/hr_2_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/hr/hr_2_webp-800x600.webp' %}", alt: "Подбор и работа с персоналом" },
+              { src: "{% static 'images/services/hr/hr_3_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/hr/hr_3_webp-800x600.webp' %}", alt: "Подбор и работа с персоналом" },
+              { src: "{% static 'images/services/hr/hr_4_jpg-800x600.jpg' %}", srcset: "{% static 'images/services/hr/hr_4_webp-800x600.webp' %}", alt: "Подбор и работа с персоналом" },
+            ]
+          },
+        ];
+
+
+
+    const SLIDES=[
+      {title:"Промо акции",items:["Листовки","Промо-модели, аниматоры","Сэмплинг и дегустация","Тайный покупатель","Мерчандайзинг","HoReCa"]},
+      {title:"Полиграфия",items:["Печать листовок","Сувенирная продукция","Офсетная печать","POS-материалы","Трейд-маркетинг"]},
+      {title:"Рекламные конструкции",items:["POS-материалы","Лайтбоксы","Брендирование","Мерчандайзинг на одежде и шарах"]},
+      {title:"Медиафасады",items:["Размещение на медиафасадах","Размещение на видеоэкранах","В любом городе и стране"]},
+      {title:"Консалтинг",items:["Маркетинговая стратегия","Реализация маркетинговых мероприятий","Комплекс рекламных услуг"]},
+      {title:"Праздничное оформление",items:["Фотозоны","Световой декор","Воздушные шары","Гирлянды из шаров","Аренда аппарата сладкой ваты"]},
+      {title:"Соц. исследования",items:["Опрос","Наблюдение","Контент анализ","Фокус группа"]},
+      {title:"Подбор персонала",items:["Супервайзер","Тайный покупатель","Подборка кандидатов","Обучение персонала","Разработка корпоративных стандартов"]}
+    ];
+
+    // ─── Состояние ───────────────────────────────────────────
+    const track   = document.getElementById("track");
+    const dotsEl  = document.getElementById("dots");
+    const wrap    = document.getElementById("wrap");
+    const N       = SLIDES.length;
+    let cur        = 3;   // индекс активного слайда (0..N-1)
+    let visible    = 3;   // слайдов видно одновременно
+    let slideW     = 0;   // ширина одного слайда в px
+    let dragging   = false;
+    let dragStartX = 0;
+    let dragDelta  = 0;
+
+    // ─── Медиа-хелпер ────────────────────────────────────────
+    function buildMedia(idx) {
+      const m = SLIDE_MEDIA[idx];
+      if (!m || m.type === "none") {
+        return `<div class="slide-img">[ нет фото ]</div>`;
+      }
+      if (m.type === "images") {
+        const img = m.images[0];
+        return `<div class="slide-img" style="padding:0;position:relative;">
+          <img alt="${img.alt}" style="width:100%;height:100%;object-fit:cover;display:block;"
+               srcset="${img.srcset}" src="${img.src}">
+        </div>`;
+      }
+      if (m.type === "video") {
+        const sources = m.sources.map(s =>
+          `<source src="${s.src}" type="${s.type}"${s.media ? ` media="${s.media}"` : ""}>`
+        ).join("");
+        return `<div class="slide-img" style="padding:0;position:relative;overflow:hidden;">
+          <img alt="poster" style="width:100%;height:100%;object-fit:cover;display:block;" src="${m.fallback}">
+          <video autoplay muted playsinline poster="${m.poster}"
+                 onended="this.currentTime=0;this.play();"
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+            ${sources}
+          </video>
+        </div>`;
+      }
+    }
+
+    // ─── Построить один DOM-элемент слайда ───────────────────
+    function buildSlide(realIdx, isClone) {
+      const s   = SLIDES[realIdx];
+      const el  = document.createElement("div");
+      el.className = "slide dim" + (isClone ? " clone" : "");
+      el.dataset.real = realIdx;
+      el.innerHTML = `
+        <div class="slide-inner">
+          ${buildMedia(realIdx)}
+          <div class="slide-body">
+            <p class="slide-title">${s.title}</p>
+            <ul class="slide-list">${s.items.map(x => `<li>${x}</li>`).join("")}</ul>
+          </div>
+        </div>`;
+      if (!isClone) {
+        el.addEventListener("click", () => {
+          if (realIdx !== cur) { cur = realIdx; update(); }
+        });
+      }
+      return el;
+    }
+
+    // ─── Рендер: клоны_конца | настоящие | клоны_начала ──────
+    function render() {
+      track.innerHTML = "";
+      dotsEl.innerHTML = "";
+
+      // клоны последних `visible` слайдов — в начало трека
+      for (let i = N - visible; i < N; i++) {
+        track.appendChild(buildSlide(i, true));
+      }
+
+      // настоящие слайды
+      SLIDES.forEach((_, i) => {
+        track.appendChild(buildSlide(i, false));
+
+        const d = document.createElement("div");
+        d.className = "dot" + (i === cur ? " active" : "");
+        d.dataset.title = SLIDES[i].title;
+        d.addEventListener("click", () => { cur = i; update(); });
+        dotsEl.appendChild(d);
+      });
+
+      // клоны первых `visible` слайдов — в конец трека
+      for (let i = 0; i < visible; i++) {
+        track.appendChild(buildSlide(i, true));
+      }
+    }
+
+    // ─── Размеры ─────────────────────────────────────────────
+    function getVisible() { return window.innerWidth < 576 ? 1 : 3; }
+
+    function setSlideW() {
+      visible = getVisible();
+      slideW  = wrap.offsetWidth / visible - 20;
+      track.querySelectorAll(".slide").forEach(s => {
+        s.style.flex = `0 0 ${slideW}px`;
+      });
+    }
+
+    // ─── Позиция трека для cur ────────────────────────────────
+    // Трек: [visible клонов конца] [слайд0..N-1] [visible клонов начала]
+    // Индекс в треке для cur: visible + cur
+    // Центрируем активный слайд: сдвигаем ещё на (visible-1)/2 * slideW влево
+    function getOffset() {
+      const trackIdx = visible + cur;
+      const center   = (visible - 1) / 2;
+      return (trackIdx - center) * slideW;
+    }
+
+    // ─── Обновить позицию и стили ─────────────────────────────
+    function update(animate = true) {
+      setSlideW();
+
+      if (!animate) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition = "transform .45s cubic-bezier(.4,0,.2,1)";
+      }
+
+      track.style.transform = `translateX(-${getOffset()}px)`;
+
+      // dim / active для настоящих слайдов
+      track.querySelectorAll(".slide:not(.clone)").forEach(s => {
+        const isCur = parseInt(s.dataset.real) === cur;
+        s.className = "slide" + (isCur ? "" : " dim") + (s.classList.contains("clone") ? " clone" : "");
+      });
+
+      // dots
+      dotsEl.querySelectorAll(".dot").forEach((d, i) => {
+        d.className = "dot" + (i === cur ? " active" : "");
+      });
+    }
+
+
+   // ─── Навигация ────────────────────────────────────────────
+    function next() {
+      cur++;
+      update();
+
+      // если вышли за правый край — тихий прыжок на начало
+      if (cur >= N) {
+        track.addEventListener("transitionend", () => {
+          cur = 0;
+          update(false);
+        }, { once: true });
+      }
+    }
+
+    function prev() {
+      cur--;
+      update();
+
+      // если вышли за левый край — тихий прыжок на конец
+      if (cur < 0) {
+        track.addEventListener("transitionend", () => {
+          cur = N - 1;
+          update(false);
+        }, { once: true });
+      }
+    }
+
+    // ─── Touch (свайп) ────────────────────────────────────────
+    wrap.addEventListener("touchstart", e => { dragStartX = e.touches[0].clientX; dragDelta = 0; }, { passive: true });
+    wrap.addEventListener("touchmove",  e => { dragDelta = e.touches[0].clientX - dragStartX; },    { passive: true });
+    wrap.addEventListener("touchend",   () => { if (Math.abs(dragDelta) > 40) { dragDelta < 0 ? next() : prev(); } });
+
+    // ─── Mouse drag ───────────────────────────────────────────
+    wrap.addEventListener("mousedown", e => {
+      dragging   = true;
+      dragStartX = e.clientX;
+      dragDelta  = 0;
+      wrap.style.cursor = "grabbing";
+    });
+    window.addEventListener("mousemove", e => {
+      if (!dragging) return;
+      dragDelta = e.clientX - dragStartX;
+    });
+    window.addEventListener("mouseup", () => {
+      if (!dragging) return;
+      dragging = false;
+      wrap.style.cursor = "";
+      if (Math.abs(dragDelta) > 40) { dragDelta < 0 ? next() : prev(); }
+    });
+
+    // ─── Колёсико мыши ───────────────────────────────────────
+    wrap.addEventListener("wheel", e => {
+      e.preventDefault();
+      e.deltaX > 0 || e.deltaY > 0 ? next() : prev();
+    }, { passive: false });
+
+    // ─── Ресайз ───────────────────────────────────────────────
+    window.addEventListener("resize", () => { render(); setSlideW(); update(false); });
+
+    // ─── Инициализация ───────────────────────────────────────
+    render();
+    setSlideW();
+    update(false);
+</script>
+

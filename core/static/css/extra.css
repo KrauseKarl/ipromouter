@@ -1,4 +1,10 @@
 :root  {
+     /* Main color schema */
+    --first-color: #9B59B6;   /* PURPLE  */
+    --second-color: #23B684;  /* GREEN   */
+    --third-color: #F9BF3B;   /* YELLOW  */
+    --forth-color: #FE6860;   /* RED     */
+
     --clr-dark:  #070a13;
     --clr-light:  #f1f5f9;
     --warning: #FFBF66;
@@ -112,10 +118,10 @@ a:hover  {
 }
 
 .btn__copy {
-    background-color: var(--warning);
-    text-size: 0.25rem;
+    background-color: var(--first-color);
+    text-size: 0.16rem;
     color: var(--dark);
-    padding: 1px 2px;
+    padding: 1.5px 2.5px;
     border-radius: 5px;
 }
 
@@ -655,20 +661,21 @@ a:hover  {
      font-size; 10px;
  }
  .nav-link.active  {
-     background-color:  var(--warning) !important;
+     background-color:  var(--first-color) !important;
      color:  white !important;
      text-align:  center !important;
      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5),  0 2px 6px rgba(0, 0, 0, 0.7);
      box-shadow: none;
  }
  .nav-link.active span  {
-     /* color:  white; */
+     color:  white;
      font-weight:  bold;
      font-weight:  bold;
      text-shadow:  none;
  }
  .nav-link.active .icon-service  {
-     display: none }
+     display: none
+     }
  @media only screen and (max-width: 993px)  {
      .nav-link .icon-service  {
      display:  none;

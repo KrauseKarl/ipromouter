@@ -89,30 +89,6 @@
                 </div><!-- end slide-inner -->
             </div> <!-- end swiper-slide -->
 
-            <!--SECOND SLIDE OLD VERSION-->
-
-            <!--            <div class="swiper-slide container__size overflow-hidden">-->
-            <!--                <div class="slide-inner slide-bg-image container__size right-position"-->
-            <!--                     data-background="{% static 'images/carousel/fasade.gif' %}">-->
-            <!--                    <div class="bg-overlay"></div>-->
-            <!--                    <div class="container p-2">-->
-            <!--                        <div class="row justify-content-center">-->
-            <!--                            <div class="col-12">-->
-            <!--                                <div class="title-heading text-start banner-title">-->
-            <!--                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">-->
-            <!--                                        Медиафасады и видеоэкраны</h2>-->
-            <!--                                    <p class="subtitle__size  ">-->
-            <!--                                        Размещение реклама на медиафасадах и видеоэкранах вашего города-->
-            <!--                                    </p>-->
-            <!--                                    <a href="#contacts" class="btn btn-first-color text-wgite btn-lg"-->
-            <!--                                        style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);">узнать подробно-->
-            <!--                                    </a>-->
-            <!--                                </div>-->
-            <!--                            </div>&lt;!&ndash;end col&ndash;&gt;-->
-            <!--                        </div>&lt;!&ndash;end row&ndash;&gt;-->
-            <!--                    </div>&lt;!&ndash;end container&ndash;&gt;-->
-            <!--                </div>&lt;!&ndash; end slide-inner &ndash;&gt;-->
-            <!--            </div> &lt;!&ndash; end swiper-slide &ndash;&gt;-->
 
             <div class="swiper-slide container__size overflow-hidden">
                 <div class="slide-inner slide-bg-image container__size right-position"
@@ -196,12 +172,45 @@
                     </div><!--end container-->
                 </div><!-- end slide-inner -->
             </div> <!-- end swiper-slide -->
+              <!-- BRANDING -->
             <div class="swiper-slide container__size overflow-hidden">
-                <div class="slide-inner slide-bg-image container__size"
-                     style="background: top center;"
-                     data-background="{% static 'images/carousel/banner_6_compressed.jpg' %}">
-                    <div class="bg-overlay"></div>
-                    <div class="container p-2">
+                <div class="slide-inner container__size" style="position: relative; overflow: hidden;">
+                    <!-- Изображение-фон с адаптивными разрешениями -->
+                    <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                        <!-- Мобильная версия (1:1 - квадратное изображение) -->
+                        <source
+                                media="(max-width: 767px)"
+                                srcset="{% static 'images/carousel/branding-mobile.png' %}"
+                                type="image/jpeg">
+                        <source
+                                media="(max-width: 767px)"
+                                srcset="{% static 'images/carousel/branding-mobile.webp' %}"
+                                type="image/webp">
+
+                        <!-- Десктопная версия (16:9) -->
+                        <source
+                                media="(min-width: 768px)"
+                                srcset="{% static 'images/carousel/branding-laptop.png' %}"
+                                type="image/jpeg">
+                        <source
+                                media="(min-width: 768px)"
+                                srcset="{% static 'images/carousel/branding-laptop.webp' %}"
+                                type="image/webp">
+
+                        <!-- Фолбэк на случай, если медиа-запросы не поддерживаются -->
+                        <img
+                                src="{% static 'images/carousel/branding-laptop.png' %}"
+                                alt="Рекламное агентство BTL+"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                                loading="eager">
+                    </picture>
+
+                    <!-- Затемняющий оверлей (поверх изображения) -->
+                    <div class="bg-overlay"
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+                    <!-- Контент -->
+                    <div class="container p-2 mt-5" style="position: relative; z-index: 2;">
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 <div class="title-heading text-start banner-title">
@@ -223,13 +232,46 @@
                         </div><!--end row-->
                     </div><!--end container-->
                 </div><!-- end slide-inner -->
-            </div> <!-- end swiper-slide -->
+            </div>
+
             <div class="swiper-slide container__size overflow-hidden">
-                <div class="slide-inner slide-bg-image container__size"
-                     style="background: top center;"
-                     data-background="{% static 'images/carousel/banner_7_compressed.jpg' %}">
-                    <div class="bg-overlay"></div>
-                    <div class="container p-2">
+                <div class="slide-inner container__size" style="position: relative; overflow: hidden;">
+                    <!-- Изображение-фон с адаптивными разрешениями -->
+                    <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+                        <!-- Мобильная версия (1:1 - квадратное изображение) -->
+                        <source
+                                media="(max-width: 767px)"
+                                srcset="{% static 'images/carousel/merchandising-mobile.png' %}"
+                                type="image/jpeg">
+                        <source
+                                media="(max-width: 767px)"
+                                srcset="{% static 'images/carousel/merchandising-mobile.webp' %}"
+                                type="image/webp">
+
+                        <!-- Десктопная версия (16:9) -->
+                        <source
+                                media="(min-width: 768px)"
+                                srcset="{% static 'images/carousel/merchandising-laptop.png' %}"
+                                type="image/jpeg">
+                        <source
+                                media="(min-width: 768px)"
+                                srcset="{% static 'images/carousel/merchandising-laptop.webp' %}"
+                                type="image/webp">
+
+                        <!-- Фолбэк на случай, если медиа-запросы не поддерживаются -->
+                        <img
+                                src="{% static 'images/carousel/merchandising-laptop.png' %}"
+                                alt="Рекламное агентство BTL+"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                                loading="eager">
+                    </picture>
+
+                    <!-- Затемняющий оверлей (поверх изображения) -->
+                     <div class="bg-overlay"
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+                    <!-- Контент -->
+                    <div class="container p-2 mt-5" style="position: relative; z-index: 2;">
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 <div class="title-heading text-start banner-title">
@@ -251,7 +293,68 @@
                         </div><!--end row-->
                     </div><!--end container-->
                 </div><!-- end slide-inner -->
-            </div> <!-- end swiper-slide -->
+            </div>
+            <!--  Полиграфия брендирование  -->
+<!--            <div class="swiper-slide container__size overflow-hidden">-->
+<!--                <div class="slide-inner slide-bg-image container__size"-->
+<!--                     style="background: top center;"-->
+<!--                     data-background="{% static 'images/carousel/banner_6_compressed.jpg' %}">-->
+<!--                    <div class="bg-overlay"></div>-->
+<!--                    <div class="container p-2">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-12">-->
+<!--                                <div class="title-heading text-start banner-title">-->
+<!--                                    <h2 class="title__size  text-white text-uppercase title-dark fw-bold">-->
+<!--                                        Полиграфия брендирование-->
+<!--                                    </h2>-->
+<!--                                    <p class="subtitle__size ">-->
+<!--                                        Сувенирная продукция<br>нанесение логотипа на одежду,-->
+<!--                                        кружки или воздушные шары-->
+<!--                                    </p>-->
+<!--                                    <div class="mt-2 pt-2">-->
+<!--                                        <a href="#contacts" class="btn btn-first-color  text-white text-uppercase btn-lg"-->
+<!--                                           style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);">-->
+<!--                                            написать нам-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                        </div>&lt;!&ndash;end row&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash;end container&ndash;&gt;-->
+<!--                </div>&lt;!&ndash; end slide-inner &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end swiper-slide &ndash;&gt;-->
+
+            <!-- Мерчандайзинг  -->
+<!--            <div class="swiper-slide container__size overflow-hidden">-->
+<!--                <div class="slide-inner slide-bg-image container__size"-->
+<!--                     style="background: top center;"-->
+<!--                     data-background="{% static 'images/carousel/banner_7_compressed.jpg' %}">-->
+<!--                    <div class="bg-overlay"></div>-->
+<!--                    <div class="container p-2">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-12">-->
+<!--                                <div class="title-heading text-start banner-title">-->
+<!--                                    <h2 class="title__size text-white text-uppercase title-dark fw-bold">-->
+<!--                                        Мерчандайзинг-->
+<!--                                    </h2>-->
+<!--                                    <p class="subtitle__size   text-start  ">-->
+<!--                                        Визуальный мерчандайзинг и выкладка товаров<br>-->
+<!--                                        POS материалы и лайтбоксы-->
+<!--                                    </p>-->
+<!--                                    <div class="mt-2 pt-2">-->
+<!--                                        <a href="#contacts" class="btn btn-first-color text-white text-uppercase btn-lg"-->
+<!--                                           style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);">-->
+<!--                                            заказать выкладку-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>&lt;!&ndash;end col&ndash;&gt;-->
+<!--                        </div>&lt;!&ndash;end row&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash;end container&ndash;&gt;-->
+<!--                </div>&lt;!&ndash; end slide-inner &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end swiper-slide &ndash;&gt;-->
+
+
         </div>
 
         <!-- end swiper-wrapper -->

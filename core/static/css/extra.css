@@ -105,6 +105,18 @@ h1  {
 .city_link  {
     color:  black;
 }
+.btn-warning {
+    background-color: var(--first-color) !important;
+}
+.btn-first-color {
+    background-color: var(--first-color);
+}
+.btn-third-color {
+    background-color: var(--third-color);
+}
+.btn-forth-color {
+    background-color: var(--forth-color);
+}
 
 .btn-warning  {
     color:  black !important;

@@ -221,7 +221,7 @@ def candidate(request):
     return JsonResponse(response)
 
 
-def my_page_not_found(request, exception):
+def custom_404(request, exception):
     return render(
         request=request, 
         template_name='404.html', 
@@ -229,7 +229,7 @@ def my_page_not_found(request, exception):
         status=404
         )
 
-def my_server_error(request):
+def custom_500(request):
     return render(
         request=request, 
         template_name='500.html', 

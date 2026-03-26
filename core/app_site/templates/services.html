@@ -17,8 +17,8 @@
                          id="nav-tab" role="tablist">
                         <button
                                 aria-controls="nav-home"
-                                aria-selected="false"
-                                class=" align-items-center border-bottom border-opacity-75 col-lg-2 col-md-12 nav-link nav-link-service py-1 ps-1 rounded service__bottom"
+                                aria-selected="true"
+                                class="active align-items-center border-bottom border-opacity-75 col-lg-2 col-md-12 nav-link nav-link-service py-1 ps-1 rounded service__bottom"
                                 data-bs-target="#promo"
                                 data-bs-toggle="tab"
                                 id="promo-tab"
@@ -55,8 +55,8 @@
                         <!--МЕДИАФАСАД-->
                         <button
                                 aria-controls="nav-contact"
-                                aria-selected="true"
-                                class="active col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
+                                aria-selected="false"
+                                class="col-md-12 align-items-center border-bottom border-opacity-75 col-lg-2 nav-link nav-link-service py-1 ps-3 rounded service__bottom"
                                 data-bs-target="#fasade"
                                 data-bs-toggle="tab"
                                 id="fasade-tab"
@@ -70,6 +70,7 @@
                             <!--   class="badge lh-lg text-wrap text-uppercase" -->
                         </button>
                         <!--МЕДИАФАСАД-->
+
                         <!--КОНСАЛДИНГ-->
                         <button
                                 aria-controls="nav-contact"
@@ -121,7 +122,8 @@
                     </div>
                 </nav>
                 <div class="tab-content mt-2" id="nav-tabContent">
-                    <div class="fade tab-pane" id="promo" role="tabpanel" aria-labelledby="promo-tab"   tabindex="0">
+                    <div class="active fade show tab-pane" id="promo" role="tabpanel" aria-labelledby="promo-tab"
+                         tabindex="0">
                         <div class="container">
                             <div style="background: url(/static/images/map.png) center center;">
                                 <div class="row">
@@ -432,8 +434,9 @@
                         </div>
                     </div>
                     <!-- КОНСАЛДИНГ END -->
+
                     <!-- МЕДИАФАСАДЫ START -->
-                    <div class="active show fade tab-pane" id="fasade" role="tabpanel" aria-labelledby="adv-equipment-tab"
+                    <div class="fade tab-pane" id="fasade" role="tabpanel" aria-labelledby="adv-equipment-tab"
                          tabindex="0">
                         <div class="container">
                             <div style="background: url(/static/images/map.png) center center;">
